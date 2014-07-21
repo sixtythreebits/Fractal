@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Fractal.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Fractal</title>
+    <link href="css/fonts.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <script src="scripts/jquery-2.1.0.min.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="scripts/js.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="all">
+        <header>
+            <span class="logo">Fractal</span>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">მთავარი</a></li>
+                    <li><a href="#">წიგნები</a></li>
+                    <li><a href="#">გამოცდები</a></li>
+                    <li><a href="#">ჩვენს შესახებ</a></li>
+                    <li><a href="#">კონტაქტი</a></li>
+                    <li class="sign">
+                        <a href="#" class="btn">შესვლა</a>
+                        <div class="hide">
+                            <div class="login">
+                                <input type="text" placeholder="მომხმარებელი" />
+
+                                <input type="password" placeholder="პაროლი" />
+
+                                <input type="submit" value="შესვლა" class="btn" />
+
+                                <a href="#">დაგავიწყდა პაროლი?</a>
+                            </div>
+                            <div class="forgot hide">
+                                <input type="text" placeholder="ელ-ფოსტა" />
+
+                                <input type="submit" value="გაგზავნა" class="btn" />
+
+                                <a href="#">შესვლა</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <footer>
+            <div>
+                <span>© “ფრაქტალი” ყველა უფლება დაცულია, 2014</span>
+                <p>
+                    შექმნილია
+                    <a href="http://63bits.com" target="_blank">63ბიტში</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    </form>
+</body>
+</html>

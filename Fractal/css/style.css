@@ -1,0 +1,405 @@
+﻿html,body,
+h1,h2,h3,h4,h5,h6,
+ul,figure,article{
+	margin:0;
+	padding:0;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.cl:before,
+.cl:after,
+.list:before,
+.list:after,
+.wrap:before,
+.wrap:after {
+  display: table;
+  content: " ";
+}
+.list:after,
+.cl:after,
+.wrap:after{
+	clear:both;
+}
+
+body{
+	color:#6d6e71;
+	font-family: 'BPG DejaVu Sans';
+	font-size:16px;
+    min-width:100px;
+}
+.fix{
+	position:fixed !important;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.hidden{
+	display:none;
+}
+.hide{
+	opacity:0;
+	z-index:0 !important;
+	visibility:hidden;
+}
+a{
+	outline:none;
+}
+a img{
+	border:0;
+}
+
+html,body,form{
+	width:100%;
+	height:100%;
+}
+html > body .all {
+	height: auto;
+	min-height: 100%;
+}
+.all {
+	position: relative;
+	height: 100%;
+	padding-bottom:78px;
+}
+
+.wrap{
+    width:1000px;
+    margin:0 auto;
+}
+
+/* ---------- btn ---------- */
+.btn{
+    display:inline-block;
+    color:#fff;
+    font-family: 'BPG DejaVu Sans';
+    font-size:13px;
+    font-weight:normal;
+    line-height:20px;
+    background:#39b54a;
+    border:1px solid #009344;
+    border-radius:3px;
+    padding:6px 26px;
+    cursor:pointer;
+}
+.btn:hover{
+    color:#fff;
+}
+/* ---------- /btn ---------- */
+
+
+
+/* ---------- header ---------- */
+header{
+	width:100%;
+	height:84px;
+	background:#fff;
+}
+header .logo{
+	float:left;
+	display:block;
+	width:221px;
+	height:51px;
+	background:url(../images/logo.png);
+	margin:17px 0 0 150px;
+    text-indent:-9999px;
+}
+
+header nav{
+	float:right;
+    margin-right:100px;
+}
+header ul{
+	list-style:none;
+}
+header li{
+    position:relative;
+	float:left;
+    margin:32px 30px 0 0;
+}
+header li a{
+	display:block;
+	color:#848484;
+    font-family: 'BPG DejaVu Sans MT';
+	font-size:14px;
+    font-weight:bold;
+	text-decoration:none;
+	line-height:20px;
+}
+header li a:hover,
+header li.active a{
+	color:#009444;
+}
+
+header li.sign{
+    margin-top:24px;
+}
+header li.sign > div.hide{
+    z-index:-1;
+}
+header li.sign > div{
+    position:absolute;
+    right:0;
+    top:44px;
+    z-index:1;
+
+    width:198px;
+    height:168px;
+    background:#fff;
+    border:1px solid #a5a7a9;
+    border-radius:3px;
+
+    -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+header li.sign > div.small{
+    height:128px;
+}
+header li.sign > div:before{
+    content:"";
+    position:absolute;
+    right:40px;
+    top:-8px;
+
+    width:15px;
+    height:8px;
+    background:url(../images/triangle-sign.png);
+}
+header li.sign > div div{
+    width:160px;
+    margin:18px auto 8px;
+
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-80px;
+
+    -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+li.sign input{
+    width:100%;
+    padding:0;
+    outline:none;
+    margin-bottom:4px;
+}
+li.sign input[type=text],
+li.sign input[type=password]{
+    height:31px;
+    padding-left:8px;
+    margin-bottom:9px;
+    background:#e7e8e9;
+    border:1px solid #acaeb1;
+    border-radius:3px;
+}
+li.sign div a{
+    display:inline-block;
+    font-family: 'BPG DejaVu Sans';
+	font-size:12px;
+    font-weight:normal;
+    text-decoration:underline;
+}
+li.sign input.btn{
+    line-height:31px;
+}
+/* ---------- /header ---------- */
+
+
+
+/* ---------- footer ---------- */
+footer{
+	position:absolute;
+	left:0;
+	bottom:0;
+	
+	width:100%;
+	height:78px;
+	background:#1b1b1b;
+}
+footer div{
+	width:1000px;
+	margin:0 auto;
+	line-height:78px;
+}
+footer *{
+	color:#6d6e71;
+	font-size:14px;
+}
+footer span{
+	float:left;
+}
+footer p{
+    margin:0;
+    float:right;
+}
+/* ---------- /footer ---------- */
+
+
+
+/* ---------- slider ---------- */
+.slider{
+    width:100%;
+    height:535px;
+}
+.slider ul{
+    list-style:none;
+}
+.slider li{
+    height:535px;
+    background-position:center center;
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/* ---------- /slider ---------- */
+
+
+h1,h2,h3,h4,h5,h6{
+    color:#777782;
+    font-family: 'BPG DejaVu Sans MT';
+    font-size:25px;
+}
+h2.title{
+    font-size:25px;
+    line-height:26px;
+    background:url(../images/pat.png) repeat-x;
+    margin:0 0 0 150px;
+}
+h2.title span{
+    background:#fff;
+    padding-right:17px;
+}
+section.gray,
+section.gray h2 span{
+    background:#ebeced;
+}
+section.home{
+    padding:44px 0 100px;
+}
+section.home h2{
+    margin-bottom:65px;
+}
+
+section.home ul{
+    list-style:none;
+}
+.home .list{
+    width:1000px;
+    margin:0 auto;
+}
+
+.home .list.col3 > li,
+.home .team .list > li{
+    float:left;
+}
+
+.home .list.col3{
+    position:relative;
+}
+.home .list.col3 li{
+    width:333px;
+    padding:0 28px;
+    text-align:center;
+}
+.home .list.col3 li:first-child{
+    width:334px;
+}
+.home .list.col3 > li:after{
+    content:"";
+    position:absolute;
+    left:333px;
+    top:0;
+    width:1px;
+    height:100%;
+    background:#aeb0b2;
+}
+.home .list.col3 li:nth-child(2):after{
+    left:666px;
+}
+
+.home .list.col3 h3{
+    color:#000;
+    margin:10px 0 8px;
+}
+.home .list.col3 article{
+    margin-bottom:50px;
+}
+
+.home p{
+    margin:0;
+}
+
+.home div.col2 > div{
+    float:left;
+    width:470px;
+}
+.home div.col2 > div:last-child{
+    float:right;
+}
+.home div.col2 li{
+    position:relative;
+    padding-left:60px;
+    margin-bottom:55px;
+}
+.home div.col2 li:last-child{
+    margin-bottom:0;
+}
+.home div.col2 li img{
+    position:absolute;
+    left:0;
+    top:0;
+}
+.home div.col2 li h4{
+    padding:4px 0 10px;
+}
+
+.home .team{
+    overflow:hidden;
+    margin-bottom:-60px;
+}
+.home .team .list{
+    width:1080px;
+}
+.home .team .list li{
+    width:203px;
+    font-size:14px;
+    margin:0 62px 60px 0;
+}
+.home .team .list li > span,
+.home .team .list li img{
+    display:block;
+}
+.home .team .list li > span{
+    position:relative;
+    width:203px;
+    height:203px;
+    border-radius:100%;
+    overflow:hidden;
+}
+.home .team .list h5{
+    color:#58595b;
+    font-size:21px;
+    margin:20px 0 10px;
+}
+.home .team .list h5,
+.home .team .list p{
+    margin-left:2px;
+}
