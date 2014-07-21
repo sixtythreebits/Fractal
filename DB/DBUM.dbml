@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Fractal" Class="DBUMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.tx_UM" Method="tx_UM">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UM_tsp_stUsers" Method="UM_tsp_stUsers">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="BirthDate" Parameter="birthDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="State" Parameter="state" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Avatar" Parameter="avatar" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="About" Parameter="about" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DefaultSubjectID" Parameter="defaultSubjectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CollegeID" Parameter="collegeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UM_Authenticate" Method="UM_Authenticate">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UM_tsp_stActions" Method="UM_tsp_stActions">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="PermissionID" Parameter="permissionID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Caption" Parameter="caption" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="AspxPagePath" Parameter="aspxPagePath" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ControlID" Parameter="controlID" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ParentID" Parameter="parentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="PermissionCode" Parameter="permissionCode" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="DCode" Parameter="dCode" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Icon" Parameter="icon" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="SortVal" Parameter="sortVal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IncludesHelp" Parameter="includesHelp" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="HelpUrl" Parameter="helpUrl" Type="System.String" DbType="NVarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UM_tsp_stRoles" Method="UM_tsp_stRoles">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="Caption" Parameter="caption" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Code" Parameter="code" Type="System.Byte" DbType="TinyInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tx_stUsers" Method="tx_stUsers">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UM_List_Users" Method="UM_List_Users" IsComposable="true">
+    <ElementType Name="UM_List_UsersResult">
+      <Column Name="usersid" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Avatar" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LastVisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VisitCount" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="unid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_UserRoles" Method="UM_List_UserRoles" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="UM_List_UserRolesResult">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_UserPermissions" Method="UM_List_UserPermissions" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="UM_List_UserPermissionsResult">
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AspxPagePath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ControlID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PermissionCode" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="[Level]" Member="Level" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Hierarchy" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SortVal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IncludesHelp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HelpUrl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_RoleUsers" Method="UM_List_RoleUsers" IsComposable="true">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UM_List_RoleUsersResult">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(401)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_Roles" Method="UM_List_Roles" IsComposable="true">
+    <ElementType Name="UM_List_RolesResult">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_RolePermissions" Method="UM_List_RolePermissions" IsComposable="true">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UM_List_RolePermissionsResult">
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AspxPagePath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ControlID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PermissionCode" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_PermissionUsers" Method="UM_List_PermissionUsers" IsComposable="true">
+    <Parameter Name="PermissionID" Parameter="permissionID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UM_List_PermissionUsersResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(401)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_Permissions" Method="UM_List_Permissions" IsComposable="true">
+    <Parameter Name="dcode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UM_List_PermissionsResult">
+      <Column Name="PermissionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AspxPagePath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ControlID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Level]" Member="Level" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Hierarchy" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PermissionCode" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="DCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SortVal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IncludesHelp" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HelpUrl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UM_List_PermissionRoles" Method="UM_List_PermissionRoles" IsComposable="true">
+    <Parameter Name="PermissionID" Parameter="permissionID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UM_List_PermissionRolesResult">
+      <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.IsEmailUniq" Method="IsEmailUniq" IsComposable="true">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.IsUsernameUniq" Method="IsUsernameUniq" IsComposable="true">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.UM_GetSingleUser" Method="UM_GetSingleUser" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Slug" Parameter="slug" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+</Database>

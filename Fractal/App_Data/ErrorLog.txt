@@ -1,0 +1,7 @@
+﻿
+
+------------------------------------
+http://localhost:5568/administration/PopupPages/CM/course/QuizToCourse.aspx?cid=2&title=Add%20Quiz - 21-Jul-14 12:06:32
+Core.Course.GetCourseCreatorUser(CourseID = 0) --- Nullable object must have a value.
+------------------------------------
+

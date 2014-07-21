@@ -1,0 +1,705 @@
+﻿.form {
+    float: left;
+    clear: both;
+    position: relative;
+    height: 70px;
+    margin-bottom: 10px;
+    width: 600px;
+}
+
+.form.short {
+    width: 500px;
+}
+
+.form > label {
+    float: left;
+    font-size: 16px;
+    line-height: 41px;
+    width: 170px;
+    text-align: right;
+    margin-right: 10px;
+    position: absolute;
+    left: 0px;
+}
+
+.form > p.error-text {
+    float: left;
+    font-size: 10px;
+    line-height: 12px;
+    width: 120px;
+    left: 50px;
+    top: 28px;
+    color: #c00;
+    text-align: right;
+    margin-right: 10px;
+    position: absolute;
+}
+
+
+
+
+.form .select,
+.form > input,
+.form > textarea,
+.custom-form-text,
+.form .input{
+    width: 338px;
+    border:1px solid #7a7a7a;
+}
+.form .select,
+.form > input,
+.form .input {
+    height: 39px;
+    padding:0 10px;
+    
+    border-radius:5px;
+    margin-left: 180px;
+    font-size: 16px;
+    position: relative;
+}
+
+.form.short > input {
+    width: 122px;    
+}
+
+.form > textarea,
+.custom-form-text {
+    height: 200px;
+    padding:5px 10px;
+    margin-left: 180px;
+    position: relative;
+    overflow: auto;
+    border-radius:5px;
+}
+
+.form .select{
+    background:url(img/input-select-right.png) right no-repeat;
+    border-right:0;
+}
+.form .select p{
+    line-height:39px;
+}
+.form .select > select{
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+    height:41px;
+    width: 358px;
+}
+
+.form.date-picker > a {
+    position: absolute;
+    left: 504px;
+    top: 12px;
+}
+
+
+.form > span:not(.ui-helper-hidden-accessible) {
+    color: #999;
+    font-size: 12px;
+    line-height: 12px;
+    padding-right: 18px;
+    background: url('img/note12x12.png') no-repeat right center;
+    clear: both;
+    float: left;
+    margin-left: 180px;
+    margin-top: 10px;
+    position: static;
+}
+
+.form > div.icon {
+    position: absolute;
+    left: 550px;
+    top: 10px;
+}
+
+.form.body {
+    height: 230px !important;
+}
+
+.form > .objectcont {
+    margin-left: 280px;
+    min-height: 40px;
+}
+
+.form > .objectcont > div{
+    padding-top:10px;
+}
+
+.form > .objectcont > span {
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 16px;
+    word-wrap: break-word;
+    display: block;
+    padding-top: 8px;
+}
+
+.form > .objectcont > a {
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 16px;
+    word-wrap: break-word;
+    display: inline-block;
+    padding-top: 8px;
+}
+
+.form > .objectcont.radio > input {
+    margin: 15px 5px 0 0;
+}
+
+.form > .objectcont > .st-autocomplete {
+    border: 0 solid black;
+    width: 400px;
+    margin-top:2px
+}
+
+.form > .objectcont.radio > label {
+    margin-right: 10px;
+}
+
+.form > .objectcont .objectcont-link {
+    padding-top: 20px;
+}
+
+.form > .objectcont .objectcont-link a {
+    font-size: 12pt;
+}
+
+.form > .objectcont .custom-form-input {
+    height:41px;
+}
+    .form > .objectcont .custom-form-input .object-item{
+        padding-top:10px;
+    }
+
+.form .tags-container {
+    margin: 10px 0 0 280px;
+}
+
+.form > div.file-upload > span {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+    line-height: 15px;
+    padding-right: 18px;
+    background: url('img/note12x12.png') no-repeat right 2px;
+    margin-right: 100px;
+    width: 260px;
+}
+
+.form.file-upload-container > .file-uploader {
+    float: left;
+    width: 500px;
+    height:40px;
+    list-style: none;
+    margin-left: 275px;    
+    border: 1px solid #7a7a7a;
+    border-radius: 5px;
+    line-height: 49px;
+    position:relative;
+}
+.form.file-upload-container > .file-uploader.textbox-size {
+    width:360px;
+}
+
+.form.file-upload-container > div > a {
+    float: left;
+    margin-left: 12px;
+    margin-top:12px;
+}
+
+.form.file-upload-container > div > ul {
+    position:absolute;
+    right:8px;
+    top:4px;
+    list-style: none;
+    background: url(img/vid-btn.gif) repeat-x;
+    border: 1px solid #999;
+    border-radius: 5px;
+    height: 30px;    
+}
+
+.form.file-upload-container > div > ul li {
+    float: left;
+    line-height: 30px;
+    border-right: 1px solid #c9c9c9;
+    position: relative;
+}
+
+.form.file-upload-container > div > ul li:last-child {
+    border: 0;
+}
+
+#pop-content .form.file-upload-container .file-uploader {
+    margin-left: 180px;
+    width:360px;    
+}
+
+.hidden-uploader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 30px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.form.file-upload-container > div li > a {
+    line-height: 30px;
+    color: #333;
+    font-family: "Lucida Grande", Verdana,arial,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+    display: block;
+    padding: 0 18px;
+    height: 30px;
+}
+
+.form.file-upload-container > div li > a.hidden {
+    display: none
+}
+
+.form > div.attach-video {
+    margin-left: 280px;
+    padding-top: 15px;
+}
+
+.form > div.attach-video > div {
+    width: 200px;
+    height: 30px;
+}
+
+.form > div.attach-video > div.video-container a {
+    float: left;
+    height: 30px;
+}
+
+
+.form > div.attach-video a {
+    font-size: 16px;
+}
+
+
+/*------------------------ form-page ------------------------ */
+.form-page {
+    margin-bottom: 90px;
+}
+
+.form-page > .section {
+    float: left;
+    width: 100%;
+    margin-top: 38px;
+}
+
+.form-page > .section {
+}
+
+.form-page .form {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.form-page .form.short {
+    width: 500px;
+}
+
+.form-page .form > input {
+    margin-left: 280px;
+}
+
+.form-page .form.short > input {
+    width: 122px;
+}
+
+.form-page .form .select{
+    margin-left: 280px;
+}
+
+.form-page .form > div.file-upload {
+    margin-left: 280px;
+}
+
+.form-page .form > div.file-upload > input {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.form-page .form > div.file-upload > .icon.text.delete-black {
+    float: left;
+    width: 330px;
+    margin-left: 22px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #000;    
+}
+
+.form-page .form > textarea {
+    margin-left: 280px;
+    width: 500px !important;
+}
+
+.form-page .form > label {
+    width: 260px;
+}
+
+.form-page .form > .icon {
+    left: 650px;
+}
+
+.form-page .form > a.icon24{
+    position:absolute;
+    left:650px;
+    top:10px;
+}
+.form-page .form > .icon.combo {
+    left: 650px;
+}
+
+.form-page .form > span:not(.ui-helper-hidden-accessible) {
+    position: static;
+    float: left;
+    clear: both;
+    margin-left: 280px;
+    margin-top: 10px;
+}
+
+.form-page .form > .error-text {
+    left: 60px;
+    width: 200px;
+}
+
+.form-page .form > .toggler {
+    margin-left: 262px;
+    margin-top: 7px;
+}
+
+.form-page .form > .radio-buttons {
+    float: left;
+    width: 540px;
+    list-style: none;
+    margin-left: 275px;
+}
+
+.form-page .form > .radio-buttons > li {
+    float: left;
+    width: 180px;
+    height: 58px;
+}
+
+.form-page .form > .radio-buttons > li > a {
+    float: left;
+    width: 100%;
+    line-height: 58px;
+    text-align: center;
+    background: url('img/button.png');
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+}
+
+.form-page .form > .radio-buttons > li.seasons {
+    float: left;
+    width: 182px;
+    height: 60px;
+    margin-right: -2px;
+    margin-bottom: -2px;
+}
+
+.form-page .form > .radio-buttons > li.seasons > a {
+    color: #FFF;
+    text-shadow: #000 0px 1px 1px;
+    line-height: 60px;
+}
+
+.form-page .form > .radio-buttons > li.seasons.spring > a {
+    background: url('img/button-spring.png');
+}
+
+.form-page .form > .radio-buttons > li.seasons.fall > a {
+    background: url('img/button-fall.png');
+}
+
+.form-page .form > .radio-buttons > li.seasons.winter > a {
+    background: url('img/button-winter.png');
+}
+
+.form-page .form > .radio-buttons > li.seasons.summer > a {
+    background: url('img/button-summer.png');
+}
+
+.form-page .form > .radio-buttons > li > a:hover {
+    text-decoration: none;
+}
+
+/*-----------------------/ form-page ------------------------ */
+
+
+
+.submit {
+    float: left;
+    background: url('img/button-save.png');
+    width: 297px;
+    height: 56px;
+    border: 0px none;
+    color: #FFF;
+    text-shadow: #000 0px 2px 1px;
+    font-size: 18px;
+    line-height: 56px;
+    margin-left: 278px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+
+
+/*------------------------ Popup ------------------------ */
+#pop-content .form > .objectcont {
+    margin-left: 180px;
+    width: 400px;
+    min-height: 40px;
+}
+
+#pop-content .form > .objectcont > input[type=file] {
+    padding-top: 9px;
+}
+
+#pop-content .form .tags-container {
+    margin: 10px 0 0 180px;
+}
+
+#pop-content .form > input {
+    width:340px;
+}
+
+#pop-content .form.date-picker input{
+    width:300px;
+    padding:0 50px 0 10px;
+}
+#pop-content .form.img-list.no-margin{
+    margin-left:20px;
+}
+
+/*-----------------------/ Popup ------------------------ */
+
+/*------------------------- toggler -------------------------*/
+div.toggler {
+    float: left;
+    clear: both;
+    left: 20px;
+}
+
+.form > div.toggler {
+    margin-left: 165px;
+    margin-top: 8px;
+}
+
+div.toggler {
+    z-index: 4;
+    position: relative;
+    width: 80px;
+    height: 25px;
+    background: url('img/tougle-bg.png');
+}
+
+div.toggler > .pad {
+    position: absolute;
+    width: 43px;
+    height: 28px;
+    background: url('img/tougle-button.png');
+    margin-left: -2px;
+    margin-right: -2px;
+    margin-top: -1px;
+    top: 0px;
+    left: 40px;
+}
+
+div.toggler.off > .pad {
+    left: 40px;
+}
+
+div.toggler.small {
+    z-index: 4;
+    position: relative;
+    width: 45px;
+    height: 14px;
+    background: url('img/tougle-bg-small.png');
+}
+
+div.toggler.small > .pad {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    background: url('img/tougle-button-small.png');
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+    top: 0px;
+    left: 0px;
+}
+
+div.toggler.off.small > .pad {
+    left: 23px;
+}
+/*------------------------/ toggler -------------------------*/
+
+.forms-general-coment > img {
+    position: relative;
+    top: 2px;
+    left: 4px;
+}
+
+/*-------------------- Asset General Page --------------------*/
+
+#general.assets .file-menu {
+    float: left;
+    width: 270px;
+}
+
+#general.assets .file-menu > * {
+    float: left;
+    clear: both;
+    margin-bottom: 15px;
+}
+
+#general.assets .file-menu > h2 {
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #333;
+}
+
+#general.assets .file-menu > a {
+    width: 266px;
+    height: 43px;
+    background: url('img/button2.png');
+    color: #000;
+}
+
+#general.assets .file-menu > a:hover {
+    text-decoration: none;
+}
+
+#general.assets .file-menu > a > span {
+    float: left;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height:16px;
+    margin-left: 16px;
+}
+
+#general.assets .file-menu > .forms-general-coment {
+    margin-bottom: 40px;
+}
+
+#general.assets .file-menu > div.upload {
+    height: 32px;
+}
+
+#general.assets .file-menu > span.alert {
+    color: #990000;
+    background: url('img/input_error.png') no-repeat;
+    padding-left: 22px;
+    line-height: 20px;
+}
+
+#general.assets .file-menu > div.upload > input {
+    margin-top: 7px;
+    width: 220px;
+}
+
+#general.assets .file-preview {
+    float: left;
+    width: 531px;
+    margin-left: 6px;
+}
+
+#general.assets .file-preview > div {
+    float: left;
+    width: 531px;
+    height: 335px;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
+}
+
+#general.assets .file-preview .content {
+    background: #000;
+    position: relative;
+    width: 525px;
+    height: 329px;
+    left: 3px;
+    top: 3px;
+    overflow: hidden;
+}
+
+#general.assets .file-preview > span {
+    margin-left: 4px;
+}
+/*-------------------/ Asset General Page --------------------*/
+
+
+.form.img-list {
+    width:553px;
+    margin-left:275px;
+}
+.form.img-list ul:before,
+.form.img-list ul:after{
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.form.img-list ul:after {
+    clear:both;
+}
+.form.img-list ul{
+    list-style:none;
+}
+.form.img-list li{
+    position:relative;
+    float:left;
+    width:127px;
+    margin:0 11px 11px 0;
+}
+
+.form.img-list .img,
+.form.img-list .img img {
+    display: block;
+    width: 127px;
+}
+.form.img-list .img{
+    position:relative;
+    height:94px;
+    overflow:hidden;
+    margin-bottom:5px;
+    background:#ccc;
+}
+.form.img-list p{
+    height:20px;
+}
+.form.img-list label,
+.form.img-list input{
+    float:left;
+}
+.img-list input{
+    margin:3px 7px 0 2px;
+}
+.form.img-list .delete{
+    margin-top:3px;
+}
+
+.form.img-list.input-top input{
+    position:absolute;
+    top:3px;
+    right:4px;
+    margin:0;
+}

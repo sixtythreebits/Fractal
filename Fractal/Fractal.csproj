@@ -1,0 +1,1403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51B8A692-AA6C-4773-A00E-05BD34D1E43A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fractal</RootNamespace>
+    <AssemblyName>Fractal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\Base.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\ExternalLibraries\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Lib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administration\CM\courses.aspx" />
+    <Content Include="Administration\CM\course\CourseKeys.aspx" />
+    <Content Include="Administration\CM\course\Default.aspx" />
+    <Content Include="Administration\CM\course\general.aspx" />
+    <Content Include="Administration\CM\course\QuizResults.aspx" />
+    <Content Include="Administration\CM\course\quiz\quiz.aspx" />
+    <Content Include="Administration\CM\course\quiz\quizes.aspx" />
+    <Content Include="Administration\CM\course\subscriptions.aspx" />
+    <Content Include="Administration\CM\quiz\quiz.aspx" />
+    <Content Include="Administration\CM\quiz\quizes.aspx" />
+    <Content Include="Administration\css\box-bar.css" />
+    <Content Include="Administration\css\PopupPages\popup.css" />
+    <Content Include="Administration\css\style.css" />
+    <Content Include="Administration\css\tab-bar.css" />
+    <Content Include="Administration\Default.aspx" />
+    <Content Include="Administration\img\asset-list\asset-filter-menu.png" />
+    <Content Include="Administration\img\asset-list\asset-list-bg.png" />
+    <Content Include="Administration\img\asset-list\asset-list-datepicker.png" />
+    <Content Include="Administration\img\asset-list\asset-list-select.png" />
+    <Content Include="Administration\img\asset-list\asset-list-type-filter.png" />
+    <Content Include="Administration\img\asset-meneger\asset-bg-active.png" />
+    <Content Include="Administration\img\asset-meneger\asset-bg-main.png" />
+    <Content Include="Administration\img\asset-meneger\asset-bg-ol.png" />
+    <Content Include="Administration\img\asset-meneger\asset-bg.png" />
+    <Content Include="Administration\img\asset-meneger\asset-list-bg.png" />
+    <Content Include="Administration\img\asset-meneger\filter-menu-bg.png" />
+    <Content Include="Administration\img\asset-meneger\sub-background.png" />
+    <Content Include="Administration\img\asset-meneger\sub-icon.png" />
+    <Content Include="Administration\img\asset-no-preview.png" />
+    <Content Include="Administration\img\bg-bottom.png" />
+    <Content Include="Administration\img\bg-center.png" />
+    <Content Include="Administration\img\bg-left.png" />
+    <Content Include="Administration\img\bg-top.png" />
+    <Content Include="Administration\img\bg.png" />
+    <Content Include="Administration\img\btn-small-red.gif" />
+    <Content Include="Administration\img\btn-small-red2.gif" />
+    <Content Include="Administration\img\button263x37.png" />
+    <Content Include="Administration\img\choose-question\add.png" />
+    <Content Include="Administration\img\choose-question\search-bg.png" />
+    <Content Include="Administration\img\choose-question\separator.png" />
+    <Content Include="Administration\img\choose-question\undo.png" />
+    <Content Include="Administration\img\course-no-image.png" />
+    <Content Include="Administration\img\cover\course.png" />
+    <Content Include="Administration\img\cover\menu.png" />
+    <Content Include="Administration\img\dash\button.jpg" />
+    <Content Include="Administration\img\dash\head.png" />
+    <Content Include="Administration\img\dash\icon.png" />
+    <Content Include="Administration\img\dash\str.png" />
+    <Content Include="Administration\img\dash\sub-title.gif" />
+    <Content Include="Administration\img\dash\triangle.png" />
+    <Content Include="Administration\img\drag-thumbs\d1.png" />
+    <Content Include="Administration\img\drag-thumbs\d2.png" />
+    <Content Include="Administration\img\drag-thumbs\d3.png" />
+    <Content Include="Administration\img\drag-thumbs\i1.png" />
+    <Content Include="Administration\img\drag-thumbs\i2.png" />
+    <Content Include="Administration\img\drag-thumbs\i3.png" />
+    <Content Include="Administration\img\drag-thumbs\o1.png" />
+    <Content Include="Administration\img\drag-thumbs\o2.png" />
+    <Content Include="Administration\img\drag-thumbs\o3.png" />
+    <Content Include="Administration\img\drag-thumbs\thumb-atlas.png" />
+    <Content Include="Administration\img\drag-thumbs\v1.png" />
+    <Content Include="Administration\img\drag-thumbs\v2.png" />
+    <Content Include="Administration\img\drag-thumbs\v3.png" />
+    <Content Include="Administration\img\drop-arro-off.png" />
+    <Content Include="Administration\img\drop-arro.png" />
+    <Content Include="Administration\img\drop-arro8x8.png" />
+    <Content Include="Administration\img\editing\bg.png" />
+    <Content Include="Administration\img\editing\icon.png" />
+    <Content Include="Administration\img\editing\left.png" />
+    <Content Include="Administration\img\editing\right.png" />
+    <Content Include="Administration\img\error-bg-left.png" />
+    <Content Include="Administration\img\error-bg-right.png" />
+    <Content Include="Administration\img\error-bg.png" />
+    <Content Include="Administration\img\exts\.dcr.png" />
+    <Content Include="Administration\img\exts\.doc.png" />
+    <Content Include="Administration\img\exts\.docx.png" />
+    <Content Include="Administration\img\exts\.mp4.png" />
+    <Content Include="Administration\img\exts\.pdf.png" />
+    <Content Include="Administration\img\exts\.ppt.png" />
+    <Content Include="Administration\img\exts\.pptx.png" />
+    <Content Include="Administration\img\exts\.txt.png" />
+    <Content Include="Administration\img\exts\.xls.png" />
+    <Content Include="Administration\img\exts\.xlsx.png" />
+    <Content Include="Administration\img\exts\.zip.png" />
+    <Content Include="Administration\img\exts\unknown.png" />
+    <Content Include="Administration\img\filter-sec-select.png" />
+    <Content Include="Administration\img\grades\custom-type.png" />
+    <Content Include="Administration\img\grades\drag-helper36x34.png" />
+    <Content Include="Administration\img\grades\grade-list-select569x33.png" />
+    <Content Include="Administration\img\grades\maximum-grades.png" />
+    <Content Include="Administration\img\grades\quize-type.png" />
+    <Content Include="Administration\img\grades\search182x22.png" />
+    <Content Include="Administration\img\grades\search372x23.png" />
+    <Content Include="Administration\img\grades\section-type.png" />
+    <Content Include="Administration\img\grades\students-score.png" />
+    <Content Include="Administration\img\grades\table-shadow7x8.png" />
+    <Content Include="Administration\img\grey-line.gif" />
+    <Content Include="Administration\img\help.png" />
+    <Content Include="Administration\img\icons\menu\alerts.png" />
+    <Content Include="Administration\img\icons\menu\anouncements.png" />
+    <Content Include="Administration\img\icons\menu\archive.png" />
+    <Content Include="Administration\img\icons\menu\assets.png" />
+    <Content Include="Administration\img\icons\menu\carousel.png" />
+    <Content Include="Administration\img\icons\menu\changeuser.png" />
+    <Content Include="Administration\img\icons\menu\chistory.png" />
+    <Content Include="Administration\img\icons\menu\courses.png" />
+    <Content Include="Administration\img\icons\menu\dollar.png" />
+    <Content Include="Administration\img\icons\menu\entities.png" />
+    <Content Include="Administration\img\icons\menu\GradeReport.png" />
+    <Content Include="Administration\img\icons\menu\grades.png" />
+    <Content Include="Administration\img\icons\menu\history.png" />
+    <Content Include="Administration\img\icons\menu\InvoiceTemplates.png" />
+    <Content Include="Administration\img\icons\menu\key.png" />
+    <Content Include="Administration\img\icons\menu\link.png" />
+    <Content Include="Administration\img\icons\menu\location.png" />
+    <Content Include="Administration\img\icons\menu\news.png" />
+    <Content Include="Administration\img\icons\menu\people.png" />
+    <Content Include="Administration\img\icons\menu\permissions.png" />
+    <Content Include="Administration\img\icons\menu\pie.png" />
+    <Content Include="Administration\img\icons\menu\process.png" />
+    <Content Include="Administration\img\icons\menu\profile.png" />
+    <Content Include="Administration\img\icons\menu\quizes.png" />
+    <Content Include="Administration\img\icons\menu\roles.png" />
+    <Content Include="Administration\img\icons\menu\security.png" />
+    <Content Include="Administration\img\icons\menu\shelf.png" />
+    <Content Include="Administration\img\icons\menu\shopping.png" />
+    <Content Include="Administration\img\icons\menu\spd.png" />
+    <Content Include="Administration\img\icons\menu\subscribtions.png" />
+    <Content Include="Administration\img\icons\menu\team.png" />
+    <Content Include="Administration\img\icons\menu\testimonials.png" />
+    <Content Include="Administration\img\icons\menu\tools.png" />
+    <Content Include="Administration\img\icons\menu\users.png" />
+    <Content Include="Administration\img\icons\menu\website.png" />
+    <Content Include="Administration\img\icons\menu\WebsiteSubjects.png" />
+    <Content Include="Administration\img\loader\ajax-loader.gif" />
+    <Content Include="Administration\img\loader\logo-loading.png" />
+    <Content Include="Administration\img\logo.png" />
+    <Content Include="Administration\img\main-title.png" />
+    <Content Include="Administration\img\main-title\bg-big.jpg" />
+    <Content Include="Administration\img\main-title\bg.jpg" />
+    <Content Include="Administration\img\main-title\left-big.jpg" />
+    <Content Include="Administration\img\main-title\left.jpg" />
+    <Content Include="Administration\img\make-note-bg.png" />
+    <Content Include="Administration\img\marker-subtitle.png" />
+    <Content Include="Administration\img\movable.png" />
+    <Content Include="Administration\img\no-avatar.jpg" />
+    <Content Include="Administration\img\no-course-cirlce.png" />
+    <Content Include="Administration\img\no-image-150x45.jpg" />
+    <Content Include="Administration\img\popup\close.png" />
+    <Content Include="Administration\img\popup\popup-drop-bg.png" />
+    <Content Include="Administration\img\popup\title-bg.png" />
+    <Content Include="Administration\img\popup\title-fg.png" />
+    <Content Include="Administration\img\preview\bottom.png" />
+    <Content Include="Administration\img\preview\middle.png" />
+    <Content Include="Administration\img\preview\top.png" />
+    <Content Include="Administration\img\profile\avatar.jpg" />
+    <Content Include="Administration\img\profile\bio.jpg" />
+    <Content Include="Administration\img\profile\bulls.png" />
+    <Content Include="Administration\img\profile\chemistry.jpg" />
+    <Content Include="Administration\img\profile\default.jpg" />
+    <Content Include="Administration\img\profile\dot.gif" />
+    <Content Include="Administration\img\profile\grafik\curse-visits.jpg" />
+    <Content Include="Administration\img\profile\grafik\section-visits-big.jpg" />
+    <Content Include="Administration\img\profile\grafik\section-visits.jpg" />
+    <Content Include="Administration\img\profile\grafik\study-questions.jpg" />
+    <Content Include="Administration\img\profile\microbiology.jpg" />
+    <Content Include="Administration\img\profile\treiangle.gif" />
+    <Content Include="Administration\img\profile\treiangle.png" />
+    <Content Include="Administration\img\reports\invoice\paid.png" />
+    <Content Include="Administration\img\reports\invoice\STFooterLogoImage.png" />
+    <Content Include="Administration\img\reports\invoice\STFooterLogoTextImage.png" />
+    <Content Include="Administration\img\reports\invoice\STMainLogoImage.png" />
+    <Content Include="Administration\img\reports\invoice\STMainLogoTextImage.png" />
+    <Content Include="Administration\img\reports\invoice\TTPFooterLogoImage.png" />
+    <Content Include="Administration\img\reports\invoice\TTPFooterLogoTextImage.png" />
+    <Content Include="Administration\img\reports\invoice\TTPMainLogoImage.png" />
+    <Content Include="Administration\img\reports\invoice\TTPMainLogoTextImage.png" />
+    <Content Include="Administration\img\save-bg.png" />
+    <Content Include="Administration\img\search.png" />
+    <Content Include="Administration\img\section-list\button-save.png" />
+    <Content Include="Administration\img\section-list\button.png" />
+    <Content Include="Administration\img\section-list\center-small.png" />
+    <Content Include="Administration\img\section-list\center.png" />
+    <Content Include="Administration\img\section-list\helper.png" />
+    <Content Include="Administration\img\section-list\left-small.png" />
+    <Content Include="Administration\img\section-list\left.png" />
+    <Content Include="Administration\img\section-list\menu-lesson.png" />
+    <Content Include="Administration\img\section-list\menu.png" />
+    <Content Include="Administration\img\section-list\middle-drop.png" />
+    <Content Include="Administration\img\section-list\over-drop.png" />
+    <Content Include="Administration\img\section-list\right-small.png" />
+    <Content Include="Administration\img\section-list\right.png" />
+    <Content Include="Administration\img\section-list\tag.png" />
+    <Content Include="Administration\img\select.png" />
+    <Content Include="Administration\img\sep.png" />
+    <Content Include="Administration\img\separator-type1.png" />
+    <Content Include="Administration\img\side-menu-toggle.png" />
+    <Content Include="Administration\img\statistics\separator-gradient.png" />
+    <Content Include="Administration\img\statistics\separator-gradient2.png" />
+    <Content Include="Administration\img\statistics\specifics.png" />
+    <Content Include="Administration\img\sub-arro.png" />
+    <Content Include="Administration\img\sub-title\center.png" />
+    <Content Include="Administration\img\sub-title\left.png" />
+    <Content Include="Administration\img\sub-title\right.png" />
+    <Content Include="Administration\img\success-bg-left.png" />
+    <Content Include="Administration\img\success-bg-right.png" />
+    <Content Include="Administration\img\success-bg.png" />
+    <Content Include="Administration\img\tab-background.png" />
+    <Content Include="Administration\img\tab-bar-button-ol.png" />
+    <Content Include="Administration\img\tab-bar-button.png" />
+    <Content Include="Administration\img\tab-bar\bg.gif" />
+    <Content Include="Administration\img\tab-bar\help.png" />
+    <Content Include="Administration\img\tab-bar\pop-b.png" />
+    <Content Include="Administration\img\tab-bar\pop-bg.png" />
+    <Content Include="Administration\img\tab-bar\pop-t.png" />
+    <Content Include="Administration\img\tab-bar\sep.gif" />
+    <Content Include="Administration\img\tab-bar\tab-bg.png" />
+    <Content Include="Administration\img\tab-bar\triangle.png" />
+    <Content Include="Administration\img\tab-off.png" />
+    <Content Include="Administration\img\tab-on.png" />
+    <Content Include="Administration\img\video-edit-container.png" />
+    <Content Include="Administration\PopupPages\CM\course\QuizToCourse.aspx" />
+    <Content Include="Administration\PopupPages\CreateNewCourseKeys.aspx" />
+    <Content Include="Administration\PopupPages\QuizPreview.aspx" />
+    <Content Include="Administration\scripts\CM\courses.aspx.js" />
+    <Content Include="Administration\scripts\CM\course\general.aspx.js" />
+    <Content Include="Administration\scripts\CM\course\quizes.aspx.js" />
+    <Content Include="Administration\scripts\CM\course\QuizResults.aspx.js" />
+    <Content Include="Administration\scripts\CM\course\statistics.aspx.js" />
+    <Content Include="Administration\scripts\CM\course\subscriptions.aspx.js" />
+    <Content Include="Administration\scripts\layout.js" />
+    <Content Include="Administration\scripts\MasterPage.master.js" />
+    <Content Include="Administration\scripts\PopupPages\MasterPage.master.js" />
+    <Content Include="Administration\scripts\validation.js" />
+    <Content Include="Administration\UM\ChangeUser.aspx" />
+    <Content Include="Administration\UM\permissions.aspx" />
+    <Content Include="Administration\UM\PermissionUR.aspx" />
+    <Content Include="Administration\UM\Roles.aspx" />
+    <Content Include="Administration\UM\RoleUP.aspx" />
+    <Content Include="Administration\UM\UserRP.aspx" />
+    <Content Include="Administration\UM\users.aspx" />
+    <Content Include="App_Data\ErrorLog.txt" />
+    <Content Include="App_Themes\DevEx\Editors\caChallengeImageBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtBtnBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtBtnDisabledBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtBtnHBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtBtnPBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtDropDownBtnHBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtDropDownBtnPBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtProgressBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtProgressIndicatorBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtTokenBoxTokenBackground.png" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarBarHighlightH.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarBarHighlightV.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarDoubleLargeTickH.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarDoubleLargeTickV.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarDoubleSmallTickH.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarDoubleSmallTickV.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarLargeTickH.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarLargeTickV.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarSmallTickH.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarSmallTickV.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarTrackH.gif" />
+    <Content Include="App_Themes\DevEx\Editors\edtTrackBarTrackV.gif" />
+    <Content Include="App_Themes\DevEx\Editors\lbHeaderBack.png" />
+    <Content Include="App_Themes\DevEx\Editors\sprite.css" />
+    <Content Include="App_Themes\DevEx\Editors\sprite.png" />
+    <Content Include="App_Themes\DevEx\Editors\styles.css" />
+    <Content Include="App_Themes\DevEx\GridView\gvFocusedBack.png" />
+    <Content Include="App_Themes\DevEx\GridView\gvGroupPanelBack.png" />
+    <Content Include="App_Themes\DevEx\GridView\gvHeaderBack.png" />
+    <Content Include="App_Themes\DevEx\GridView\gvPagerPanelBack.png" />
+    <Content Include="App_Themes\DevEx\GridView\gvTitleBack.png" />
+    <Content Include="App_Themes\DevEx\GridView\sprite.css" />
+    <Content Include="App_Themes\DevEx\GridView\sprite.png" />
+    <Content Include="App_Themes\DevEx\GridView\StatusBarLoading.gif" />
+    <Content Include="App_Themes\DevEx\GridView\styles.css" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\AltBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\ControlBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\FocusedBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\HeaderBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\PagerBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\PreviewBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\CssImages\TitleBack.png" />
+    <Content Include="App_Themes\DevEx\TreeList\sprite.css" />
+    <Content Include="App_Themes\DevEx\TreeList\sprite.png" />
+    <Content Include="App_Themes\DevEx\TreeList\styles.css" />
+    <Content Include="App_Themes\DevEx\Web\DocumentViewerSprite.css" />
+    <Content Include="App_Themes\DevEx\Web\DocumentViewerSprite.png" />
+    <Content Include="App_Themes\DevEx\Web\dvItemBack.png" />
+    <Content Include="App_Themes\DevEx\Web\dvPagerPanelBack.png" />
+    <Content Include="App_Themes\DevEx\Web\dvPagerPanelSpacingBack.png" />
+    <Content Include="App_Themes\DevEx\Web\edtBtnBack.png" />
+    <Content Include="App_Themes\DevEx\Web\edtBtnDisabledBack.png" />
+    <Content Include="App_Themes\DevEx\Web\edtBtnHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\fmFileCheck.png" />
+    <Content Include="App_Themes\DevEx\Web\fmSplitterSeparator.gif" />
+    <Content Include="App_Themes\DevEx\Web\HESprite.css" />
+    <Content Include="App_Themes\DevEx\Web\HESprite.png" />
+    <Content Include="App_Themes\DevEx\Web\igLoading.gif" />
+    <Content Include="App_Themes\DevEx\Web\igNavBtnsBack.png" />
+    <Content Include="App_Themes\DevEx\Web\isLoading.gif" />
+    <Content Include="App_Themes\DevEx\Web\Loading.gif" />
+    <Content Include="App_Themes\DevEx\Web\mHorzItemSepBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mHorzLargeItemSepBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mItemBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mItemHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mItemSBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mScrollHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mScrollPBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mSubItemHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mSubItemSepBack.png" />
+    <Content Include="App_Themes\DevEx\Web\mVertItemSepBack.png" />
+    <Content Include="App_Themes\DevEx\Web\nbHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\nbIHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\nbISBack.png" />
+    <Content Include="App_Themes\DevEx\Web\ncPagerPanelSpacingBack.png" />
+    <Content Include="App_Themes\DevEx\Web\pcFBack.png" />
+    <Content Include="App_Themes\DevEx\Web\pcHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\pDropDownButtonHoverBack.png" />
+    <Content Include="App_Themes\DevEx\Web\pDropDownButtonPressedBack.png" />
+    <Content Include="App_Themes\DevEx\Web\pSepBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rcMapImage.png" />
+    <Content Include="App_Themes\DevEx\Web\rFileTabBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rFileTabHoverBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rFileTabPressedBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rGroupSepBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rItemHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rItemSBack.png" />
+    <Content Include="App_Themes\DevEx\Web\rpHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\splHSepHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\splResizingPointer.gif" />
+    <Content Include="App_Themes\DevEx\Web\splVSepHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\sprite.css" />
+    <Content Include="App_Themes\DevEx\Web\sprite.png" />
+    <Content Include="App_Themes\DevEx\Web\SSSprite.css" />
+    <Content Include="App_Themes\DevEx\Web\SSSprite.png" />
+    <Content Include="App_Themes\DevEx\Web\styles.css" />
+    <Content Include="App_Themes\DevEx\Web\tcTabBack.png" />
+    <Content Include="App_Themes\DevEx\Web\tcTabHoverBack.png" />
+    <Content Include="App_Themes\DevEx\Web\tiFBBack.png" />
+    <Content Include="App_Themes\DevEx\Web\tiHBack.png" />
+    <Content Include="App_Themes\DevEx\Web\tvNodeLoading.gif" />
+    <Content Include="App_Themes\DevEx\Web\ucButtonBack.png" />
+    <Content Include="App_Themes\DevEx\Web\ucButtonDisabledBack.png" />
+    <Content Include="App_Themes\DevEx\Web\ucButtonHoverBack.png" />
+    <Content Include="App_Themes\DevEx\Web\ucButtonPressedBack.png" />
+    <Content Include="App_Themes\DevEx\Web\ucProgressBack.png" />
+    <Content Include="App_Themes\DevEx\Web\ucProgressIndicatorBack.png" />
+    <Content Include="css\utils.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="plugins\atooltip\atooltip.css" />
+    <Content Include="plugins\atooltip\jquery.atooltip.min.js" />
+    <Content Include="plugins\clock\css\analog.css" />
+    <Content Include="plugins\clock\css\digital.css" />
+    <Content Include="plugins\clock\img\clockface.png" />
+    <Content Include="plugins\clock\img\hourhand.png" />
+    <Content Include="plugins\clock\img\minhand.png" />
+    <Content Include="plugins\clock\img\sechand.png" />
+    <Content Include="plugins\clock\js\jquery.clock.js" />
+    <Content Include="plugins\FormAdmin\img\Thumbs.db" />
+    <Content Include="plugins\JqueryNumeric\numericInput.min.js" />
+    <Content Include="plugins\maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="plugins\QuizMaker\QuizMakerApi.ashx" />
+    <Content Include="Administration\MasterPage.master" />
+    <Content Include="Administration\img\asset-list\Thumbs.db" />
+    <Content Include="Administration\img\asset-meneger\Thumbs.db" />
+    <Content Include="Administration\img\cover\Thumbs.db" />
+    <Content Include="Administration\img\drag-thumbs\Thumbs.db" />
+    <Content Include="Administration\img\exts\Thumbs.db" />
+    <Content Include="Administration\img\icons\menu\Thumbs.db" />
+    <Content Include="Administration\img\loader\Thumbs.db" />
+    <Content Include="Administration\img\popup\Thumbs.db" />
+    <Content Include="Administration\img\preview\Thumbs.db" />
+    <Content Include="Administration\img\section-list\Thumbs.db" />
+    <Content Include="Administration\img\statistics\Thumbs.db" />
+    <Content Include="Administration\img\sub-title\Thumbs.db" />
+    <Content Include="Administration\img\Thumbs.db" />
+    <Content Include="Administration\CM\course\MasterPage.master" />
+    <Content Include="App_Themes\DevEx\ASPxButton.skin" />
+    <Content Include="App_Themes\DevEx\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\DevEx\ASPxCalendar.skin" />
+    <Content Include="App_Themes\DevEx\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\DevEx\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\DevEx\ASPxCheckBoxList.skin" />
+    <Content Include="App_Themes\DevEx\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\DevEx\ASPxComboBox.skin" />
+    <Content Include="App_Themes\DevEx\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\DevEx\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\DevEx\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\DevEx\ASPxGridLookup.skin" />
+    <Content Include="App_Themes\DevEx\ASPxGridView.skin" />
+    <Content Include="App_Themes\DevEx\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\DevEx\ASPxLabel.skin" />
+    <Content Include="App_Themes\DevEx\ASPxListBox.skin" />
+    <Content Include="App_Themes\DevEx\ASPxMemo.skin" />
+    <Content Include="App_Themes\DevEx\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\DevEx\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\DevEx\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\DevEx\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\DevEx\ASPxTextBox.skin" />
+    <Content Include="App_Themes\DevEx\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\DevEx\ASPxTokenBox.skin" />
+    <Content Include="App_Themes\DevEx\ASPxTrackBar.skin" />
+    <Content Include="App_Themes\DevEx\ASPxTreeList.skin" />
+    <Content Include="App_Themes\DevEx\ASPxValidationSummary.skin" />
+    <Content Include="App_Themes\DevEx\Parameters.config" />
+    <Content Include="Administration\PopupPages\MasterPage.master" />
+    <Content Include="plugins\TagManager3.0\TagManager3.0.rar" />
+    <Content Include="handlers\download.ashx" />
+    <Content Include="handlers\preview.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plugins\dropzone\dropzone.css" />
+    <Content Include="plugins\dropzone\dropzone.min.js" />
+    <Content Include="plugins\fancybox2.0\blank.gif" />
+    <Content Include="plugins\fancybox2.0\fancybox_loading%402x.gif" />
+    <Content Include="plugins\fancybox2.0\fancybox_loading.gif" />
+    <Content Include="plugins\fancybox2.0\fancybox_overlay.png" />
+    <Content Include="plugins\fancybox2.0\fancybox_sprite%402x.png" />
+    <Content Include="plugins\fancybox2.0\fancybox_sprite.png" />
+    <Content Include="plugins\fancybox2.0\FancyMethods.js" />
+    <Content Include="plugins\fancybox2.0\helpers\fancybox_buttons.png" />
+    <Content Include="plugins\fancybox2.0\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="plugins\fancybox2.0\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="plugins\fancybox2.0\helpers\jquery.fancybox-media.js" />
+    <Content Include="plugins\fancybox2.0\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="plugins\fancybox2.0\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="plugins\fancybox2.0\jquery.fancybox.css" />
+    <Content Include="plugins\fancybox2.0\jquery.fancybox.js" />
+    <Content Include="plugins\fancybox2.0\jquery.fancybox.pack.js" />
+    <Content Include="plugins\FormAdmin\custom-form.js" />
+    <Content Include="plugins\FormAdmin\forms.css" />
+    <Content Include="plugins\FormAdmin\img\button-fall-ol.png" />
+    <Content Include="plugins\FormAdmin\img\button-fall.png" />
+    <Content Include="plugins\FormAdmin\img\button-ol.png" />
+    <Content Include="plugins\FormAdmin\img\button-save.png" />
+    <Content Include="plugins\FormAdmin\img\button-spring-ol.png" />
+    <Content Include="plugins\FormAdmin\img\button-spring.png" />
+    <Content Include="plugins\FormAdmin\img\button-summer-ol.png" />
+    <Content Include="plugins\FormAdmin\img\button-summer.png" />
+    <Content Include="plugins\FormAdmin\img\button-winter-ol.png" />
+    <Content Include="plugins\FormAdmin\img\button-winter.png" />
+    <Content Include="plugins\FormAdmin\img\button.png" />
+    <Content Include="plugins\FormAdmin\img\button2.png" />
+    <Content Include="plugins\FormAdmin\img\input-select-right.png" />
+    <Content Include="plugins\FormAdmin\img\input-text-center.png" />
+    <Content Include="plugins\FormAdmin\img\input-text-left.png" />
+    <Content Include="plugins\FormAdmin\img\input-text-right.png" />
+    <Content Include="plugins\FormAdmin\img\input_error.png" />
+    <Content Include="plugins\FormAdmin\img\note12x12.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-b-l.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-b-r.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-b.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-l.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-r.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-t-l.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-t-r.png" />
+    <Content Include="plugins\FormAdmin\img\textarea-t.png" />
+    <Content Include="plugins\FormAdmin\img\tougle-bg-small.png" />
+    <Content Include="plugins\FormAdmin\img\tougle-bg.png" />
+    <Content Include="plugins\FormAdmin\img\tougle-button-small.png" />
+    <Content Include="plugins\FormAdmin\img\tougle-button.png" />
+    <Content Include="plugins\FormAdmin\img\vid-btn.gif" />
+    <Content Include="plugins\FormAdmin\input.js" />
+    <Content Include="plugins\gm-loader\gm-loader.css" />
+    <Content Include="plugins\gm-loader\gm-loader.js" />
+    <Content Include="plugins\gm-loader\img\ajax-loader.gif" />
+    <Content Include="plugins\gm-loader\img\logo-loading.png" />
+    <Content Include="plugins\icons\icons.css" />
+    <Content Include="plugins\icons\img\24\arrow-down-blue.png" />
+    <Content Include="plugins\icons\img\24\eye.png" />
+    <Content Include="plugins\icons\img\24\file-compare.png" />
+    <Content Include="plugins\icons\img\24\gallery.png" />
+    <Content Include="plugins\icons\img\24\general.png" />
+    <Content Include="plugins\icons\img\24\guarantee.png" />
+    <Content Include="plugins\icons\img\24\help.png" />
+    <Content Include="plugins\icons\img\24\info.png" />
+    <Content Include="plugins\icons\img\24\lock-small.png" />
+    <Content Include="plugins\icons\img\24\lock.png" />
+    <Content Include="plugins\icons\img\24\no-preview.png" />
+    <Content Include="plugins\icons\img\24\puzzle.png" />
+    <Content Include="plugins\icons\img\24\unlock-small-white.png" />
+    <Content Include="plugins\icons\img\24\unlock-small.png" />
+    <Content Include="plugins\icons\img\24\unlock.png" />
+    <Content Include="plugins\icons\img\24\video-compare.png" />
+    <Content Include="plugins\icons\img\32\32.png" />
+    <Content Include="plugins\icons\img\32\arrow-down-blue.png" />
+    <Content Include="plugins\icons\img\32\arrow_down_rounded.png" />
+    <Content Include="plugins\icons\img\32\arrow_left_green.png" />
+    <Content Include="plugins\icons\img\32\arrow_left_red.png" />
+    <Content Include="plugins\icons\img\32\arrow_right_green.png" />
+    <Content Include="plugins\icons\img\32\building.png" />
+    <Content Include="plugins\icons\img\32\course.png" />
+    <Content Include="plugins\icons\img\32\dashboard.png" />
+    <Content Include="plugins\icons\img\32\dollar.png" />
+    <Content Include="plugins\icons\img\32\file-compare.png" />
+    <Content Include="plugins\icons\img\32\gallery.png" />
+    <Content Include="plugins\icons\img\32\general.png" />
+    <Content Include="plugins\icons\img\32\gradebook.png" />
+    <Content Include="plugins\icons\img\32\guarantee.png" />
+    <Content Include="plugins\icons\img\32\help.png" />
+    <Content Include="plugins\icons\img\32\info.png" />
+    <Content Include="plugins\icons\img\32\key.png" />
+    <Content Include="plugins\icons\img\32\library.png" />
+    <Content Include="plugins\icons\img\32\news.png" />
+    <Content Include="plugins\icons\img\32\puzzle.png" />
+    <Content Include="plugins\icons\img\32\subject.png" />
+    <Content Include="plugins\icons\img\32\template.png" />
+    <Content Include="plugins\icons\img\32\testimonials.png" />
+    <Content Include="plugins\icons\img\32\tools.png" />
+    <Content Include="plugins\icons\img\32\users-grid.png" />
+    <Content Include="plugins\icons\img\32\users.png" />
+    <Content Include="plugins\icons\img\32\video-compare.png" />
+    <Content Include="plugins\icons\img\32\winrar.png" />
+    <Content Include="plugins\icons\img\48\ads.png" />
+    <Content Include="plugins\icons\img\48\alert.png" />
+    <Content Include="plugins\icons\img\48\announcement.png" />
+    <Content Include="plugins\icons\img\48\arrow-down-blue.png" />
+    <Content Include="plugins\icons\img\48\assets.png" />
+    <Content Include="plugins\icons\img\48\building.png" />
+    <Content Include="plugins\icons\img\48\course.png" />
+    <Content Include="plugins\icons\img\48\dashboard.png" />
+    <Content Include="plugins\icons\img\48\doc.png" />
+    <Content Include="plugins\icons\img\48\dollar.png" />
+    <Content Include="plugins\icons\img\48\file-compare.png" />
+    <Content Include="plugins\icons\img\48\gallery.png" />
+    <Content Include="plugins\icons\img\48\general.png" />
+    <Content Include="plugins\icons\img\48\guarantee.png" />
+    <Content Include="plugins\icons\img\48\hellobar.png" />
+    <Content Include="plugins\icons\img\48\help.png" />
+    <Content Include="plugins\icons\img\48\info.png" />
+    <Content Include="plugins\icons\img\48\key.png" />
+    <Content Include="plugins\icons\img\48\location.png" />
+    <Content Include="plugins\icons\img\48\marker.png" />
+    <Content Include="plugins\icons\img\48\news.png" />
+    <Content Include="plugins\icons\img\48\note.png" />
+    <Content Include="plugins\icons\img\48\puzzle.png" />
+    <Content Include="plugins\icons\img\48\quiz.png" />
+    <Content Include="plugins\icons\img\48\quiz_results.png" />
+    <Content Include="plugins\icons\img\48\settings.png" />
+    <Content Include="plugins\icons\img\48\statistics.png" />
+    <Content Include="plugins\icons\img\48\structure.png" />
+    <Content Include="plugins\icons\img\48\subject.png" />
+    <Content Include="plugins\icons\img\48\subscriptions.png" />
+    <Content Include="plugins\icons\img\48\subtitles.png" />
+    <Content Include="plugins\icons\img\48\teachers.png" />
+    <Content Include="plugins\icons\img\48\template.png" />
+    <Content Include="plugins\icons\img\48\testimonials.png" />
+    <Content Include="plugins\icons\img\48\thumbnails.png" />
+    <Content Include="plugins\icons\img\48\tools.png" />
+    <Content Include="plugins\icons\img\48\users-grid.png" />
+    <Content Include="plugins\icons\img\48\users.png" />
+    <Content Include="plugins\icons\img\48\video-compare.png" />
+    <Content Include="plugins\icons\img\48\winrar.png" />
+    <Content Include="plugins\icons\img\add.png" />
+    <Content Include="plugins\icons\img\ads.png" />
+    <Content Include="plugins\icons\img\alert.png" />
+    <Content Include="plugins\icons\img\announcement.png" />
+    <Content Include="plugins\icons\img\arrow-down-blue.png" />
+    <Content Include="plugins\icons\img\arrow_left_green.png" />
+    <Content Include="plugins\icons\img\assets.png" />
+    <Content Include="plugins\icons\img\attachment.png" />
+    <Content Include="plugins\icons\img\blackboard.png" />
+    <Content Include="plugins\icons\img\book-create.png" />
+    <Content Include="plugins\icons\img\book-delete.png" />
+    <Content Include="plugins\icons\img\book-edit.png" />
+    <Content Include="plugins\icons\img\book-opened.png" />
+    <Content Include="plugins\icons\img\bookmark.png" />
+    <Content Include="plugins\icons\img\bookmarks.png" />
+    <Content Include="plugins\icons\img\bubbles.png" />
+    <Content Include="plugins\icons\img\building.png" />
+    <Content Include="plugins\icons\img\calendar.png" />
+    <Content Include="plugins\icons\img\calendar12x12.png" />
+    <Content Include="plugins\icons\img\cancel.png" />
+    <Content Include="plugins\icons\img\cancel112x12.png" />
+    <Content Include="plugins\icons\img\circle-green.png" />
+    <Content Include="plugins\icons\img\circle-red.png" />
+    <Content Include="plugins\icons\img\circle_grey.png" />
+    <Content Include="plugins\icons\img\circle_yellow.png" />
+    <Content Include="plugins\icons\img\clear.png" />
+    <Content Include="plugins\icons\img\ClearFilter.png" />
+    <Content Include="plugins\icons\img\coingold.png" />
+    <Content Include="plugins\icons\img\coinsilver.png" />
+    <Content Include="plugins\icons\img\collapse.png" />
+    <Content Include="plugins\icons\img\component.png" />
+    <Content Include="plugins\icons\img\copy.png" />
+    <Content Include="plugins\icons\img\course.png" />
+    <Content Include="plugins\icons\img\dashboard.png" />
+    <Content Include="plugins\icons\img\date.png" />
+    <Content Include="plugins\icons\img\delete-black.png" />
+    <Content Include="plugins\icons\img\delete.png" />
+    <Content Include="plugins\icons\img\doc.png" />
+    <Content Include="plugins\icons\img\dollar.png" />
+    <Content Include="plugins\icons\img\download.png" />
+    <Content Include="plugins\icons\img\drag.png" />
+    <Content Include="plugins\icons\img\edit.png" />
+    <Content Include="plugins\icons\img\expand.png" />
+    <Content Include="plugins\icons\img\export.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.dcr.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.doc.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.docx.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.mp4.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.pdf.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.ppt.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.pptx.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.txt.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.xls.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.xlsx.png" />
+    <Content Include="plugins\icons\img\ext\53x40\.zip.png" />
+    <Content Include="plugins\icons\img\ext\53x40\unknown.png" />
+    <Content Include="plugins\icons\img\eye.png" />
+    <Content Include="plugins\icons\img\fail.png" />
+    <Content Include="plugins\icons\img\file-add.png" />
+    <Content Include="plugins\icons\img\file-compare.png" />
+    <Content Include="plugins\icons\img\file.png" />
+    <Content Include="plugins\icons\img\folder-add.png" />
+    <Content Include="plugins\icons\img\folder.png" />
+    <Content Include="plugins\icons\img\gallery.png" />
+    <Content Include="plugins\icons\img\general.png" />
+    <Content Include="plugins\icons\img\guarantee.png" />
+    <Content Include="plugins\icons\img\hellobar.png" />
+    <Content Include="plugins\icons\img\help.png" />
+    <Content Include="plugins\icons\img\image.png" />
+    <Content Include="plugins\icons\img\info.png" />
+    <Content Include="plugins\icons\img\key.png" />
+    <Content Include="plugins\icons\img\library.png" />
+    <Content Include="plugins\icons\img\link.png" />
+    <Content Include="plugins\icons\img\link8x8.png" />
+    <Content Include="plugins\icons\img\loader-red.gif" />
+    <Content Include="plugins\icons\img\loader.gif" />
+    <Content Include="plugins\icons\img\location.png" />
+    <Content Include="plugins\icons\img\lock.png" />
+    <Content Include="plugins\icons\img\marker-add.png" />
+    <Content Include="plugins\icons\img\marker-edit.png" />
+    <Content Include="plugins\icons\img\marker.png" />
+    <Content Include="plugins\icons\img\news.png" />
+    <Content Include="plugins\icons\img\no-preview.png" />
+    <Content Include="plugins\icons\img\note-add.png" />
+    <Content Include="plugins\icons\img\note.png" />
+    <Content Include="plugins\icons\img\note12x12.png" />
+    <Content Include="plugins\icons\img\other.png" />
+    <Content Include="plugins\icons\img\pencil10x10.png" />
+    <Content Include="plugins\icons\img\pending.png" />
+    <Content Include="plugins\icons\img\playing.gif" />
+    <Content Include="plugins\icons\img\plus-gray.png" />
+    <Content Include="plugins\icons\img\plus-white.png" />
+    <Content Include="plugins\icons\img\preview.png" />
+    <Content Include="plugins\icons\img\print.png" />
+    <Content Include="plugins\icons\img\properties.png" />
+    <Content Include="plugins\icons\img\puzzle.png" />
+    <Content Include="plugins\icons\img\quiz.png" />
+    <Content Include="plugins\icons\img\quiz_results.png" />
+    <Content Include="plugins\icons\img\refresh.png" />
+    <Content Include="plugins\icons\img\rename.png" />
+    <Content Include="plugins\icons\img\reset.png" />
+    <Content Include="plugins\icons\img\restore.png" />
+    <Content Include="plugins\icons\img\revert.png" />
+    <Content Include="plugins\icons\img\save.png" />
+    <Content Include="plugins\icons\img\search3.png" />
+    <Content Include="plugins\icons\img\settings.png" />
+    <Content Include="plugins\icons\img\social\fb.png" />
+    <Content Include="plugins\icons\img\social\youtube.png" />
+    <Content Include="plugins\icons\img\statistics.png" />
+    <Content Include="plugins\icons\img\structure.png" />
+    <Content Include="plugins\icons\img\subject.png" />
+    <Content Include="plugins\icons\img\subscriptions.png" />
+    <Content Include="plugins\icons\img\subtitles.png" />
+    <Content Include="plugins\icons\img\success-white.png" />
+    <Content Include="plugins\icons\img\success.png" />
+    <Content Include="plugins\icons\img\success12x12.png" />
+    <Content Include="plugins\icons\img\sync.png" />
+    <Content Include="plugins\icons\img\teachers.png" />
+    <Content Include="plugins\icons\img\template.png" />
+    <Content Include="plugins\icons\img\testimonials.png" />
+    <Content Include="plugins\icons\img\thumbnails.png" />
+    <Content Include="plugins\icons\img\tools.png" />
+    <Content Include="plugins\icons\img\trash.png" />
+    <Content Include="plugins\icons\img\unlock.png" />
+    <Content Include="plugins\icons\img\update.png" />
+    <Content Include="plugins\icons\img\upload.png" />
+    <Content Include="plugins\icons\img\user.png" />
+    <Content Include="plugins\icons\img\users-grid.png" />
+    <Content Include="plugins\icons\img\users.png" />
+    <Content Include="plugins\icons\img\video-compare.png" />
+    <Content Include="plugins\icons\img\video.png" />
+    <Content Include="plugins\icons\img\volume.png" />
+    <Content Include="plugins\icons\img\web.png" />
+    <Content Include="plugins\icons\img\window.png" />
+    <Content Include="plugins\icons\img\winrar.png" />
+    <Content Include="plugins\icons\img\xls.png" />
+    <Content Include="plugins\jquery-ui-timepicker\jquery-ui-timepicker-addon.css" />
+    <Content Include="plugins\jquery-ui-timepicker\jquery-ui-timepicker-addon.js" />
+    <Content Include="plugins\jquery-ui\css\images\animated-overlay.gif" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_flat_0_333333_40x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_004276_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="plugins\jquery-ui\css\jquery-ui-system.css" />
+    <Content Include="plugins\jquery-ui\js\dialog.js" />
+    <Content Include="plugins\jquery-ui\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="plugins\jquery.flipster\arrows.png" />
+    <Content Include="plugins\jquery.flipster\jquery.flipster.css" />
+    <Content Include="plugins\jquery.flipster\jquery.flipster.min.js" />
+    <Content Include="plugins\JqueryContextMenu\jquery.contextMenu.css" />
+    <Content Include="plugins\JqueryContextMenu\jquery.contextMenu.js" />
+    <Content Include="plugins\JqueryCyrcles\jquery.cycle2.min.js" />
+    <Content Include="plugins\jquery\jquery-1.10.2.min.js" />
+    <Content Include="plugins\QuizMaker\img\2.jpg" />
+    <Content Include="plugins\QuizMaker\img\add-blue.png" />
+    <Content Include="plugins\QuizMaker\img\add-db.png" />
+    <Content Include="plugins\QuizMaker\img\add.png" />
+    <Content Include="plugins\QuizMaker\img\arrow-right-drop20x20.png" />
+    <Content Include="plugins\QuizMaker\img\arrow-right20x20.png" />
+    <Content Include="plugins\QuizMaker\img\bg-big.jpg" />
+    <Content Include="plugins\QuizMaker\img\btn-small-red.gif" />
+    <Content Include="plugins\QuizMaker\img\btn-small-red2.gif" />
+    <Content Include="plugins\QuizMaker\img\btn-small2.gif" />
+    <Content Include="plugins\QuizMaker\img\collapse.png" />
+    <Content Include="plugins\QuizMaker\img\dotted.png" />
+    <Content Include="plugins\QuizMaker\img\dotted2.png" />
+    <Content Include="plugins\QuizMaker\img\drag2.png" />
+    <Content Include="plugins\QuizMaker\img\dropzone.png" />
+    <Content Include="plugins\QuizMaker\img\expand.png" />
+    <Content Include="plugins\QuizMaker\img\graded32x32.png" />
+    <Content Include="plugins\QuizMaker\img\item-bank.jpg" />
+    <Content Include="plugins\QuizMaker\img\practice32x32.png" />
+    <Content Include="plugins\QuizMaker\img\question-img.jpg" />
+    <Content Include="plugins\QuizMaker\img\remove.png" />
+    <Content Include="plugins\QuizMaker\img\search2.png" />
+    <Content Include="plugins\QuizMaker\img\tag.png" />
+    <Content Include="plugins\QuizMaker\img\video32x32.png" />
+    <Content Include="plugins\QuizMaker\QuizMakerControl.ascx" />
+    <Content Include="plugins\QuizMaker\QuizMakerControl.ascx.css" />
+    <Content Include="plugins\QuizMaker\QuizMakerControl.ascx.js" />
+    <Content Include="plugins\QuizUserControl\images\btn-small.gif" />
+    <Content Include="plugins\QuizUserControl\images\docs32.png" />
+    <Content Include="plugins\QuizUserControl\QuizUserControl.ascx" />
+    <Content Include="plugins\QuizUserControl\QuizUserControl.ascx.css" />
+    <Content Include="plugins\QuizUserControl\QuizUserControl.ascx.js" />
+    <Content Include="plugins\scroll-to\jquery.scrollTo-1.4.3.1-min.js" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\error-bg-left.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\error-bg-right.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\error-bg.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\error.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\success-bg-left.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\success-bg-right.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\success-bg.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\images\success.png" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\SuccessErrorControl.ascx" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\SuccessErrorControl.css" />
+    <Content Include="plugins\SuccessErrorMessageAdmin\SuccessErrorControl.js" />
+    <Content Include="plugins\TagManager3.0\tagmanager.css" />
+    <Content Include="plugins\TagManager3.0\tagmanager.js" />
+    <Content Include="plugins\tinymce\jquery.tinymce.js" />
+    <Content Include="plugins\tinymce\langs\en.js" />
+    <Content Include="plugins\tinymce\license.txt" />
+    <Content Include="plugins\tinymce\plugins\advhr\css\advhr.css" />
+    <Content Include="plugins\tinymce\plugins\advhr\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\advhr\js\rule.js" />
+    <Content Include="plugins\tinymce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\advhr\rule.htm" />
+    <Content Include="plugins\tinymce\plugins\advimage\css\advimage.css" />
+    <Content Include="plugins\tinymce\plugins\advimage\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\advimage\image.htm" />
+    <Content Include="plugins\tinymce\plugins\advimage\img\sample.gif" />
+    <Content Include="plugins\tinymce\plugins\advimage\js\image.js" />
+    <Content Include="plugins\tinymce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\advlink\css\advlink.css" />
+    <Content Include="plugins\tinymce\plugins\advlink\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\advlink\js\advlink.js" />
+    <Content Include="plugins\tinymce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\advlink\link.htm" />
+    <Content Include="plugins\tinymce\plugins\advlist\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\autolink\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\autosave\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\autosave\langs\en.js" />
+    <Content Include="plugins\tinymce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\directionality\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\emotions\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\emotions\emotions.htm" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="plugins\tinymce\plugins\emotions\js\emotions.js" />
+    <Content Include="plugins\tinymce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\example\dialog.htm" />
+    <Content Include="plugins\tinymce\plugins\example\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\example\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\example\img\example.gif" />
+    <Content Include="plugins\tinymce\plugins\example\js\dialog.js" />
+    <Content Include="plugins\tinymce\plugins\example\langs\en.js" />
+    <Content Include="plugins\tinymce\plugins\example\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="plugins\tinymce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\fullpage\fullpage.htm" />
+    <Content Include="plugins\tinymce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="plugins\tinymce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="plugins\tinymce\plugins\iespell\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="plugins\tinymce\plugins\inlinepopups\template.htm" />
+    <Content Include="plugins\tinymce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\layer\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\lists\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\media\css\media.css" />
+    <Content Include="plugins\tinymce\plugins\media\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\media\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\media\js\embed.js" />
+    <Content Include="plugins\tinymce\plugins\media\js\media.js" />
+    <Content Include="plugins\tinymce\plugins\media\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\media\media.htm" />
+    <Content Include="plugins\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="plugins\tinymce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\paste\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\paste\js\pastetext.js" />
+    <Content Include="plugins\tinymce\plugins\paste\js\pasteword.js" />
+    <Content Include="plugins\tinymce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\paste\pastetext.htm" />
+    <Content Include="plugins\tinymce\plugins\paste\pasteword.htm" />
+    <Content Include="plugins\tinymce\plugins\preview\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\preview\example.html" />
+    <Content Include="plugins\tinymce\plugins\preview\jscripts\embed.js" />
+    <Content Include="plugins\tinymce\plugins\preview\preview.html" />
+    <Content Include="plugins\tinymce\plugins\print\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\print\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\save\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\save\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="plugins\tinymce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="plugins\tinymce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="plugins\tinymce\plugins\spellchecker\css\content.css" />
+    <Content Include="plugins\tinymce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="plugins\tinymce\plugins\style\css\props.css" />
+    <Content Include="plugins\tinymce\plugins\style\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\style\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\style\js\props.js" />
+    <Content Include="plugins\tinymce\plugins\style\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\style\props.htm" />
+    <Content Include="plugins\tinymce\plugins\style\readme.txt" />
+    <Content Include="plugins\tinymce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\table\cell.htm" />
+    <Content Include="plugins\tinymce\plugins\table\css\cell.css" />
+    <Content Include="plugins\tinymce\plugins\table\css\row.css" />
+    <Content Include="plugins\tinymce\plugins\table\css\table.css" />
+    <Content Include="plugins\tinymce\plugins\table\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\table\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\table\js\cell.js" />
+    <Content Include="plugins\tinymce\plugins\table\js\merge_cells.js" />
+    <Content Include="plugins\tinymce\plugins\table\js\row.js" />
+    <Content Include="plugins\tinymce\plugins\table\js\table.js" />
+    <Content Include="plugins\tinymce\plugins\table\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\table\merge_cells.htm" />
+    <Content Include="plugins\tinymce\plugins\table\row.htm" />
+    <Content Include="plugins\tinymce\plugins\table\table.htm" />
+    <Content Include="plugins\tinymce\plugins\template\blank.htm" />
+    <Content Include="plugins\tinymce\plugins\template\css\template.css" />
+    <Content Include="plugins\tinymce\plugins\template\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\template\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\template\js\template.js" />
+    <Content Include="plugins\tinymce\plugins\template\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\plugins\template\template.htm" />
+    <Content Include="plugins\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="plugins\tinymce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="plugins\tinymce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\themes\advanced\about.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\anchor.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\charmap.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\color_picker.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\editor_template.js" />
+    <Content Include="plugins\tinymce\themes\advanced\editor_template_src.js" />
+    <Content Include="plugins\tinymce\themes\advanced\image.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="plugins\tinymce\themes\advanced\img\flash.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\icons.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\iframe.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\quicktime.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\realmedia.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\shockwave.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\trans.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\video.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\js\about.js" />
+    <Content Include="plugins\tinymce\themes\advanced\js\anchor.js" />
+    <Content Include="plugins\tinymce\themes\advanced\js\charmap.js" />
+    <Content Include="plugins\tinymce\themes\advanced\js\color_picker.js" />
+    <Content Include="plugins\tinymce\themes\advanced\js\image.js" />
+    <Content Include="plugins\tinymce\themes\advanced\js\link.js" />
+    <Content Include="plugins\tinymce\themes\advanced\js\source_editor.js" />
+    <Content Include="plugins\tinymce\themes\advanced\langs\en.js" />
+    <Content Include="plugins\tinymce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="plugins\tinymce\themes\advanced\link.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\shortcuts.htm" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\content.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\default\ui.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="plugins\tinymce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="plugins\tinymce\themes\advanced\source_editor.htm" />
+    <Content Include="plugins\tinymce\themes\simple\editor_template.js" />
+    <Content Include="plugins\tinymce\themes\simple\editor_template_src.js" />
+    <Content Include="plugins\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="plugins\tinymce\themes\simple\langs\en.js" />
+    <Content Include="plugins\tinymce\themes\simple\skins\default\content.css" />
+    <Content Include="plugins\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="plugins\tinymce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="plugins\tinymce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="plugins\tinymce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="plugins\tinymce\tiny_mce.js" />
+    <Content Include="plugins\tinymce\tiny_mce_popup.js" />
+    <Content Include="plugins\tinymce\tiny_mce_src.js" />
+    <Content Include="plugins\tinymce\utils\editable_selects.js" />
+    <Content Include="plugins\tinymce\utils\form_utils.js" />
+    <Content Include="plugins\tinymce\utils\mctabs.js" />
+    <Content Include="plugins\tinymce\utils\validate.js" />
+    <Content Include="scripts\utils.js" />
+    <Content Include="UserControls\ExporterControl.ascx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\CM\courses.aspx.cs">
+      <DependentUpon>courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\courses.aspx.designer.cs">
+      <DependentUpon>courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\CourseKeys.aspx.cs">
+      <DependentUpon>CourseKeys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\CourseKeys.aspx.designer.cs">
+      <DependentUpon>CourseKeys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\general.aspx.cs">
+      <DependentUpon>general.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\general.aspx.designer.cs">
+      <DependentUpon>general.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\QuizResults.aspx.cs">
+      <DependentUpon>QuizResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\QuizResults.aspx.designer.cs">
+      <DependentUpon>QuizResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\quiz\quiz.aspx.cs">
+      <DependentUpon>quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\quiz\quiz.aspx.designer.cs">
+      <DependentUpon>quiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\quiz\quizes.aspx.cs">
+      <DependentUpon>quizes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\quiz\quizes.aspx.designer.cs">
+      <DependentUpon>quizes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\course\subscriptions.aspx.cs">
+      <DependentUpon>subscriptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\course\subscriptions.aspx.designer.cs">
+      <DependentUpon>subscriptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\quiz\quiz.aspx.cs">
+      <DependentUpon>quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\quiz\quiz.aspx.designer.cs">
+      <DependentUpon>quiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\CM\quiz\quizes.aspx.cs">
+      <DependentUpon>quizes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\CM\quiz\quizes.aspx.designer.cs">
+      <DependentUpon>quizes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\PopupPages\CM\course\QuizToCourse.aspx.cs">
+      <DependentUpon>QuizToCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\PopupPages\CM\course\QuizToCourse.aspx.designer.cs">
+      <DependentUpon>QuizToCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\PopupPages\CreateNewCourseKeys.aspx.cs">
+      <DependentUpon>CreateNewCourseKeys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\PopupPages\CreateNewCourseKeys.aspx.designer.cs">
+      <DependentUpon>CreateNewCourseKeys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\PopupPages\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\PopupPages\MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\PopupPages\QuizPreview.aspx.cs">
+      <DependentUpon>QuizPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\PopupPages\QuizPreview.aspx.designer.cs">
+      <DependentUpon>QuizPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\ChangeUser.aspx.cs">
+      <DependentUpon>ChangeUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\ChangeUser.aspx.designer.cs">
+      <DependentUpon>ChangeUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\permissions.aspx.cs">
+      <DependentUpon>permissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\permissions.aspx.designer.cs">
+      <DependentUpon>permissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\PermissionUR.aspx.cs">
+      <DependentUpon>PermissionUR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\PermissionUR.aspx.designer.cs">
+      <DependentUpon>PermissionUR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\RoleUP.aspx.cs">
+      <DependentUpon>RoleUP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\RoleUP.aspx.designer.cs">
+      <DependentUpon>RoleUP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\UserRP.aspx.cs">
+      <DependentUpon>UserRP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\UserRP.aspx.designer.cs">
+      <DependentUpon>UserRP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UM\users.aspx.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UM\users.aspx.designer.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="plugins\QuizMaker\QuizMakerControl.ascx.cs">
+      <DependentUpon>QuizMakerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plugins\QuizMaker\QuizMakerControl.ascx.designer.cs">
+      <DependentUpon>QuizMakerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="plugins\QuizUserControl\QuizUserControl.ascx.cs">
+      <DependentUpon>QuizUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plugins\QuizUserControl\QuizUserControl.ascx.designer.cs">
+      <DependentUpon>QuizUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="plugins\SuccessErrorMessageAdmin\SuccessErrorControl.ascx.cs">
+      <DependentUpon>SuccessErrorControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="plugins\SuccessErrorMessageAdmin\SuccessErrorControl.ascx.designer.cs">
+      <DependentUpon>SuccessErrorControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ExporterControl.ascx.cs">
+      <DependentUpon>ExporterControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ExporterControl.ascx.designer.cs">
+      <DependentUpon>ExporterControl.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Administration\img\profile\images\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{02e1f55a-5880-4ad1-bab8-c0377a3496d3}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5568</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5568/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

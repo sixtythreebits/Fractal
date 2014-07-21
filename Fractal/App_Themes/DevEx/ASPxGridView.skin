@@ -1,0 +1,39 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwgv" Namespace="DevExpress.Web.ASPxGridView" Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dxwgv:ASPxGridView runat="server" CssFilePath="~/App_Themes/DevEx/{0}/styles.css" CssPostfix="DevEx">
+	<Images SpriteCssFilePath="~/App_Themes/DevEx/{0}/sprite.css">
+	</Images>
+    <SettingsPager CurrentPageNumberFormat="{0}" />
+    <Styles>
+        <Header SortingImageSpacing="5" />
+    </Styles>	
+    <Settings ShowFilterRow="true" ShowFilterRowMenu="true" ShowFooter="true" GridLines="Both" />
+    <SettingsBehavior AllowDragDrop="false" AllowFocusedRow="true" AutoExpandAllGroups="true" ConfirmDelete="true" ColumnResizeMode="NextColumn" />
+    <SettingsEditing Mode="Inline" />    
+    <SettingsPager PageSize="30">
+        <PageSizeItemSettings Visible="true" Items="10, 20, 30, 50, 100" />
+    </SettingsPager>
+    <SettingsText ConfirmDelete="Do you really want to delete this row?" />
+    <SettingsCommandButton>
+        <NewButton>
+            <Image Url="~/plugins/icons/img/add.png"></Image>
+        </NewButton>
+        <EditButton>
+            <Image Url="~/plugins/icons/img/edit.png"></Image>
+        </EditButton>
+        <UpdateButton>
+            <Image Url="~/plugins/icons/img/update.png"></Image>
+        </UpdateButton>
+        <CancelButton>
+            <Image Url="~/plugins/icons/img/cancel.png"></Image>
+        </CancelButton>
+        <DeleteButton>
+            <Image Url="~/plugins/icons/img/delete.png"></Image>
+        </DeleteButton>
+        <ClearFilterButton>
+            <Image Url="~/plugins/icons/img/ClearFilter.png"></Image>
+        </ClearFilterButton>
+    </SettingsCommandButton>	
+</dxwgv:ASPxGridView>
+

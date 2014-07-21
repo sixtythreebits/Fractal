@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Fractal" Class="DBSecurityDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sec_IsUserAllowedToViewAsset" Method="sec_IsUserAllowedToViewAsset" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="AssetID" Parameter="assetID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.sec_IsUserAllowedToViewCourse" Method="sec_IsUserAllowedToViewCourse" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Boolean" />
+  </Function>
+</Database>

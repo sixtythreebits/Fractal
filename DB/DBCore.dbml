@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Fractal" Class="DBCoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.GetCourseDuration" Method="GetCourseDuration" IsComposable="true">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.List_dtAny" Method="List_dtAny" IsComposable="true">
+    <Parameter Name="hrclvl" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DCode" Parameter="dCode" Type="System.Int32" DbType="Int" />
+    <ElementType Name="List_dtAnyResult">
+      <Column Name="codeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="hnamee" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="mgrid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hrclvl" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="hrccrt" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="hcode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="dcode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="defval" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="crtime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="vm1" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="SortVal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="img1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="img2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="img3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="img4" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="img5" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="img6" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IntCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OldID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSingleAnswer" Method="GetSingleAnswer" IsComposable="true">
+    <Parameter Name="AnswerID" Parameter="answerID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.GetSingleCourse" Method="GetSingleCourse" IsComposable="true">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Slug" Parameter="slug" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.GetSingleCourseKeyGroup" Method="GetSingleCourseKeyGroup" IsComposable="true">
+    <Parameter Name="GroupID" Parameter="groupID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.GetSingleCourseQuiz" Method="GetSingleCourseQuiz" IsComposable="true">
+    <Parameter Name="CourseQuizID" Parameter="courseQuizID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="QuizID" Parameter="quizID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="GetSingleCourseQuizResult">
+      <Column Name="RecordID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuizCaption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CourseCaption" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GradeReleaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPractice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowAnswers" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinScore" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="unid" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SectionID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSingleQuestion" Method="GetSingleQuestion" IsComposable="true">
+    <Parameter Name="QuestionID" Parameter="questionID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.GetSingleQuiz" Method="GetSingleQuiz" IsComposable="true">
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.List_CourseKeys" Method="List_CourseKeys" IsComposable="true">
+    <ElementType Name="List_CourseKeysResult">
+      <Column Name="KeyID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MonthLifeTime" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="RegTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UseTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_CourseKeysByGroupID" Method="List_CourseKeysByGroupID" IsComposable="true">
+    <Parameter Name="GroupID" Parameter="groupID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_CourseKeysByGroupIDResult">
+      <Column Name="KeyID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UseTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_CourseQuizes" Method="List_CourseQuizes" IsComposable="true">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsPublished" Parameter="isPublished" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsPractice" Parameter="isPractice" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ConsiderDates" Parameter="considerDates" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="SectionID" Parameter="sectionID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_CourseQuizesResult">
+      <Column Name="RecordID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GradeReleaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsPractice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowAnswers" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="unid" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SectionID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Section" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaxScore" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tx_Quizes" Method="tx_Quizes">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tx_Courses" Method="tx_Courses">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteCourse" Method="DeleteCourse">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tx_Subscriptions" Method="tx_Subscriptions">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tx_Tracking" Method="tx_Tracking">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.IsCourseSlugUniq" Method="IsCourseSlugUniq" IsComposable="true">
+    <Parameter Name="Slug" Parameter="slug" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.tsp_CourseKeys" Method="tsp_CourseKeys">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="KeyID" Parameter="keyID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="GroupID" Parameter="groupID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Key" Parameter="key" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tsp_CourseKeyGroups" Method="tsp_CourseKeyGroups">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="GroupID" Parameter="groupID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Caption" Parameter="caption" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="LifeTimeTypeID" Parameter="lifeTimeTypeID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MonthLifeTime" Parameter="monthLifeTime" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="DayLifeTime" Parameter="dayLifeTime" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="ExpDate" Parameter="expDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.List_UserSubscribedCourses" Method="List_UserSubscribedCourses" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="ActiveOnly" Parameter="activeOnly" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="List_UserSubscribedCoursesResult">
+      <Column Name="SubscriptionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SubscriptionTypeCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsExpired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Slug" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Semester" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="teachers" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tx_CourseKeys" Method="tx_CourseKeys">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.List_QuizAttempts" Method="List_QuizAttempts" IsComposable="true">
+    <ElementType Name="List_QuizAttemptsResult">
+      <Column Name="AttemptID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Num" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CourseID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CourseCaption" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CourseYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Score" Type="System.Decimal" DbType="Decimal(10,0)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="QuizCaption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GradeReleaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ShowAnswers" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MinScore" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UserFullName" Type="System.String" DbType="NVarChar(401)" CanBeNull="true" />
+      <Column Name="MaxScore" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_Quizes" Method="List_Quizes" IsComposable="true">
+    <ElementType Name="List_QuizesResult">
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsCreator" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tsp_Answers" Method="tsp_Answers">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="AnswerID" Parameter="answerID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="QuestionID" Parameter="questionID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Answer" Parameter="answer" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Explanation" Parameter="explanation" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IsCorrect" Parameter="isCorrect" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AssetID" Parameter="assetID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tsp_Questions" Method="tsp_Questions">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="QuestionID" Parameter="questionID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Question" Parameter="question" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Hint" Parameter="hint" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Analysis" Parameter="analysis" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Score" Parameter="score" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="IsPublished" Parameter="isPublished" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AssetID" Parameter="assetID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.List_Answers" Method="List_Answers" IsComposable="true">
+    <Parameter Name="QuestionID" Parameter="questionID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_AnswersResult">
+      <Column Name="AnswerID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Answer" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Explanation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsCorrect" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="unid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tx_Answers" Method="tx_Answers">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tx_Questions" Method="tx_Questions">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tsp_Quizes" Method="tsp_Quizes">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="QuizID" Parameter="quizID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Caption" Parameter="caption" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tsp_CourseQuizes" Method="tsp_CourseQuizes">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="RecordID" Parameter="recordID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="QuizID" Parameter="quizID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="StartDate" Parameter="startDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EndDate" Parameter="endDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="GradeReleaseDate" Parameter="gradeReleaseDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IsPublished" Parameter="isPublished" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IsPractice" Parameter="isPractice" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="SectionID" Parameter="sectionID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.IsUserAlreadyPassedQuiz" Method="IsUserAlreadyPassedQuiz" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="QuizID" Parameter="quizID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.List_UserQuizes" Method="List_UserQuizes" IsComposable="true">
+    <ElementType Name="List_UserQuizesResult">
+      <Column Name="RecordID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IsCreator" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[View]" Member="View" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Edit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[Delete]" Member="Delete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_TeacherQuizesNotInCourse" Method="List_TeacherQuizesNotInCourse" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_TeacherQuizesNotInCourseResult">
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_TeacherQuizes" Method="List_TeacherQuizes" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_TeacherQuizesResult">
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tsp_dtAny" Method="tsp_dtAny" IsComposable="true">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="codeid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="mgrid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hname" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="hnamee" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="hcode" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="dcode" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="defval" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="vm1" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="SortVal" Parameter="sortVal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="img1" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="img2" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="img3" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="img4" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="img5" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="img6" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="IntCode" Parameter="intCode" Type="System.Int32" DbType="Int" />
+    <Return Type="object" />
+  </Function>
+  <Function Name="dbo.tx_Assets" Method="tx_Assets">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetSingleAsset" Method="GetSingleAsset" IsComposable="true">
+    <Parameter Name="AssetID" Parameter="assetID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IncludeStatistics" Parameter="includeStatistics" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.tsp_Courses" Method="tsp_Courses">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Caption" Parameter="caption" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="SubjectID" Parameter="subjectID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Icon" Parameter="icon" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="PromoImage" Parameter="promoImage" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="SemesterID" Parameter="semesterID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Year" Parameter="year" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="IsPublished" Parameter="isPublished" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Slug" Parameter="slug" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.List_Courses" Method="List_Courses" IsComposable="true">
+    <ElementType Name="List_CoursesResult">
+      <Column Name="CourseID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Slug" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SubjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SemesterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_UserCourses" Method="List_UserCourses" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="IsPublished" Parameter="isPublished" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="List_UserCoursesResult">
+      <Column Name="RecordID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CourseID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsCreator" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Slug" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Icon" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SubjectID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SemesterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Lname" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Semester" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_CourseKeyGroups" Method="List_CourseKeyGroups" IsComposable="true">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_CourseKeyGroupsResult">
+      <Column Name="GroupID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Group]" Member="Group" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="KeyCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MonthLifeTime" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.List_UserQuestionsNotInQuiz" Method="List_UserQuestionsNotInQuiz" IsComposable="true">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="QuizID" Parameter="quizID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="KeyWords" Parameter="keyWords" Type="System.String" DbType="NVarChar(4000)" />
+    <ElementType Name="List_UserQuestionsNotInQuizResult">
+      <Column Name="QuestionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Question" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AssetID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCourseCreatorUserID" Method="GetCourseCreatorUserID" IsComposable="true">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int64" />
+  </Function>
+</Database>

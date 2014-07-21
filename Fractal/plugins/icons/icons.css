@@ -1,0 +1,597 @@
+﻿.icon{
+   display:block;
+   width:16px;
+   height:16px;
+}
+.icon24{
+   display:block;
+   width:24px;
+   height:24px;
+}
+.icon32{
+   display:block;
+   width:32px;
+   height:32px;
+}
+.icon48{
+   display:block;
+   width:48px;
+   height:48px;
+}
+
+.icon.text{    
+    width:auto;
+    height:auto;
+    padding-left:25px;
+    line-height:16px;    
+    min-height:16px;
+}
+.icon32.text{   
+    width:auto;
+    height:auto;
+    padding-left:25px;
+    line-height:32px; 
+    min-height:32px;   
+}
+.icon.text.hidden {
+    display:none;
+}
+
+.icon.add{
+	background:url('img/add.png') left no-repeat;
+}
+.icon.ads{
+	background:url('img/ads.png') left no-repeat;
+}
+.icon.alert{
+    background:url('img/alert.png') left no-repeat;
+}
+.icon.arrow-left-green{
+    background:url('img/arrow_left_green.png') left no-repeat;
+}
+.icon.assets{
+    background:url('img/assets.png') left no-repeat;
+}
+.icon.announcement{
+    background:url('img/announcement.png') left no-repeat;
+}
+.icon.attachment {
+    background:url('img/attachment.png') left no-repeat;
+}
+.icon.book-create {
+    background:url('img/book-create.png') left no-repeat;
+}
+.icon.book-delete {
+    background:url('img/book-delete.png') left no-repeat;
+}
+.icon.book-edit {
+    background:url('img/book-edit.png') left no-repeat;
+}
+.icon.book-opened {
+    background:url('img/book-opened.png') left no-repeat;
+}
+.icon.bubbles {
+    background: url('img/bubbles.png') left no-repeat;
+}
+.icon.building {
+    background: url('img/building.png') left no-repeat;
+}
+.icon.calendar {
+    background:url('img/calendar.png') left no-repeat;
+}
+.icon.cancel{
+	background:url('img/cancel.png') left no-repeat;
+}
+.icon.circle-green{
+	background:url('img/circle_green.png') left no-repeat;
+}
+.icon.circle-red{
+	background:url('img/circle_red.png') left no-repeat;
+}
+.icon.circle-grey{
+	background:url('img/circle_grey.png') left no-repeat;
+}
+.icon.circle-yellow{
+	background:url('img/circle_yellow.png') left no-repeat;
+}
+.icon.clear{
+	background:url('img/clear.png') left no-repeat;
+}
+.icon.coingold{
+	background:url('img/coingold.png') left no-repeat;
+}
+.icon.coinsilver{
+	background:url('img/coinsilver.png') left no-repeat;
+}
+.icon.collapse{
+	background:url('img/collapse.png') left no-repeat;
+}
+.icon.component{
+	background:url('img/component.png') left no-repeat;
+}
+.icon.copy {
+    background:url('img/copy.png') left no-repeat;
+}
+.icon.course {
+    background:url('img/course.png') left no-repeat;
+}
+.icon.dashboard{
+	background:url('img/dashboard.png') left no-repeat;
+}
+.icon.date{
+	background:url('img/date.png') left no-repeat;
+}
+.icon.delete{
+	background:url('img/delete.png') left no-repeat;
+}
+.icon.delete-black{
+	background:url('img/delete-black.png') left no-repeat;
+}
+.icon.doc{
+	background:url('img/doc.png') left no-repeat;
+}
+.icon.dollar{
+	background:url('img/dollar.png') left no-repeat;
+}
+.icon.download{
+	background:url('img/download.png') left no-repeat;
+}
+.icon.drag{
+	background:url('img/drag.png') left no-repeat;
+}
+.icon.edit{
+	background:url('img/edit.png') left no-repeat;
+}
+.icon.expand{
+	background:url('img/expand.png') left no-repeat;
+}
+.icon.export{
+	background:url('img/export.png') left no-repeat;
+}
+.icon.eye{
+	background:url('img/eye.png') left no-repeat;
+}
+.icon.fail{
+    background:url('img/fail.png') left no-repeat;
+}
+.icon.file-add{
+    background:url('img/file-add.png') left no-repeat;
+}
+.icon.file-compare{
+    background:url('img/file-compare.png') left no-repeat;
+}
+.icon.folder-add{
+    background:url('img/folder-add.png') left no-repeat;
+}
+.icon.gallery{
+    background:url('img/gallery.png') left no-repeat;
+}
+.icon.general{
+	background:url('img/general.png') left no-repeat;
+}
+.icon.guarantee{
+	background:url('img/guarantee.png') left no-repeat;
+}
+.icon.hellobar {
+    background:url('img/hellobar.png') left no-repeat;    
+}
+.icon.help {
+    background:url('img/help.png') left no-repeat;    
+}
+.icon.image {
+    background:url('img/image.png') left no-repeat;
+}
+.icon.info {
+    background:url('img/info.png') left no-repeat;
+}
+.icon.key {
+    background:url('img/key.png') left no-repeat;
+}
+.icon.library {
+    background:url('img/library.png') left no-repeat;
+}
+.icon.location{
+	background:url('img/location.png') left no-repeat;
+}
+.icon.lock {
+    background:url('img/lock.png') left no-repeat;
+}
+.icon.marker {
+    background:url('img/marker.png') left no-repeat;
+}
+.icon.marker-add {
+    background:url('img/marker-add.png') left no-repeat;
+}
+.icon.marker-edit {
+    background:url('img/marker-edit.png') left no-repeat;
+}
+.icon.news {
+    background:url('img/news.png') left no-repeat;
+}
+.icon.no-preview {
+    background:url('img/no-preview.png') left no-repeat;
+}
+.icon.note {
+    background:url('img/note.png') left no-repeat;
+}
+.icon.other {
+    background:url('img/other.png') left no-repeat;
+}
+.icon.pending{
+    background:url('img/pending.png') left no-repeat;
+}
+.icon.plus-gray{
+    background:url('img/plus-gray.png') left no-repeat;
+}
+.icon.plus-white{
+    background:url('img/plus-white.png') left no-repeat;
+}
+.icon.preview{
+    background:url('img/preview.png') left no-repeat;
+}
+.icon.print{
+    background:url('img/print.png') left no-repeat;
+}
+.icon.properties {
+    background:url('img/properties.png') left no-repeat;    
+}
+.icon.puzzle{
+    background:url('img/puzzle.png') left no-repeat;
+}
+.icon.quiz{
+    background:url('img/quiz.png') left no-repeat;
+}
+.icon.quiz_results{
+    background:url('img/quiz_results.png') left no-repeat;
+}
+.icon.rename {
+    background:url('img/rename.png') left no-repeat;
+}
+.icon.refresh {
+    background:url('img/refresh.png') left no-repeat;
+}
+.icon.reset {
+    background:url('img/reset.png') left no-repeat;
+}
+.icon.restore {
+    background:url('img/restore.png') left no-repeat;
+}
+.icon.revert {
+    background:url('img/revert.png') left no-repeat;
+}
+.icon.save{
+    background:url('img/save.png') left no-repeat;    
+}
+.icon.settings{
+    background:url('img/settings.png') left no-repeat;    
+}
+.icon.statistics{
+	background:url('img/statistics.png') left no-repeat;
+}
+.icon.structure{
+	background:url('img/structure.png') left no-repeat;
+}
+.icon.subject{
+    background:url('img/subject.png') left no-repeat;    
+}
+.icon.subscriptions{
+    background:url('img/subscriptions.png') left no-repeat;    
+}
+.icon.subtitles{
+    background:url('img/subtitles.png') left no-repeat;    
+}
+.icon.success{
+    background:url('img/success.png') left no-repeat;    
+}
+.icon.sync {
+    background:url('img/sync.png') left no-repeat;    
+}
+.icon.teachers{
+    background:url('img/teachers.png') left no-repeat;    
+}
+.icon.template{
+    background:url('img/template.png') left no-repeat;    
+}
+.icon.testimonials{
+    background:url('img/testimonials.png') left no-repeat;    
+}
+.icon.thumbnails{
+    background:url('img/thumbnails.png') left no-repeat;    
+}
+.icon.tools{
+    background:url('img/tools.png') left no-repeat;    
+}
+.icon.trash{
+    background:url('img/trash.png') left no-repeat;    
+}
+.icon.unlock {
+    background:url('img/unlock.png') left no-repeat;
+}
+.icon.update{
+	background:url('img/update.png') left no-repeat;
+}
+.icon.upload{
+	background:url('img/upload.png') left no-repeat;
+}
+.icon.user{
+	background:url('img/user.png') left no-repeat;
+}
+.icon.users{
+	background:url('img/users.png') left no-repeat;
+}
+.icon.users-grid{
+	background:url('img/users-grid.png') left no-repeat;
+}
+.icon.video {
+    background:url('img/video.png') left no-repeat;
+}
+.icon.video-compare{
+    background:url('img/video-compare.png') left no-repeat;
+}
+.icon.volume {
+    background:url('img/volume.png') left no-repeat;
+}
+.icon.xls{
+    background:url('img/xls.png') left no-repeat;    
+}
+.icon.web {
+    background:url('img/web.png') left no-repeat;    
+}
+.icon.window {
+    background:url('img/window.png') left no-repeat;    
+}
+.icon.winrar{
+    background:url('img/winrar.png') left no-repeat;
+}
+
+/*Should always be in the end, to override other icons*/
+.icon.loader {
+    background:url('img/loader.gif') left no-repeat;
+}
+.icon.loader-red {
+    background:url('img/loader-red.gif') left no-repeat;
+}
+
+
+.icon24.eye {
+    background:url('img/24/eye.png') left no-repeat;
+}
+.icon24.file-compare{
+    background:url('img/24/file-compare.png') left no-repeat;
+}
+.icon24.gallery{
+    background:url('img/24/gallery.png') left no-repeat;
+}
+.icon24.guarantee{
+	background:url('img/24/guarantee.png') left no-repeat;
+}
+.icon24.help {
+    background:url('img/24/help.png') left no-repeat;    
+}
+.icon24.info {
+    background:url('img/24/info.png') left no-repeat;
+}
+.icon24.lock {
+    background:url('img/24/lock.png') left no-repeat;
+}
+.icon24.lock-small {
+    background:url('img/24/lock-small.png') left no-repeat;
+}
+.icon24.no-preview {
+    background:url('img/24/no-preview.png') left no-repeat;
+}
+.icon24.puzzle{
+    background:url('img/24/puzzle.png') left no-repeat;
+}
+.icon24.unlock {
+    background:url('img/24/unlock.png') left no-repeat;
+}
+.icon24.unlock-small {
+    background:url('img/24/unlock-small.png') left no-repeat;
+}
+.icon24.unlock-small-white {
+    background:url('img/24/unlock-small-white.png') left no-repeat;
+}
+.icon24.video-compare{
+    background:url('img/24/video-compare.png') left no-repeat;
+}
+
+
+
+
+.icon32.arrow-down-rounded {
+    background:url('img/32/arrow_down_rounded.png') left no-repeat;
+}
+.icon32.arrow-left-green{
+    background:url('img/32/arrow_left_green.png') left no-repeat;
+}
+.icon32.arrow-left-red{
+    background:url('img/32/arrow_left_red.png') left no-repeat;
+}
+.icon32.arrow-right-green {
+    background:url('img/32/arrow_right_green.png') left no-repeat;
+}
+.icon32.building {
+    background: url('img/32/building.png') left no-repeat;
+}
+.icon32.course {
+    background:url('img/32/course.png') left no-repeat;
+}
+.icon32.dashboard{
+	background:url('img/32/dashboard.png') left no-repeat;
+}
+.icon32.dollar{
+	background:url('img/32/dollar.png') left no-repeat;
+}
+.icon32.file-compare{
+    background:url('img/32/file-compare.png') left no-repeat;
+}
+.icon32.gallery{
+    background:url('img/32/gallery.png') left no-repeat;
+}
+.icon32.gradebook {
+    background:url('img/32/gradebook.png') left no-repeat;    
+}
+.icon32.guarantee{
+	background:url('img/32/guarantee.png') left no-repeat;
+}
+.icon32.help {
+    background:url('img/32/help.png') left no-repeat;
+}
+.icon32.info {
+    background:url('img/32/info.png') left no-repeat;
+}
+.icon32.key {
+    background:url('img/32/key.png') left no-repeat;
+}
+.icon32.location{
+	background:url('img/32/location.png') left no-repeat;
+}
+.icon32.news {
+    background:url('img/32/news.png') left no-repeat;
+}
+.icon32.puzzle{
+    background:url('img/32/puzzle.png') left no-repeat;
+}
+.icon32.subject{
+    background:url('img/32/subject.png') left no-repeat;    
+}
+.icon32.template{
+    background:url('img/32/template.png') left no-repeat;    
+}
+.icon32.tools{
+    background:url('img/32/tools.png') left no-repeat;    
+}
+.icon32.testimonials{
+    background:url('img/32/testimonials.png') left no-repeat;    
+}
+.icon32.users{
+    background:url('img/32/users.png') left no-repeat;    
+}
+.icon32.users-grid{
+	background:url('img/32/users-grid.png') left no-repeat;
+}
+.icon32.video-compare{
+    background:url('img/32/video-compare.png') left no-repeat;
+}
+.icon32.winrar{
+    background:url('img/32/winrar.png') left no-repeat;
+}
+
+.icon48.ads{
+	background:url('img/48/ads.png') left no-repeat;
+}
+.icon48.alert{
+	background:url('img/48/alert.png') left no-repeat;
+}
+.icon48.announcement{
+	background:url('img/48/announcement.png') left no-repeat;
+}
+.icon48.assets{
+	background:url('img/48/assets.png') left no-repeat;
+}
+.icon48.building {
+    background: url('img/48/building.png') left no-repeat;
+}
+.icon48.course{
+	background:url('img/48/course.png') left no-repeat;
+}
+.icon48.dashboard{
+	background:url('img/48/dashboard.png') left no-repeat;
+}
+.icon48.doc{
+	background:url('img/48/doc.png') left no-repeat;
+}
+.icon48.dollar{
+	background:url('img/48/dollar.png') left no-repeat;
+}
+.icon48.file-compare{
+    background:url('img/48/file-compare.png') left no-repeat;
+}
+.icon48.gallery{
+    background:url('img/48/gallery.png') left no-repeat;
+}
+.icon48.general{
+	background:url('img/48/general.png') left no-repeat;
+}
+.icon48.guarantee{
+	background:url('img/48/guarantee.png') left no-repeat;
+}
+.icon48.hellobar {
+    background:url('img/48/hellobar.png') left no-repeat;    
+}
+.icon48.help {
+    background:url('img/48/help.png') left no-repeat;    
+}
+.icon48.info {
+    background:url('img/48/info.png') left no-repeat;
+}
+.icon48.key {
+    background:url('img/48/key.png') left no-repeat;
+}
+.icon48.location{
+	background:url('img/48/location.png') left no-repeat;
+}
+.icon48.marker{
+	background:url('img/48/marker.png') left no-repeat;
+}
+.icon48.news {
+    background:url('img/48/news.png') left no-repeat;
+}
+.icon48.note{
+	background:url('img/48/note.png') left no-repeat;
+}
+.icon48.puzzle{
+    background:url('img/48/puzzle.png') left no-repeat;
+}
+.icon48.quiz{
+	background:url('img/48/quiz.png') left no-repeat;
+}
+.icon48.quiz_results{
+	background:url('img/48/quiz_results.png') left no-repeat;
+}
+.icon48.settings{
+	background:url('img/48/settings.png') left no-repeat;
+}
+.icon48.statistics{
+	background:url('img/48/statistics.png') left no-repeat;
+}
+.icon48.structure{
+	background:url('img/48/structure.png') left no-repeat;
+}
+.icon48.subject{
+    background:url('img/48/subject.png') left no-repeat;    
+}
+.icon48.subscriptions{
+	background:url('img/48/subscriptions.png') left no-repeat;
+}
+.icon48.subtitles{
+	background:url('img/48/subtitles.png') left no-repeat;
+}
+.icon48.teachers{
+	background:url('img/48/teachers.png') left no-repeat;
+}
+.icon48.template{
+    background:url('img/48/template.png') left no-repeat;    
+}
+.icon48.testimonials{
+    background:url('img/48/testimonials.png') left no-repeat;    
+}
+.icon48.thumbnails{
+	background:url('img/48/thumbnails.png') left no-repeat;
+}
+.icon48.tools{
+    background:url('img/48/tools.png') left no-repeat;    
+}
+.icon48.users{
+	background:url('img/48/users.png') left no-repeat;
+}
+.icon48.users-grid{
+	background:url('img/48/users-grid.png') left no-repeat;
+}
+.icon48.video-compare{    
+    background:url('img/48/video-compare.png') left no-repeat;
+}
+.icon48.winrar{
+    background:url('img/48/winrar.png') left no-repeat;
+}

@@ -1,0 +1,99 @@
+﻿#tab-bar{
+	margin-top:34px;
+	float:left;
+	width:940px;
+	list-style:none;
+	position:relative;
+}
+#tab-sub-bar{
+	background:url('../img/asset-meneger/sub-background.png');
+	width:806px;
+	height:126px;
+	position:absolute;
+	left:7px;
+	top:-10px;
+	z-index:-1;
+}
+#tab-sub-bar > h2{
+	position:relative;
+	top:100px;
+	left:30px;
+	line-height:32px;
+	padding-left:60px;
+	background:url('../img/asset-meneger/sub-icon.png') no-repeat center left;
+	color:#414141;
+	font-size:16px;
+	font-weight:normal;
+}
+#tab-sub-bar > h2 > b{
+	font-size:16px;
+	font-weight:normal;
+	color:#990000;
+}
+#tab-bar > li {	
+	float:left;
+	width:134px;
+	height:62px;
+	margin-right:0px;
+	background:url('../img/tab-bar-button.png');	
+}
+
+#tab-bar > li.on,#tab-bar > li:hover  {
+    background:url('../img/tab-bar-button-ol.png');	
+}
+#tab-bar > li > a{
+	float:left;
+	font-size:14px;
+	color:#000;
+	width:100%;
+	text-align:center;
+	padding-top:20px;
+	margin-top:15px;
+    background-position:center 0;
+}
+#tab-bar > li.on > a {
+    color:#FFF;
+    font-weight:bold;
+    text-shadow:0 1px 0 #000000;
+}
+
+#tab-bar > li > a:hover{	
+	text-decoration:none;
+}
+
+/*#tab-bar > li > a.coin{
+	background:url('../img/tab-bar/coingold.png') no-repeat top center;
+}
+#tab-bar > li > a.students{
+	background:url('../img/tab-bar/students.png') no-repeat top center;
+}
+#tab-bar > li > a.components{
+	background:url('../img/tab-bar/components.png') no-repeat top center;
+}
+#tab-bar > li > a.general{
+	background:url('../img/tab-bar/general.png') no-repeat top center;
+}
+#tab-bar > li > a.course-structure{
+	background:url('../img/tab-bar/course-structure.png') no-repeat top center;
+}
+#tab-bar > li > a.quizes{
+	background:url('../img/tab-bar/quizes.png') no-repeat top center;
+}
+#tab-bar > li > a.documents{
+	background:url('../img/tab-bar/documents.png') no-repeat top center;
+}
+#tab-bar > li > a.announcements{
+	background:url('../img/tab-bar/announcements.png') no-repeat top center;
+}
+#tab-bar > li > a.statistics{
+	background:url('../img/tab-bar/statistics.png') no-repeat top center;
+}
+#tab-bar > li > a.alerts{
+	background:url('../img/tab-bar/alerts.png') no-repeat top center;
+}
+#tab-bar > li > a.ads{
+	background:url('../img/tab-bar/ads.png') no-repeat top center;
+}
+#tab-bar > li > a.activity{
+	background:url('../img/tab-bar/activity.png') no-repeat top center;
+}*/

@@ -1,0 +1,131 @@
+﻿.success-massage {
+    margin-top: 20px;
+    clear: both;
+    width: 100%;
+    height: 95px;
+    background: url('images/success-bg.png');
+    position: relative;
+    width: 820px;
+    top: 15px;
+}
+
+.success-massage.uploader{
+    width:400px;
+    margin:-15px 0 25px 10px;
+}
+
+#section-list .success-massage {
+    width: 770px;
+}
+
+.success-massage > span:first-child {
+    background: #fff url('images/success-bg-left.png');
+    position: absolute;
+    width: 12px;
+    height: 95px;
+}
+
+.success-massage > span:last-child {
+    background: #fff url('images/success-bg-right.png');
+    width: 12px;
+    height: 95px;
+    position: absolute;
+    right: 0px;
+}
+
+.success-massage > div {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 100%;
+}
+
+.success-massage.uploader > div {
+    left: 20px;    
+    width:360px;
+}
+
+.success-massage > div > * {
+    float: left;
+}
+
+.success-massage > div > p {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.success-massage.uploader > div > p {
+    margin-top: 3px;
+    margin-left: 15px;
+}
+
+
+.success-massage .icon-success {
+    background-image:url(images/success.png);
+    height:32px;
+    width:32px;
+}
+
+.error-massage {
+    margin-top: 20px;
+    clear: both;
+    width: 100%;
+    height: 95px;
+    background: url('images/error-bg.png');
+    position: relative;
+    width: 810px;
+    top: 15px;
+}
+.error-massage.uploader{
+    width:400px;
+    margin:-15px 0 25px 10px;
+}
+
+#section-list .error-massage {
+    width: 770px;
+}
+
+.error-massage > span:first-child {
+    background: #fff url('images/error-bg-left.png');
+    position: absolute;
+    width: 12px;
+    height: 95px;
+}
+
+.error-massage > span:last-child {
+    background: #fff url('images/error-bg-right.png');
+    width: 12px;
+    height: 95px;
+    position: absolute;
+    right: 0px;
+}
+
+.error-massage > div {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    width: 100%;
+}
+.error-massage.uploader > div {
+    left: 20px;    
+    width:360px;
+}
+
+.error-massage > div > * {
+    float: left;
+}
+
+.error-massage > div > p {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.error-massage.uploader > div > p {
+    margin-top: 3px;
+    margin-left: 15px;
+}
+
+.error-massage .icon-error {
+    background-image:url(images/error.png);
+    height:32px;
+    width:32px;
+}

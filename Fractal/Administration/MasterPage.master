@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="administration_MasterPage" Codebehind="MasterPage.master.cs" %>
+<%@ Import Namespace="Core.Properties" %>
+<%@ Import Namespace="Core" %>
+<%@ Import Namespace="Lib" %>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta content="NO-CACHE" http-equiv="PRAGMA" />
+    <meta content="NO-CACHE" http-equiv="CACHE-CONTROL" />
+    <title></title>
+    <asp:Literal ID="HeadLiteral" runat="server"></asp:Literal>
+    <link type='text/css' href='/plugins/icons/icons.css' rel='stylesheet'/>
+    <link type='text/css' href='/administration/css/style.css' rel='stylesheet'/>
+    <link type='text/css' href='/css/utils.css' rel='stylesheet'/>
+    <script type='text/javascript' src='/scripts/utils.js'></script>
+    <script type='text/javascript' src='/administration/scripts/MasterPage.master.js'></script>    
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+            
+        <div class="side-menu">
+			<img src="<%=Root %>img/logo.png" width="292" height="64" alt="Logo"/>
+
+            <ul id="analog-clock" class="analog">	
+	   	        <li class="hour"></li>
+	            <li class="min"></li>
+                <li class="sec"></li>        
+                <li class="meridiem"></li>
+            </ul>
+
+            <a href="#" class="page-toggle close"></a>
+
+			<h2><%=UserObject.FullName %></h2>
+			<p>← <a href="/">საიტზე დაბრუნება</a> • <a href="/logout.aspx">გამოსვლა</a></p>                        
+            <ul class="top-menu">
+                <asp:Repeater ID="TopMenuRepeater" runat="server" EnableViewState="false" OnItemDataBound="TopMenuRepeater_ItemDataBound">
+                    <ItemTemplate>
+                        <li class="<%# (bool)Eval("IsOpened") ? "on" : "off"%>"><a href="#"><%#Eval("Caption") %></a>
+                        <asp:Repeater ID="SubMenuRepeater" runat="server" EnableViewState="false">
+                            <HeaderTemplate>
+                            <ul class="top-menu hidden">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li><img src="<%=Root %>img/icons/menu/<%#Eval("Icon") %>"/><a <%# (bool)Eval("Selected")?"class=\"selected\"":string.Empty %> href="<%=Root %><%#Eval("AspxPagePath") %>"><%#Eval("Caption") %></a></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                            </ul>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
+		</div>
+		<div id="content">
+			<p class="nav"><asp:Literal ID="NavigationMenuLiteral" runat="server"></asp:Literal></p>
+			<div id="view">
+                <asp:PlaceHolder ID="PageTitlePlaceHolder" runat="server" EnableViewState="false" Visible="false">
+                <h1><asp:Literal ID="PageTitleLiteral" runat="server" EnableViewState="false"></asp:Literal></h1>
+                </asp:PlaceHolder>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">        
+                </asp:ContentPlaceHolder>
+            </div>
+		</div>        
+        <input type="hidden" id="HFRoot" value="<%=Root %>" />        
+        <input type="hidden" id="HFAbort" value="<%=Resources.Abort %>" />        
+        <asp:PlaceHolder ID="DialogPlaceHolder" runat="server" Visible="false" ViewStateMode="Disabled">
+        <div id="dialog">
+	        <p><asp:Literal ID="DialogTextLiteral" runat="server" ViewStateMode="Disabled"></asp:Literal></p>
+        </div>
+        </asp:PlaceHolder>
+        <asp:PlaceHolder ID="HelpPlaceHolder" runat="server" ViewStateMode="Disabled" Visible="false">
+        <div class="help-container">
+            <span></span>
+            <asp:HyperLink ID="HelpLink" runat="server" Text="Need Some Help?"></asp:HyperLink>
+        </div>
+        </asp:PlaceHolder>
+    </form>
+    <asp:ContentPlaceHolder id="ScriptsPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

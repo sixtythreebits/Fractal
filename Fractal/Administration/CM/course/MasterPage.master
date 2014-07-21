@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" MasterPageFile="../../MasterPage.master" AutoEventWireup="true" Inherits="administration_course_MasterPage" Codebehind="MasterPage.master.cs" %>
+<%@ MasterType TypeName="administration_MasterPage" %>
+<%@ Reference Control="~/administration/MasterPage.master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:Literal ID="HeadLiteral" runat="server" EnableViewState="false"></asp:Literal>
+    <asp:ContentPlaceHolder id="CourseHeadPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Literal ID="MenuLiteral" runat="server" EnableViewState="false"></asp:Literal>
+
+<div class="view-top clearfix">
+    <ul>
+        <li>წიგნი</li>
+        <li class="sub-nav"><a href="<%=Master.Root %>CM/course/default.aspx?id=<%=CourseObject.ID %>"><asp:Literal ID="CourseCaptionLiteral" runat="server" EnableViewState="false"></asp:Literal></a>
+            <div class="sub-div">
+                <div class="sub-t"></div>
+                <ul>
+                    <asp:Repeater ID="CourseMenuRepeater" runat="server">
+                        <ItemTemplate>
+                            <li><a class="icon text <%#Eval("Icon") %>" href="<%# string.Format("{0}{1}?id={2}", Master.Root, Eval("AspxPagePath"), CourseObject.ID) %>"><%#Eval("Caption") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>                    
+                </ul>
+                <div class="sub-b"></div>
+            </div>
+        </li>
+        <asp:PlaceHolder ID="CourseNavigationLevelPlaceHolder" runat="server" EnableViewState="false" Visible="false">
+        <li class="sep"></li>
+        <li class="current"><asp:Literal ID="CourseNavigationCurrentLevelLiteral" runat="server" EnableViewState="false"></asp:Literal></li>        
+        <asp:Repeater ID="AdditionalMenuItemsRepeater" runat="server">
+            <ItemTemplate>
+                <li class="sep"></li>
+                <li class="current"><%#Container.DataItem %></li>        
+            </ItemTemplate>
+        </asp:Repeater>
+        </asp:PlaceHolder>
+    </ul>
+</div>
+<asp:ContentPlaceHolder id="CourseContentPlaceHolder" runat="server">
+</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" runat="server" ContentPlaceHolderID="ScriptsPlaceHolder">
+    <asp:ContentPlaceHolder ID="CourseScriptsPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

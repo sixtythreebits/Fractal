@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fractal", "Fractal\Fractal.csproj", "{51B8A692-AA6C-4773-A00E-05BD34D1E43A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{CD4F1299-1FD6-49A3-8232-F133439994B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{02E1F55A-5880-4AD1-BAB8-C0377A3496D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51B8A692-AA6C-4773-A00E-05BD34D1E43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B8A692-AA6C-4773-A00E-05BD34D1E43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B8A692-AA6C-4773-A00E-05BD34D1E43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B8A692-AA6C-4773-A00E-05BD34D1E43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD4F1299-1FD6-49A3-8232-F133439994B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD4F1299-1FD6-49A3-8232-F133439994B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD4F1299-1FD6-49A3-8232-F133439994B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD4F1299-1FD6-49A3-8232-F133439994B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E1F55A-5880-4AD1-BAB8-C0377A3496D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E1F55A-5880-4AD1-BAB8-C0377A3496D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E1F55A-5880-4AD1-BAB8-C0377A3496D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E1F55A-5880-4AD1-BAB8-C0377A3496D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

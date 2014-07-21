@@ -1,0 +1,360 @@
+﻿html {
+    font-family:"Lucida Grande", Verdana,arial,sans-serif;
+    background: url('../../img/popup/title-bg.png') repeat-x;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    font: 70% "Lucida Grande", Verdana,arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5em;
+    color: black;
+}
+
+img {
+    border: 0px;
+}
+
+* {
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+a {
+    color: #880000;
+    text-decoration: none;
+}
+
+.form.price > input, .form.score > input, .form.year > input {
+    width: 144px !important;
+}
+
+/*--------------------------------------------------------------*/
+#pop-title {
+    float: left;
+    width: 100%;
+    height: 94px;
+    background: url('../../img/popup/title-fg.png') center top no-repeat;
+}
+
+#pop-title > h1 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #FFF;
+    text-shadow: #000 0px 1px 1px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.pop-menu {
+    float: left;
+    width: 100%;
+    margin-top: 12px;
+    position: absolute;
+    top: 37px;
+    left: 0px;
+}
+
+.pop-menu > a.icon.text {
+    line-height: 32px;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: #000 0px 1px 1px;
+    font-size: 14px;
+    font-weight:bold;
+    margin-left: 20px;
+}
+
+.pop-menu > a.icon-text:hover {
+    text-shadow: #000 0px 2px 1px;
+}
+
+#pop-content > .page-title {
+    border-bottom: 1px dotted #B2B2B2;
+    clear: both;
+    float: left;
+    position: relative;
+    width: 600px;
+    margin: 0px 0px 30px 20px;
+}
+
+#pop-content > .page-title h2 {
+    color: #999999;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+#pop-content {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.pop-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    background: url('../../img/popup/close.png');
+}
+
+#pop-content.choose-question {
+    width: 630px;
+    text-align: center;
+}
+
+    #pop-content.choose-question > input {
+        background: url('../../img/choose-question/search-bg.png');
+        width: 540px;
+        height: 33px;
+        border: 0px none;
+        font-size: 14px;
+        line-height: 14px;
+        padding-left: 48px;
+        padding-right: 20px;
+        height: 43px;
+    }
+
+    #pop-content.choose-question > p {
+        background: url('../../img/choose-question/separator.png') no-repeat bottom center;
+        height: 40px;
+        line-height: 27px;
+        color: #999;
+    }
+
+    #pop-content.choose-question > ul {
+        margin: 0px 13px;
+        width: 607px;
+        list-style: none;
+    }
+
+        #pop-content.choose-question > ul > li {
+            border-bottom: 1px dotted #ccc;
+            padding: 15px;
+            text-align: left;
+            padding-left: 35px;
+            position: relative;
+        }
+
+            #pop-content.choose-question > ul > li > div {
+                display: none;
+            }
+
+            #pop-content.choose-question > ul > li > p {
+                display: block;
+            }
+
+            #pop-content.choose-question > ul > li > a.add {
+                position: absolute;
+                background: url('../../img/choose-question/add.png') no-repeat center center;
+                width: 32px;
+                height: 32px;
+                top: 4px;
+                left: 0px;
+                display: block;
+            }
+
+            #pop-content.choose-question > ul > li.undo > div {
+                display: block;
+            }
+
+            #pop-content.choose-question > ul > li.undo > p {
+                display: none;
+            }
+
+            #pop-content.choose-question > ul > li > p > .selection {
+                background: #ffeb99;
+                font-weight: bold;
+            }
+
+            #pop-content.choose-question > ul > li.undo {
+                background: #fff6d3;
+            }
+
+                #pop-content.choose-question > ul > li.undo > div > a {
+                    position: relative;
+                    background: url('../../img/choose-question/undo.png') no-repeat left center;
+                    padding-left: 30px;
+                    left: -25px;
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                    #pop-content.choose-question > ul > li.undo > div > a > span {
+                        color: #990000;
+                    }
+
+                #pop-content.choose-question > ul > li.undo > a.add {
+                    display: none;
+                }
+
+#pop-content .quiz-container {
+    margin:0 20px 0 20px;
+}
+
+#ui-datepicker-div {
+    z-index: 100 !important;
+}
+
+.popup.title {
+    line-height: 26px;
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0px 10px;
+    border-bottom: 1px solid #999999;
+    margin: 0px 10px;
+}
+
+/*-------------------- Alert Popup ---------------*/
+.alert-popap {
+}
+
+    .alert-popap .margin {
+        margin-top: 100px;
+    }
+
+    .alert-popap .form .select{
+        width: 304px;
+    }
+
+    .alert-popap .form .icon32.arrow-down-rounded {
+        position: absolute;
+        right: 60px;
+        top: 4px;
+    }
+
+    .alert-popap .form .custom-form-text {
+        width: 340px;
+        height: 200px;
+        margin-left: 180px;
+        margin-top: -20px;
+        list-style: none;
+        overflow: auto;
+    }
+
+    .alert-popap .form > span {
+        float: left;
+        margin-left: 180px;
+        margin-top: 10px;
+        position: static;
+    }
+
+    .alert-popap .form .custom-form-text li {
+        float: left;
+        width: 100%;
+        border-bottom: 1px dotted #b2b2b2;
+        position: relative;
+    }
+
+        .alert-popap .form .custom-form-text li p {
+            margin-right: 40px;
+            margin: 10px 0px 10px 0px;
+            line-height: 14px;
+            width: 300px;
+            float: left;
+        }
+
+        .alert-popap .form .custom-form-text li .icon {
+            position:absolute;
+            right: 0px;
+            top: 5px;
+        }
+/*-------------------/ Alert Popup ---------------*/
+
+
+
+
+
+/*-------------------- Asset Item ---------------*/
+#asset-list {
+    padding-left: 10px;
+}
+
+div.asset-item {
+    height: 60px;
+    position: relative;
+    margin: 0px 5px;
+}
+
+div.asset-item > * {
+    position: absolute;
+}
+
+div.asset-item > img {
+    left: 40px;
+    top: 10px;
+    cursor: pointer;
+}
+
+div.asset-item > div {
+    left: 120px;
+    top: 16px;
+    color: #333;
+}
+
+div.asset-item > div > h1 {
+    font-size: 14px;
+}
+
+div.asset-item > div > h1 > a {
+    color: #000 !important;
+    font-size: 14px;
+}
+
+div.asset-item > span.topic {
+    right: 50px;
+    top: 23px;
+    color: #999;
+}
+
+div.asset-item > .icon{
+    top: 21px;
+    left: 7px;
+}
+
+div.asset-item > .icon.trash,
+div.asset-item > .icon.add,
+div.asset-item > .icon.loader {
+    right: 5px;
+    left: auto;
+}
+
+div.asset-item > div > span {
+    color: #999999;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+/*------------------/ Asset Item ---------------*/
+
+input.search {
+    background: url("../../img/search.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    float: right;
+    height: 16px;
+    line-height: 16px;
+    margin-right: 20px;
+    padding: 7px 9px 7px 30px;
+    width: 200px;
+}
+
+#pop-content .popup-quiz-container {
+    margin:0 30px 0 0;
+}
+
+
