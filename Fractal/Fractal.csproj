@@ -1189,6 +1189,7 @@
     <Content Include="scripts\jquery-2.1.0.min.js" />
     <Content Include="scripts\js.js" />
     <Content Include="scripts\utils.js" />
+    <Content Include="signup.aspx" />
     <Content Include="UserControls\ExporterControl.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1453,6 +1454,13 @@
       <DependentUpon>SuccessErrorControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ExporterControl.ascx.cs">
       <DependentUpon>ExporterControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

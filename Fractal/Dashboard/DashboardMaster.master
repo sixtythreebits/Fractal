@@ -7,7 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <div class="dashboard cl">
+    <div class="cnt dashboard cl">
         <nav>
             <ul>
                 <li class="active">

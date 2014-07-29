@@ -22,7 +22,7 @@
 
 
         <div class="bar-code">
-            <div class="form">
+            <div class="bar-code-form">
                 <label>შეიყვანეთ კოდი იმისთვის, რომ მიიღოთ წვდომა გამოცდებთან</label>
                 <input type="text" />
                 <input type="submit" class="btn big" value="გაგზავნა" />
