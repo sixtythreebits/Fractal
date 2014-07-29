@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Roles" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="management_UM_Roles" Theme="Office2010Silver" Codebehind="Roles.aspx.cs" %>
+﻿<%@ Page Title="Roles" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="management_UM_Roles" Theme="DevEx" Codebehind="Roles.aspx.cs" %>
 <%@ MasterType TypeName="administration_MasterPage" %>
 <%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
 <%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>

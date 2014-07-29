@@ -7,7 +7,8 @@ using Core.Utilities;
 
 public partial class management_UM_users : System.Web.UI.Page
 {
-    User RowUserObject;    
+    User RowUserObject;
+    public string FormatDateTime = Res.FormatDateTime;
 
     protected void Page_Load(object sender, EventArgs e)
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" Inherits="administration_CM_course_QuizResults" Theme="Office2010Silver" Codebehind="QuizResults.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" Inherits="administration_CM_course_QuizResults" Theme="DevEx" Codebehind="QuizResults.aspx.cs" %>
 <%@ MasterType TypeName="administration_course_MasterPage" %>
 <%@ Reference Control="~/administration/MasterPage.master" %>
 <%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
