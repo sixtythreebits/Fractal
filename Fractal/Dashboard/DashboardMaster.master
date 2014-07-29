@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DashboardMaster.master.cs" Inherits="Fractal.Dashboard.DashboardMaster" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <asp:ContentPlaceHolder ID="DashboardHeadPlaceHolder" runat="server">        
+    </asp:ContentPlaceHolder>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    <div class="dashboard cl">
+        <nav>
+            <ul>
+                <li class="active">
+                    <a href="#">მთავარი</a>
+                </li>
+                <li>
+                    <a href="#">პროფილი</a>
+                </li>
+                <li>
+                    <a href="#">პაროლის შეცვლა</a>
+                </li>
+                <li>
+                    <a href="#">ჩაბარებული ტესტები</a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <asp:ContentPlaceHolder ID="DashboardContentPlaceHolder" runat="server">        
+            </asp:ContentPlaceHolder>
+        </section>
+    </div>
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="DashboardScriptsPlaceHolder" runat="server">        
+    </asp:ContentPlaceHolder>
+</asp:Content>

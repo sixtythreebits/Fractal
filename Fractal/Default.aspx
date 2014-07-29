@@ -4,13 +4,12 @@
     <script src="plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="slider">
-        <ul>
-            <li style="background-image:url(images/0/sl-01.jpg)"></li>
-            <li style="background-image:url(images/0/sl-02.jpg)"></li>
-            <li style="background-image:url(images/0/sl-01.jpg)"></li>
-            <li style="background-image:url(images/0/sl-02.jpg)"></li>
-        </ul>
+    <div class="home-top">
+        <div>
+            <h3><span>ლორემ იპსუმ</span></h3>
+            <h4><span>დოლორ სიტ ამეტ</span></h4>
+            <a href="#" class="btn big">დარეგისტრირდი</a>
+        </div>
     </div>
     <section class="home gray">
         <h2 class="title">

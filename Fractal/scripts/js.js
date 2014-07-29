@@ -23,9 +23,25 @@ $(function(){
         return false;
     });
 
-    $('.slider > ul').bxSlider({
-        auto: true,
-        controls: false
+    //$('.slider > ul').bxSlider({
+    //    auto: true,
+    //    controls: false
+    //});
+
+    //grid
+    $('.grid .name a').mouseover(function () {
+        var SpanWidth = $(this).parent().parent().width();
+        var LinkWidth = $(this).width();
+
+        if (LinkWidth > SpanWidth) {
+            speed = 4000 + 13 * (LinkWidth - SpanWidth);
+            if (LinkWidth < 600) { speed = 3000 }
+            //console.log(speed);
+            $(this).stop().animate({ 'left': -(LinkWidth - SpanWidth) }, speed)
+        }
+    });
+    $('.grid .name a').mouseout(function () {
+        $(this).stop().animate({ 'left': 0 }, 1000)
     });
 
 });

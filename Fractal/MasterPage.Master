@@ -50,8 +50,7 @@
                 </ul>
             </nav>
         </header>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">        
         </asp:ContentPlaceHolder>
         <footer>
             <div>
@@ -64,5 +63,7 @@
         </footer>
     </div>
     </form>
+    <asp:ContentPlaceHolder ID="ScriptsPlaceHolder" runat="server">        
+    </asp:ContentPlaceHolder>
 </body>
 </html>

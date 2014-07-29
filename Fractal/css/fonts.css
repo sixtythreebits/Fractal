@@ -25,7 +25,7 @@
 	src: url('../fonts/BPG_DejaVuSansMt.eot?#iefix') format('embedded-opentype'),
 			 url('../fonts/BPG_DejaVuSansMt.woff') format('woff'),
 			 url('../fonts/BPG_DejaVuSansMt.ttf') format('truetype'),
-			 url('../fonts/BPG_DejaVuSansMt.svg#BPG DejaVu Sans') format('svg');
+			 url('../fonts/BPG_DejaVuSansMt.svg#BPG DejaVu Sans MT') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -35,7 +35,18 @@
 	src: url('../fonts/BPG_DejaVuSansMt_Bold.eot?#iefix') format('embedded-opentype'),
 			 url('../fonts/BPG_DejaVuSansMt_Bold.woff') format('woff'),
 			 url('../fonts/BPG_DejaVuSansMt_Bold.ttf') format('truetype'),
-			 url('../fonts/BPG_DejaVuSansMt_Bold.svg#BPG DejaVu Sans') format('svg');
+			 url('../fonts/BPG_DejaVuSansMt_Bold.svg#BPG DejaVu Sans MT') format('svg');
 	font-weight: bold;
+	font-style: normal;
+}
+
+ @font-face {
+	font-family: 'BPG DejaVu Sans MT';
+	src: url('../fonts/BPG_DejaVuSansMT_Extralight.eot');
+	src: url('../fonts/BPG_DejaVuSansMT_Extralight.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/BPG_DejaVuSansMT_Extralight.woff') format('woff'),
+			 url('../fonts/BPG_DejaVuSansMT_Extralight.ttf') format('truetype'),
+			 url('../fonts/BPG_DejaVuSansMT_Extralight.svg#BPG DejaVu Sans MT') format('svg');
+	font-weight: 200;
 	font-style: normal;
 }
