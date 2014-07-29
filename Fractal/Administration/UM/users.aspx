@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Users" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="management_UM_users" Theme="Office2010Silver" Codebehind="users.aspx.cs" %>
+﻿<%@ Page Title="Users" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="management_UM_users" Theme="DevEx" Codebehind="users.aspx.cs" %>
 <%@ MasterType TypeName="administration_MasterPage" %>
 <%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
 <%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
@@ -8,8 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="main-title">
 	<span class="left"></span>
-	<a href="#" class="icon text add">Create New</a>
-    <a href="#" class="icon text puzzle">Show Customization Form</a>    
+	<a href="#" class="icon text add">დამატება</a>    
 	<span class="right"></span>
 </div>    
 <div class="container">
@@ -17,7 +16,7 @@
         onrowdeleting="UsersGrid_RowDeleting" onrowinserting="UsersGrid_RowInserting" onrowupdating="UsersGrid_RowUpdating" onrowvalidating="UsersGrid_RowValidating">
         <ClientSideEvents CallbackError="OnCallbackError" />
         <Columns>                                                            
-            <dx:GridViewDataTextColumn FieldName="Username" Caption="Username" Width="220px">
+            <dx:GridViewDataTextColumn FieldName="Username" Caption="მომხმარებელი" Width="220px">
                 <Settings AutoFilterCondition="Contains" />
                 <PropertiesTextEdit MaxLength="50">
                     <ValidationSettings>
@@ -25,22 +24,22 @@
                     </ValidationSettings>
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Password" Caption="Password" Width="80px">
+            <dx:GridViewDataTextColumn FieldName="Password" Caption="პაროლი" Width="80px">
                 <PropertiesTextEdit MaxLength="50">
                 </PropertiesTextEdit>
                 <DataItemTemplate>****</DataItemTemplate>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Fname" Caption="Fname" Width="100px">
+            <dx:GridViewDataTextColumn FieldName="Fname" Caption="სახელი" Width="100px">
                 <Settings AutoFilterCondition="Contains" />
                 <PropertiesTextEdit MaxLength="20">
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Lname" Caption="Lname"  Width="100px">
+            <dx:GridViewDataTextColumn FieldName="Lname" Caption="გვარი"  Width="100px">
                 <Settings AutoFilterCondition="Contains" />
                 <PropertiesTextEdit MaxLength="20">
                 </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>            
-            <dx:GridViewDataTextColumn FieldName="Email" Caption="Email" Width="220px">
+            <dx:GridViewDataTextColumn FieldName="Email" Caption="ელ-ფოსტა" Width="220px">
                 <Settings AutoFilterCondition="Contains" />
                 <PropertiesTextEdit MaxLength="100">
                     <ValidationSettings>
@@ -48,51 +47,32 @@
                         <RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
                     </ValidationSettings>
                 </PropertiesTextEdit>
-            </dx:GridViewDataTextColumn>                        
-            <dx:GridViewDataTextColumn FieldName="College" Caption="College"  Width="150px">
-                <Settings AutoFilterCondition="Contains" />                
-                <PropertiesTextEdit MaxLength="20">
-                </PropertiesTextEdit>
-                <EditItemTemplate></EditItemTemplate>
-            </dx:GridViewDataTextColumn>                                                                              
-            <dx:GridViewDataCheckColumn FieldName="IsTeacher" Caption="Teacher" Width="70px">
-                <PropertiesCheckEdit DisplayTextChecked="Teacher" DisplayTextUnchecked="Student">                    
-                </PropertiesCheckEdit>
+            </dx:GridViewDataTextColumn>                                                                          
+            <dx:GridViewDataCheckColumn FieldName="IsAdmin" Caption="ადმინი" Width="60px">                
             </dx:GridViewDataCheckColumn>
-            <dx:GridViewDataCheckColumn FieldName="IsTA" Caption="TA" Width="50px">
-            </dx:GridViewDataCheckColumn>
-            <dx:GridViewDataCheckColumn FieldName="IsAdmin" Caption="Admin" Width="60px">                
-            </dx:GridViewDataCheckColumn>
-            <dx:GridViewDataCheckColumn FieldName="IsActive" Caption="Active" Width="70px">
+            <dx:GridViewDataCheckColumn FieldName="IsActive" Caption="აქტიური" Width="70px">
                 <PropertiesCheckEdit DisplayTextChecked="Active" DisplayTextUnchecked="Not Active"></PropertiesCheckEdit> 
             </dx:GridViewDataCheckColumn>
-            <dx:GridViewDataDateColumn FieldName="LastVisitDate" Caption="Last Visit" Width="170px" Visible="false">
+            <dx:GridViewDataDateColumn FieldName="LastVisitDate" Caption="ბოლო ვიზიტი" Width="170px" Visible="false">
                 <Settings AllowDragDrop="True" />
                 <PropertiesDateEdit DisplayFormatString="MMM dd, yyyy hh:mm tt"></PropertiesDateEdit>
                 <EditCellStyle>
                     <Paddings PaddingLeft="7px" PaddingRight="7px" />
                 </EditCellStyle>
                 <EditItemTemplate>
-                    <%#Eval("LastVisitDate","{0:" + General.Properties.Resources.FormatDateTime + "}") %>
+                    <%#Eval("LastVisitDate","{0:" + FormatDateTime + "}") %>
                 </EditItemTemplate>
             </dx:GridViewDataDateColumn>                        
-            <dx:GridViewDataDateColumn FieldName="CRTime" Caption="Reg Date"  Width="170px">
+            <dx:GridViewDataDateColumn FieldName="CRTime" Caption="რეგ. თარიღი"  Width="170px">
                 <Settings AllowDragDrop="True" />
                 <PropertiesDateEdit DisplayFormatString="MMM dd, yyyy hh:mm tt"></PropertiesDateEdit>
                 <EditCellStyle>
                     <Paddings PaddingLeft="7px" PaddingRight="7px" />
                 </EditCellStyle>
                 <EditItemTemplate>
-                    <%#Eval("CRTime","{0:" + General.Properties.Resources.FormatDateTime + "}") %>                    
+                    <%#Eval("CRTime","{0:" + FormatDateTime + "}") %>                    
                 </EditItemTemplate>
-            </dx:GridViewDataDateColumn>
-            <dx:GridViewDataColumn Caption="More" Width="50px">
-                <CellStyle HorizontalAlign="Center"></CellStyle>
-                <DataItemTemplate>
-                <a href="user.aspx?id=<%#Eval("ID") %>"><img src="<%=Core.Utilities.AppSettings.PluginIconImagesFolderHttpPath %>info.png" /></a>
-                </DataItemTemplate>
-                <EditItemTemplate></EditItemTemplate>
-            </dx:GridViewDataColumn>
+            </dx:GridViewDataDateColumn>            
             <dx:GridViewCommandColumn  Caption=" " ButtonType="Image" Width="60px" ShowEditButton="true" ShowUpdateButton="true" ShowCancelButton="true" ShowDeleteButton="true" ShowClearFilterButton="true" >
             </dx:GridViewCommandColumn>
             <dx:GridViewDataColumn>
@@ -106,8 +86,7 @@
         <SettingsPopup>
             <CustomizationWindow HorizontalAlign="RightSides" VerticalAlign="TopSides" />
         </SettingsPopup>        
-    </dx:ASPxGridView>
-
+    </dx:ASPxGridView>    
     <asp:ObjectDataSource ID="UsersDataSource" runat="server" DeleteMethod="TX_Users" InsertMethod="TX_Users" SelectMethod="ListUsers" 
         TypeName="Core.User" UpdateMethod="TX_Users" ondeleting="UsersDataSource_Deleting" oninserting="UsersDataSource_Inserting" OnObjectCreated="UsersDataSource_ObjectCreated" OnDeleted="UsersDataSource_Deleted"
         onupdating="UsersDataSource_Updating">

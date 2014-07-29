@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Role User ↔ Permissions" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="management_UM_RoleUP" Theme="Office2010Silver" Codebehind="RoleUP.aspx.cs" %>
+﻿<%@ Page Title="Role User ↔ Permissions" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="management_UM_RoleUP" Theme="DevEx" Codebehind="RoleUP.aspx.cs" %>
 <%@ MasterType TypeName="administration_MasterPage" %>
 <%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"  Namespace="DevExpress.Web.ASPxCallback" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>

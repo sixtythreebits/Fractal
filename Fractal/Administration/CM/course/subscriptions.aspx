@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master"  AutoEventWireup="true" Inherits="administration_CM_course_subscriptions" Theme="Office2010Silver" Codebehind="subscriptions.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master"  AutoEventWireup="true" Inherits="administration_CM_course_subscriptions" Theme="DevEx" Codebehind="subscriptions.aspx.cs" %>
 <%@ MasterType TypeName="administration_course_MasterPage" %>
 <%@ Reference Control="~/administration/MasterPage.master" %>
 
