@@ -28,17 +28,15 @@ namespace Core
         public string Address1 { set; get; }
         public string Address2 { set; get; }
         public string Zip { set; get; }
-        public string City { set; get; }
+        public string CityID { set; get; }
         public string Avatar { set; get; }
         public string About { set; get; }
         public bool IsAuthorized { set; get; }
         public bool IsAdmin { set; get; }
         public bool IsGrant { set; get; }
         public bool IsActive { set; get; }
-        public string SessionID { set; get; }
         public DateTime? LastVisitDate { set; get; }
         public long? VisitCount { set; get; }
-        public bool? Gender { set; get; }
         public List<Role> Roles { set; get; }
         public List<Permission> Permissions { set; get; }
         public XElement Properties { set; get; }
@@ -235,6 +233,53 @@ namespace Core
         }
 
         /// <summary>
+        /// Gets single user by ID, fills all existing and additional properties
+        /// </summary>
+        /// <param name="UserID">User ID Value</param>
+        /// <param name="Slug">User slug</param>
+        public void GetSingleUser(long? UserID = null, string Slug = null)
+        {
+            TryExecute(string.Format("UM.User.GetSingleUser(UserID = {0}, Slug = {1})", UserID, Slug), () =>
+            {
+                using (var db = ConnectionFactory.GetDBUMDataContext())
+                {
+                    var x = db.UM_GetSingleUser(UserID, Slug);
+                    if (x == null)
+                    {
+                        IsError = true;
+                        ErrorMessage = "User Not Found";
+                    }
+                    else
+                    {
+                        this.ID = x.LongValueOf("id");
+                        this.Username = x.ValueOf("username");
+                        this.Password = x.ValueOf("password");
+                        this.Fname = x.ValueOf("fname");
+                        this.Lname = x.ValueOf("lname");
+                        this.FullName = this.Fname + " " + this.Lname;
+                        this.BirthDate = x.DateTimeValueOf("birth_date");
+                        this.Email = x.ValueOf("email");
+                        this.Mobile = x.ValueOf("mobile");
+                        this.Address1 = x.ValueOf("Address1");
+                        this.Address2 = x.ValueOf("address2");
+                        this.Zip = x.ValueOf("zip");
+                        this.CityID = x.ValueOf("city_id");
+                        this.Avatar = x.ValueOf("avatar");
+                        this.LastVisitDate = x.DateTimeValueOf("last_visit_date");
+                        this.VisitCount = x.LongValueOf("visit_count");
+                        this.About = x.ValueOf("about");
+                        this.IsActive = x.BooleanValueOf("is_active") == true;
+
+                        this.Roles = new Role().ListUserRoles(this.ID);
+                        this.Permissions = new Permission().ListUserPermissions(this.ID);
+
+                        this.IsAdmin = (this.ID == 1 || Roles.Where(r => r.Code == 1).Count() > 0);
+                    }
+                }
+            });
+        }
+
+        /// <summary>
         /// Gets Univesal Password
         /// </summary>  
         public string GetUniversalPassword()
@@ -303,56 +348,7 @@ namespace Core
                     }).ToList();
                 }
             });
-        }
-
-        /// <summary>
-        /// Gets single user by ID, fills all existing and additional properties
-        /// </summary>
-        /// <param name="UserID">User ID Value</param>
-        /// <param name="Slug">User slug</param>
-        public void GetSingleUser(long? UserID = null, string Slug = null)
-        {
-            TryExecute(string.Format("UM.User.GetSingleUser(UserID = {0}, Slug = {1})", UserID, Slug), () =>
-            {
-                using (var db = ConnectionFactory.GetDBUMDataContext())
-                {
-                    var x = db.UM_GetSingleUser(UserID, Slug);
-                    if (x == null)
-                    {
-                        IsError = true;
-                        ErrorMessage = "User Not Found";
-                    }
-                    else
-                    {
-                        this.ID = x.LongValueOf("id");
-                        this.Username = x.ValueOf("username");
-                        this.Password = x.ValueOf("password");
-                        this.Fname = x.ValueOf("fname");
-                        this.Lname = x.ValueOf("lname");
-                        this.FullName = this.Fname + " " + this.Lname;
-                        this.BirthDate = x.DateTimeValueOf("birth_date");
-                        this.Email = x.ValueOf("email");
-                        this.Mobile = x.ValueOf("mobile");
-                        this.Address1 = x.ValueOf("Address1");
-                        this.Address2 = x.ValueOf("address2");
-                        this.Zip = x.ValueOf("zip");
-                        this.City = x.ValueOf("city");
-                        this.Avatar = x.ValueOf("avatar");
-                        this.LastVisitDate = x.DateTimeValueOf("last_visit_date");
-                        this.VisitCount = x.LongValueOf("visit_count");
-                        this.About = x.ValueOf("about");
-                        this.IsActive = x.BooleanValueOf("is_active") == true;
-                        this.Gender = x.BooleanValueOf("gender");
-
-                        this.Roles = new Role().ListUserRoles(this.ID);
-                        this.Permissions = new Permission().ListUserPermissions(this.ID);
-
-                        this.IsAdmin = (this.ID == 1 || Roles.Where(r => r.Code == 1).Count() > 0);
-                    }
-                }
-            });
-        }
-
+        }        
 
         /// <summary>
         /// List users of all users registered in database
@@ -544,24 +540,21 @@ namespace Core
         /// <param name="Email">User Email</param>
         /// <param name="Address1">First Address</param>
         /// <param name="Address2">Secondary Address</param>
-        /// <param name="StateID">State database ID</param>
+        /// <param name="CityID">City ID</param>
         /// <param name="Zip">Zip Code</param>
-        /// <param name="City">City</param>
-        /// <param name="Avatar">Avatar File Name</param>        
-        /// <param name="IsActive">Is Active or not</param>
-        /// <param name="DefaultSubjectID">Teacher's default subject</param>
-        /// <param name="CollegeID">Student's college</param>
-        /// <param name="Gender">Student's gender (true - Male, false - Female)</param>
-        public void TSP_Users(byte? iud = null, long? ID = null, string Username = null, string Password = null, string Fname = null, string Lname = null, DateTime? BirthDate = null, string Mobile = null, string Email = null, string Address1 = null, string Address2 = null, int? StateID = null, string Zip = null, string City = null, string Avatar = null, string About = null, bool? IsActive = null, int? DefaultSubjectID = null, int? CollegeID = null, bool? Gender = null)
+        /// <param name="Avatar">Avatar</param>
+        /// <param name="About">About Info</param>
+        /// <param name="IsActive">Is active or not</param>
+        public void TSP_Users(byte? iud = null, long? ID = null, string Username = null, string Password = null, string Fname = null, string Lname = null, DateTime? BirthDate = null, string Mobile = null, string Email = null, string Address1 = null, string Address2 = null, int? CityID = null, string Zip = null, string Avatar = null, string About = null, bool? IsActive = null)
         {
-            TryExecute(string.Format("UM.User.TSP_Users(iud = {0}, ID = {1}, Username = {2}, Password = {3}, Fname = {4}, Lname = {5}, BirthDate = {6}, Mobile = {7}, Email = {8}, Address1 = {9}, Address2 = {10}, StateID = {11}, Zip = {12}, City = {13}, Avatar = {14}, About = {15}, IsActive = {16}, CollegeID = {17}, Gender = {18})", iud, ID, Username, Password, Fname, Lname, BirthDate, Mobile, Email, Address1, Address2, StateID, Zip, City, Avatar, About, IsActive, CollegeID, Gender), () =>
+            TryExecute(string.Format("UM.User.TSP_Users(iud = {0}, ID = {1}, Username = {2}, Password = {3}, Fname = {4}, Lname = {5}, BirthDate = {6}, Mobile = {7}, Email = {8}, Address1 = {9}, Address2 = {10}, CityID = {11}, Zip = {12}, Avatar = {13}, About = {14}, IsActive = {15})", iud, ID, Username, Password, Fname, Lname, BirthDate, Mobile, Email, Address1, Address2, CityID, Zip, CityID, Avatar, About, IsActive), () =>
             {
                 using (var db = ConnectionFactory.GetDBUMDataContext())
                 {
                     long? NewID = ID;
                     Password = (Password == null ? "" : Password.MD5());
 
-                    db.UM_tsp_stUsers(iud, ref NewID, Username, Password, Fname, Lname, BirthDate, Mobile, Email, Address1, Address2, StateID, Zip, City, Avatar, About, DefaultSubjectID, CollegeID, IsActive, Gender);
+                    db.UM_tsp_stUsers(iud, ref NewID, Username, Password, Fname, Lname, BirthDate, Mobile, Email, Address1, Address2, CityID, Zip, Avatar, About, IsActive);
                     this.ID = NewID.Value;
                 }
             });

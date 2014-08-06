@@ -33,7 +33,7 @@ namespace DB
     #endregion
 		
 		public DBUMDataContext() : 
-				base(global::DB.Properties.Settings.Default.FractalConnectionString, mappingSource)
+				base(global::DB.Properties.Settings.Default.FractalConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -66,34 +66,6 @@ namespace DB
 		public int tx_UM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Xml")] System.Xml.Linq.XElement x)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, x);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UM_tsp_stUsers")]
-		public int UM_tsp_stUsers(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] ref System.Nullable<long> userID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(200)")] string password, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fname", DbType="NVarChar(200)")] string fname, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lname", DbType="NVarChar(200)")] string lname, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="BirthDate", DbType="Date")] System.Nullable<System.DateTime> birthDate, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Mobile", DbType="VarChar(100)")] string mobile, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address1", DbType="NVarChar(200)")] string address1, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address2", DbType="NVarChar(200)")] string address2, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="State", DbType="Int")] System.Nullable<int> state, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zip", DbType="VarChar(10)")] string zip, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="NVarChar(200)")] string city, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Avatar", DbType="NVarChar(200)")] string avatar, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="About", DbType="NVarChar(MAX)")] string about, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DefaultSubjectID", DbType="Int")] System.Nullable<int> defaultSubjectID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CollegeID", DbType="Int")] System.Nullable<int> collegeID, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsActive", DbType="Bit")] System.Nullable<bool> isActive, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="Bit")] System.Nullable<bool> gender)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, userID, username, password, fname, lname, birthDate, mobile, email, address1, address2, state, zip, city, avatar, about, defaultSubjectID, collegeID, isActive, gender);
-			userID = ((System.Nullable<long>)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -199,6 +171,30 @@ namespace DB
 		public System.Xml.Linq.XElement UM_GetSingleUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Slug", DbType="VarChar(100)")] string slug)
 		{
 			return ((System.Xml.Linq.XElement)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, slug).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UM_tsp_stUsers")]
+		public int UM_tsp_stUsers(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] ref System.Nullable<long> userID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(50)")] string username, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(200)")] string password, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fname", DbType="NVarChar(200)")] string fname, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lname", DbType="NVarChar(200)")] string lname, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="BirthDate", DbType="Date")] System.Nullable<System.DateTime> birthDate, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Mobile", DbType="VarChar(100)")] string mobile, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(100)")] string email, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address1", DbType="NVarChar(200)")] string address1, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address2", DbType="NVarChar(200)")] string address2, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CityID", DbType="Int")] System.Nullable<int> cityID, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Zip", DbType="VarChar(10)")] string zip, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Avatar", DbType="NVarChar(200)")] string avatar, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="About", DbType="NVarChar(MAX)")] string about, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsActive", DbType="Bit")] System.Nullable<bool> isActive)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, userID, username, password, fname, lname, birthDate, mobile, email, address1, address2, cityID, zip, avatar, about, isActive);
+			userID = ((System.Nullable<long>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

@@ -4,48 +4,50 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Fractal</title>
-    <link href="css/fonts.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <title>Fractal</title>    
+    <link href="/css/fonts.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />        
+    <link href="/css/utils.css" rel="stylesheet" />
+    <script src="/scripts/jquery-2.1.0.min.js"></script>    
+    <script src="/scripts/utils.js"></script>    
+    <script src="/scripts/master.js"></script>
 
-    <script src="scripts/jquery-2.1.0.min.js"></script>
-    
+    <link type="text/css" rel="stylesheet" href="/plugins/gm-loader/gm-loader.css" />
+    <script type="text/javascript" src="/plugins/gm-loader/gm-loader.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <script src="scripts/js.js"></script>
+    </asp:ContentPlaceHolder>    
 </head>
 <body>
     <form id="form1" runat="server">
     <div class="all">
         <header>
-            <span class="logo">Fractal</span>
+            <a href="/" class="logo">Fractal</a>
             <nav>
                 <ul>
-                    <li class="active"><a href="#">მთავარი</a></li>
-                    <li><a href="#">წიგნები</a></li>
+                    <li class="active"><a href="/">მთავარი</a></li>
+                    <li><a>წიგნები</a></li>
                     <li><a href="#">გამოცდები</a></li>
                     <li><a href="#">ჩვენს შესახებ</a></li>
-                    <li><a href="#">კონტაქტი</a></li>
-                    <li class="sign">
+                    <li><a href="#">კონტაქტი</a></li>                    
+                    <li class="sign in">
                         <a href="#" class="btn">შესვლა</a>
                         <div class="hide">
                             <div class="login">
-                                <input type="text" placeholder="მომხმარებელი" />
-
-                                <input type="password" placeholder="პაროლი" />
-
-                                <input type="submit" value="შესვლა" class="btn" />
-
+                                <input id="LoginUsernameTextBox" type="text" placeholder="მომხმარებელი" />
+                                <input id="LoginPasswordTextBox" type="password" placeholder="პაროლი" />
+                                <input id="SignInButton" type="button" value="შესვლა" class="btn" />
                                 <a href="#">დაგავიწყდა პაროლი?</a>
                             </div>
                             <div class="forgot hide">
-                                <input type="text" placeholder="ელ-ფოსტა" />
-
-                                <input type="submit" value="გაგზავნა" class="btn" />
-
+                                <span class="hidden">თქვენს ფოსტაზე გამოგზავნილია წერილი მომდევნო ინსტრუქციებით.</span>
+                                <input id="ForgetPasswordEmail" type="text" placeholder="ელ-ფოსტა" />
+                                <input id="ForgetPasswordButton" type="button" value="გაგზავნა" class="btn" />
                                 <a href="#">შესვლა</a>
                             </div>
                         </div>
+                    </li>
+                    <li class="sign">
+                        <a href="/signup/" class="btn">რეგისტრაცია</a>
                     </li>
                 </ul>
             </nav>

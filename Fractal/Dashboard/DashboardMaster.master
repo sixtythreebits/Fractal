@@ -1,26 +1,24 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DashboardMaster.master.cs" Inherits="Fractal.Dashboard.DashboardMaster" %>
+<%@ MasterType VirtualPath="~/MasterPage.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
     <asp:ContentPlaceHolder ID="DashboardHeadPlaceHolder" runat="server">        
     </asp:ContentPlaceHolder>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
     <div class="cnt dashboard cl">
         <nav>
             <ul>
-                <li class="active">
-                    <a href="#">მთავარი</a>
+                <li>
+                    <a href="/dashboard/">მთავარი</a>
                 </li>
                 <li>
-                    <a href="#">პროფილი</a>
+                    <a href="/dashboard/profile/">პროფილი</a>
                 </li>
                 <li>
-                    <a href="#">პაროლის შეცვლა</a>
+                    <a href="/dashboard/password/">პაროლის შეცვლა</a>
                 </li>
                 <li>
-                    <a href="#">ჩაბარებული ტესტები</a>
+                    <a href="/dashboard/quizzes/">ჩაბარებული ტესტები</a>
                 </li>
             </ul>
         </nav>
@@ -29,9 +27,19 @@
             </asp:ContentPlaceHolder>
         </section>
     </div>
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">
-    <asp:ContentPlaceHolder ID="DashboardScriptsPlaceHolder" runat="server">        
-    </asp:ContentPlaceHolder>
+<asp:ContentPlaceHolder ID="DashboardScriptsPlaceHolder" runat="server">        
+</asp:ContentPlaceHolder>
+<script type="text/javascript">    
+
+    var url = document.URL.split("?")[0];
+    $(".cnt.dashboard.cl nav li a").each(function (index, item) {
+        var href = $(this).attr("href");        
+        if (url.indexOf(href, url.length - href.length) !== -1) {
+            $(this).removeAttr("href");
+            $(this).parent().addClass("active");
+        }
+    });
+</script>
 </asp:Content>

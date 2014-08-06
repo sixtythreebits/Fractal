@@ -151,6 +151,15 @@ namespace Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს..
+        /// </summary>
+        public static string EmailTextRegistration {
+            get {
+                return ResourceManager.GetString("EmailTextRegistration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MMM dd, yyyy.
         /// </summary>
         public static string FormatDate {
@@ -214,11 +223,110 @@ namespace Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to თქვენს მიერ მითითებული ელ ფოსტა ჩვენს სისტემაში ვერ მოიძებნა..
+        /// </summary>
+        public static string InformationEmailNotInDB {
+            get {
+                return ResourceManager.GetString("InformationEmailNotInDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to როგორც ჩანს თქვენ მოითხოვეთ პაროლის შეცვლა. მიჰყევით ბმულს თუ ნამდვილად გნებავთ გამოცვალოთ თქვენი პაროლი..
+        /// </summary>
+        public static string InformationPasswordReset {
+            get {
+                return ResourceManager.GetString("InformationPasswordReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to თქვენ წარმატებით შეცვალეთ თქვენი პაროლი.
+        /// </summary>
+        public static string InformationPasswordUpdateSuccess {
+            get {
+                return ResourceManager.GetString("InformationPasswordUpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to თქვენი პროფილი წარმატებით გააქტიურდა..
+        /// </summary>
+        public static string InformationProfileActivationSuccess {
+            get {
+                return ResourceManager.GetString("InformationProfileActivationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა პროფილის აქტივაციისათვის..
+        /// </summary>
+        public static string InformationRegistrationSuccess {
+            get {
+                return ResourceManager.GetString("InformationRegistrationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ელ-ფოსტის ფორმატი არასწორია..
+        /// </summary>
+        public static string InvalidEmailFormat {
+            get {
+                return ResourceManager.GetString("InvalidEmailFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to შეტანილი პაროლი არ ემთხვევა მიმდინარე პაროლს..
+        /// </summary>
+        public static string InvalidOldPassword {
+            get {
+                return ResourceManager.GetString("InvalidOldPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to თქვენ არასწორად გაიმეორეთ პაროლი..
+        /// </summary>
+        public static string InvalidRePassword {
+            get {
+                return ResourceManager.GetString("InvalidRePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to არასწორი მომხმარებელია ან პაროლი..
+        /// </summary>
+        public static string InvalidUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("InvalidUsernameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$.
+        /// </summary>
+        public static string RegexEmail {
+            get {
+                return ResourceManager.GetString("RegexEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to აუცილებელია წიგნის დასახელების შეყვანა.
         /// </summary>
         public static string RequiredCourseCaption {
             get {
                 return ResourceManager.GetString("RequiredCourseCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to აუცილებელია ელ - ფოსტის შეყვანა..
+        /// </summary>
+        public static string RequiredEmail {
+            get {
+                return ResourceManager.GetString("RequiredEmail", resourceCulture);
             }
         }
         
@@ -232,11 +340,38 @@ namespace Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to სახელის შეყვანა აუცილებელია..
+        /// </summary>
+        public static string RequiredFirstName {
+            get {
+                return ResourceManager.GetString("RequiredFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to აუცილებელია პასუხების გამოქვეყნების თარიღის შეყვანა..
         /// </summary>
         public static string RequiredGradeDate {
             get {
                 return ResourceManager.GetString("RequiredGradeDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to გვარის შეყვანა აუცილებელია..
+        /// </summary>
+        public static string RequiredLastName {
+            get {
+                return ResourceManager.GetString("RequiredLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to პაროლის შეყვანა აუცილებელია..
+        /// </summary>
+        public static string RequiredPassword {
+            get {
+                return ResourceManager.GetString("RequiredPassword", resourceCulture);
             }
         }
         

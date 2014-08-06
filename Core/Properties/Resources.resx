@@ -147,6 +147,9 @@
   <data name="DontTouchMe" xml:space="preserve">
     <value>Admin cant be touched.</value>
   </data>
+  <data name="EmailTextRegistration" xml:space="preserve">
+    <value>გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს.</value>
+  </data>
   <data name="FormatDate" xml:space="preserve">
     <value>MMM dd, yyyy</value>
   </data>
@@ -168,14 +171,56 @@
   <data name="InfoNoSubscriptions" xml:space="preserve">
     <value>No Subscriptions.</value>
   </data>
+  <data name="InformationEmailNotInDB" xml:space="preserve">
+    <value>თქვენს მიერ მითითებული ელ ფოსტა ჩვენს სისტემაში ვერ მოიძებნა.</value>
+  </data>
+  <data name="InformationPasswordReset" xml:space="preserve">
+    <value>როგორც ჩანს თქვენ მოითხოვეთ პაროლის შეცვლა. მიჰყევით ბმულს თუ ნამდვილად გნებავთ გამოცვალოთ თქვენი პაროლი.</value>
+  </data>
+  <data name="InformationPasswordUpdateSuccess" xml:space="preserve">
+    <value>თქვენ წარმატებით შეცვალეთ თქვენი პაროლი</value>
+  </data>
+  <data name="InformationProfileActivationSuccess" xml:space="preserve">
+    <value>თქვენი პროფილი წარმატებით გააქტიურდა.</value>
+  </data>
+  <data name="InformationRegistrationSuccess" xml:space="preserve">
+    <value>თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა პროფილის აქტივაციისათვის.</value>
+  </data>
+  <data name="InvalidEmailFormat" xml:space="preserve">
+    <value>ელ-ფოსტის ფორმატი არასწორია.</value>
+  </data>
+  <data name="InvalidOldPassword" xml:space="preserve">
+    <value>შეტანილი პაროლი არ ემთხვევა მიმდინარე პაროლს.</value>
+  </data>
+  <data name="InvalidRePassword" xml:space="preserve">
+    <value>თქვენ არასწორად გაიმეორეთ პაროლი.</value>
+  </data>
+  <data name="InvalidUsernameOrPassword" xml:space="preserve">
+    <value>არასწორი მომხმარებელია ან პაროლი.</value>
+  </data>
+  <data name="RegexEmail" xml:space="preserve">
+    <value>^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$</value>
+  </data>
   <data name="RequiredCourseCaption" xml:space="preserve">
     <value>აუცილებელია წიგნის დასახელების შეყვანა</value>
+  </data>
+  <data name="RequiredEmail" xml:space="preserve">
+    <value>აუცილებელია ელ - ფოსტის შეყვანა.</value>
   </data>
   <data name="RequiredEndDate" xml:space="preserve">
     <value>აუცილებელია დაწყების თარიღის შეყვანა.</value>
   </data>
+  <data name="RequiredFirstName" xml:space="preserve">
+    <value>სახელის შეყვანა აუცილებელია.</value>
+  </data>
   <data name="RequiredGradeDate" xml:space="preserve">
     <value>აუცილებელია პასუხების გამოქვეყნების თარიღის შეყვანა.</value>
+  </data>
+  <data name="RequiredLastName" xml:space="preserve">
+    <value>გვარის შეყვანა აუცილებელია.</value>
+  </data>
+  <data name="RequiredPassword" xml:space="preserve">
+    <value>პაროლის შეყვანა აუცილებელია.</value>
   </data>
   <data name="RequiredQuiz" xml:space="preserve">
     <value>ტესტსის არჩევა აუცილებელია.</value>

@@ -54,6 +54,11 @@ namespace Core
             return string.Format("<link type=\"text/css\" href=\"/plugins/fancybox2.0/jquery.fancybox.css\" rel=\"stylesheet\" />{0}<script type=\"text/javascript\" src=\"/plugins/fancybox2.0/jquery.fancybox.js\"></script>{0}<script type=\"text/javascript\" src=\"/plugins/fancybox2.0/FancyMethods.js\"></script>{0}", Environment.NewLine);
         }
 
+        public static string GetForms()
+        {
+            return string.Format("<link type=\"text/css\" href=\"/plugins/form/form.css\" rel=\"stylesheet\" />{0}<script type=\"text/javascript\" src=\"/plugins/form/form.js\"></script>{0}", Environment.NewLine);
+        }
+
         public static string GetGMLoader()
         {
             return string.Format("<link type='text/css' href='/plugins/gm-loader/gm-loader.css' rel='stylesheet' />{0}<script type='text/javascript' src='/plugins/gm-loader/gm-loader.js'></script>{0}", Environment.NewLine);

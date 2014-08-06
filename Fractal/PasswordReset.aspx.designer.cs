@@ -7,37 +7,55 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fractal.Dashboard {
+namespace Fractal {
     
     
-    public partial class DashboardMaster {
+    public partial class PasswordReset {
         
         /// <summary>
-        /// DashboardHeadPlaceHolder control.
+        /// PasswordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder DashboardHeadPlaceHolder;
+        protected global::System.Web.UI.WebControls.TextBox PasswordTextBox;
         
         /// <summary>
-        /// DashboardContentPlaceHolder control.
+        /// RePasswordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder DashboardContentPlaceHolder;
+        protected global::System.Web.UI.WebControls.TextBox RePasswordTextBox;
         
         /// <summary>
-        /// DashboardScriptsPlaceHolder control.
+        /// FinishResetPasswordButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder DashboardScriptsPlaceHolder;
+        protected global::System.Web.UI.WebControls.Button FinishResetPasswordButton;
+        
+        /// <summary>
+        /// SuccessErrorControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::StreamingTutorsWebProject.UserControls.SuccessErrorControl SuccessErrorControl1;
+        
+        /// <summary>
+        /// ScriptsLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ScriptsLiteral;
         
         /// <summary>
         /// Master property.

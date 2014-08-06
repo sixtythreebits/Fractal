@@ -95,7 +95,9 @@ namespace Core.Utilities
                 using (var db = ConnectionFactory.GetDBCoreDataContext())
                 {
                     return db.List_dtAny(level, dcode)
-                             .OrderBy(a => a.SortVal)
+                             .OrderByDescending(a => a.defval)
+                             .ThenBy(a => a.SortVal)
+                             .ThenBy(a => a.hname)
                              .Select(a => new Any
                              {
                                  ID = a.codeid,
@@ -279,7 +281,6 @@ namespace Core.Utilities
             get { return "/plugins/icons/img/"; }
         }
 
-
         public static string UploadFolderHttpPath
         {
             get { return "/upload/"; }
@@ -288,6 +289,11 @@ namespace Core.Utilities
         public static string UploadFolderPhysicalPath
         {
             get { return ConfigurationManager.AppSettings["UploadFolderPhysicalPath"]; }
+        }
+
+        public static string WebsiteHttpFullPath
+        {
+            get { return Utility.GetRootUrl(); }
         }
         #endregion Properties
     }
@@ -429,14 +435,14 @@ namespace Core.Utilities
 
         }
 
-        public static List<string> GetUploadFileLocations()
+        public static string GetRootUrl()
         {
-            return new string[]
-            {
-                AppSettings.AssetFolderPhysicalPath,
-                AppSettings.UploadFolderPhysicalPath
-            }.ToList();
-        }
+            var Request = HttpContext.Current.Request;
+            var Url = Request.Url;
+
+            string url = Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath;
+            return url += url.EndsWith("/") ? string.Empty : "/";
+        }        
 
         /// <summary>
         /// Takes ID parameter and returs "[ID]_[Guid]" encripted string
@@ -478,6 +484,15 @@ namespace Core.Utilities
                 s = s.Replace(Keys[i], Values[i]);
             }
             return s;
+        }
+
+        public static List<string> GetUploadFileLocations()
+        {
+            return new string[]
+            {
+                AppSettings.AssetFolderPhysicalPath,
+                AppSettings.UploadFolderPhysicalPath
+            }.ToList();
         }
 
         /// <summary>

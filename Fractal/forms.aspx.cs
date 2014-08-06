@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Fractal
 {
-    public partial class Course : System.Web.UI.Page
+    public partial class forms : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

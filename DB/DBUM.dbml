@@ -1,31 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Fractal" Class="DBUMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits\MSSQL2012,49231;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.tx_UM" Method="tx_UM">
     <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
     <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.UM_tsp_stUsers" Method="UM_tsp_stUsers">
-    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
-    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="BirthDate" Parameter="birthDate" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="State" Parameter="state" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="Avatar" Parameter="avatar" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="About" Parameter="about" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="DefaultSubjectID" Parameter="defaultSubjectID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CollegeID" Parameter="collegeID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="Gender" Parameter="gender" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.UM_Authenticate" Method="UM_Authenticate">
@@ -190,5 +167,24 @@
     <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
     <Parameter Name="Slug" Parameter="slug" Type="System.String" DbType="VarChar(100)" />
     <Return Type="System.Xml.Linq.XElement" />
+  </Function>
+  <Function Name="dbo.UM_tsp_stUsers" Method="UM_tsp_stUsers">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="BirthDate" Parameter="birthDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Address1" Parameter="address1" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Address2" Parameter="address2" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Zip" Parameter="zip" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Avatar" Parameter="avatar" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="About" Parameter="about" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

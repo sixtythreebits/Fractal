@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Quiz.cs" />
     <Compile Include="Security.cs" />
+    <Compile Include="Services.cs" />
     <Compile Include="structs.cs" />
     <Compile Include="um.cs" />
     <Compile Include="Utilities.cs" />
