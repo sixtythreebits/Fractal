@@ -319,42 +319,86 @@ section.gray h2 span{
 
 /* ---------- home ---------- */
 .home-top{
+    position:relative;
     width:100%;
-    height:520px;
+    height:496px;
+    overflow:hidden;
 
-    background-image:url(../images/home.jpg);
-    background-position:center center;
-	background-repeat:no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    background: #77b13f; /* Old browsers */
+    background: -moz-linear-gradient(top, #77b13f 0%, #1c733b 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#77b13f), color-stop(100%,#1c733b)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #77b13f 0%,#1c733b 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #77b13f 0%,#1c733b 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #77b13f 0%,#1c733b 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #77b13f 0%,#1c733b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#77b13f', endColorstr='#1c733b',GradientType=0 ); /* IE6-9 */
 }
-.home-top > div{
+.home-top h2.title{
+    position:relative;
+    color:#fff;
+    background:none;
+    margin:40px 0 0 150px;
+}
+.home-top h2.title span {
+    position:absolute;
+    right:0;
+    left:170px;
+    height:100%;
+    background-color:transparent;
+    background:url(../images/pat-white.png) 0 0 repeat-x;
+}
+.home-top ul{
+    list-style:none;
     width:1000px;
     margin:0 auto;
-    padding:35px;
 }
-.home-top h3,
-.home-top h4{
-    max-width:520px;
-    color:#39b54a;
-    font-family: 'BPG DejaVu Sans MT';
-    font-size:47px;
-    line-height:42px;
-    margin-bottom:8px;
+.home-top li{
+    position:relative;
+    float:left;
+    width:50%;
+    height:430px;
 }
-.home-top h3 span,
-.home-top h4 span{
-    display:inline-block;
-    background:#fff;
-    padding-top:7px;
+.home-top li img{
+    position:absolute;
+    left:-5px;
+    top:0;
 }
-.home-top .btn{
-    margin-top:7px;
+.home-top li a{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    margin-left:-125px;
+    display:block;
+    width:253px;
+    height:47px;
+    background:rgba(255,255,255,0.2);
+    border:1px solid rgba(255,255,255,0.57);
+    border-radius:4px;
+
+    color:#fff;
+    font-size:20px;
+    line-height:47px;
+    text-align:center;
+}
+.home-top li a:hover{
+    background:rgba(255,255,255,0.4);
 }
 
 
+ul.banners{
+    list-style:none;
+    width:1000px;
+    margin:0 auto;
+}
+ul.banners li{
+    float:left;
+    width:499px;
+    height:150px;
+    margin:40px 0;
+}
+ul.banners li img{
+    display:block;
+}
 
 section.home{
     padding:44px 0 100px;
