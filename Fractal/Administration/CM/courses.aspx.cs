@@ -109,11 +109,11 @@ public partial class administration_scripts_CM_courses : System.Web.UI.Page
     }
 
     void DeleteCourse()
-   {
-       var ID = Request.Form["id"].ToLong();
-       var C = new Course();
-       C.DeleteCourse(ID);
-   }
+    {
+        var ID = Request.Form["id"].ToLong();
+        var C = new Course();
+        C.DeleteCourse(ID);
+    }
 
     void RenameCourse()
     {

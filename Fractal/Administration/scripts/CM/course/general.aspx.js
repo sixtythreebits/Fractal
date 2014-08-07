@@ -29,10 +29,19 @@ $(document).ready(function () {
     });
 
     $('#DescriptionTextBox').tinymce({
-        "width": "100%",
-        "convert_newlines_to_brs": true,
-        "height": 200,
-        "theme": "simple"
+        width: "100%",
+        height: 2100,
+        theme: "advanced",
+        theme_advanced_buttons1: "bold,italic,underline,forecolor",
+        theme_advanced_buttons2: "",
+        theme_advanced_buttons3: "",
+
+        forced_root_block: false,
+        force_p_newlines: 'false',
+        remove_linebreaks: false,
+        force_br_newlines: true,
+        remove_trailing_nbsp: false,
+        verify_html: false
     });
 
     SetTogglers();

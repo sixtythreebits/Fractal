@@ -33,7 +33,7 @@ namespace DB
     #endregion
 		
 		public DBCoreDataContext() : 
-				base(global::DB.Properties.Settings.Default.FractalConnectionString, mappingSource)
+				base(global::DB.Properties.Settings.Default.FractalConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -141,13 +141,6 @@ namespace DB
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, x, @out);
 			@out = ((System.Xml.Linq.XElement)(result.GetParameterValue(2)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteCourse")]
-		public int DeleteCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseID);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -366,6 +359,19 @@ namespace DB
 		public System.Nullable<long> GetCourseCreatorUserID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID)
 		{
 			return ((System.Nullable<long>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseID).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteCourse")]
+		public int DeleteCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_CourseQuizzesWithUserResults", IsComposable=true)]
+		public IQueryable<List_CourseQuizzesWithUserResultsResult> List_CourseQuizzesWithUserResults([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
+		{
+			return this.CreateMethodCallQuery<List_CourseQuizzesWithUserResultsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseID, userID);
 		}
 	}
 	
@@ -3606,6 +3612,122 @@ namespace DB
 				if ((this._AssetID != value))
 				{
 					this._AssetID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_CourseQuizzesWithUserResultsResult
+	{
+		
+		private long _RecordID;
+		
+		private long _QuizID;
+		
+		private string _Caption;
+		
+		private System.Nullable<int> _MaxScore;
+		
+		private System.Nullable<int> _YourScore;
+		
+		private System.Nullable<System.DateTime> _CRTime;
+		
+		public List_CourseQuizzesWithUserResultsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordID", DbType="BigInt NOT NULL")]
+		public long RecordID
+		{
+			get
+			{
+				return this._RecordID;
+			}
+			set
+			{
+				if ((this._RecordID != value))
+				{
+					this._RecordID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt NOT NULL")]
+		public long QuizID
+		{
+			get
+			{
+				return this._QuizID;
+			}
+			set
+			{
+				if ((this._QuizID != value))
+				{
+					this._QuizID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
+		public string Caption
+		{
+			get
+			{
+				return this._Caption;
+			}
+			set
+			{
+				if ((this._Caption != value))
+				{
+					this._Caption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxScore", DbType="Int")]
+		public System.Nullable<int> MaxScore
+		{
+			get
+			{
+				return this._MaxScore;
+			}
+			set
+			{
+				if ((this._MaxScore != value))
+				{
+					this._MaxScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YourScore", DbType="Int")]
+		public System.Nullable<int> YourScore
+		{
+			get
+			{
+				return this._YourScore;
+			}
+			set
+			{
+				if ((this._YourScore != value))
+				{
+					this._YourScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
 				}
 			}
 		}

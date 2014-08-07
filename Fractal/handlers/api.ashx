@@ -4,9 +4,9 @@ using System;
 using System.Web;
 using Lib;
 using Core.Services;
-    
-public class api : IHttpHandler,System.Web.SessionState.IReadOnlySessionState {
-    
+
+public class api : IHttpHandler, System.Web.SessionState.IRequiresSessionState
+{    
     public void ProcessRequest(HttpContext context)
     {
         try

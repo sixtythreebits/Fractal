@@ -483,6 +483,31 @@ namespace Core
         }
 
         /// <summary>
+        /// Gets list of course quizzes with student results
+        /// </summary>
+        /// <param name="CourseID">CourseID</param>
+        /// <param name="UserID">User ID</param>
+        /// <returns></returns>
+        public List<CourseQuizFront> ListCourseQuizzesWithUserResults(long? CourseID, long? UserID)
+        {
+            return TryToGetList<CourseQuizFront>(string.Format("Core.Quiz.ListCourseQuizzesWithUserResults(CourseID = {0}, UserID = {1})", CourseID, UserID), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    return db.List_CourseQuizzesWithUserResults(CourseID, UserID).Select(q => new CourseQuizFront
+                    {
+                        RecordID =q.RecordID,
+                        ID = q.QuizID,
+                        Caption = q.Caption,
+                        MaxScore = q.MaxScore,
+                        StudentScore = q.YourScore,
+                        CRTime = q.CRTime
+                    }).ToList();
+                }
+            });
+        }
+
+        /// <summary>
         /// Gets List of Quizes
         /// </summary>
         /// <returns></returns>

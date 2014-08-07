@@ -481,4 +481,46 @@ namespace Core
         }
         #endregion Methods
     }
+
+    public class Subscription : ObjectBase
+    {
+        #region Properties
+        public long ID { set; get; }
+        public int TypeID { set; get; }
+        public string TypeCode { set; get; }
+        public string Type { set; get; }
+        public long? TariffID { set; get; }
+        public decimal? Price { set; get; }
+        public DateTime? ExpDate { set; get; }
+        public long CourseID { set; get; }
+        public string Course { set; get; }
+        public long UserID { set; get; }
+        public string UserFullName { set; get; }
+        public string Fname { set; get; }
+        public string Lname { set; get; }
+        public string Email { set; get; }
+        public string Note { set; get; }
+        public XElement Properties { set; get; }
+        #endregion Properties
+
+        #region Methods
+        /// <summary>
+        /// Performs action with user-course subscriptions based on iud parameter and xml values
+        /// </summary>
+        /// <param name="iud">Action ID</param>
+        /// <param name="xml">Input parameters given as xml</param>
+        public void TX_Subscriptions(byte iud, string xml)
+        {
+            XElement RetVal = null;
+            TryExecute(string.Format("Core.Subscription.TX_Subscriptions(iud = {0}, xml = {1})", iud, xml), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    db.tx_Subscriptions(iud, XElement.Parse(xml), ref RetVal);
+                }
+            });
+            Properties = RetVal;
+        }
+        #endregion Methods
+    }
 }

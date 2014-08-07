@@ -342,7 +342,7 @@ section.gray h2 span{
 .home-top h2.title span {
     position:absolute;
     right:0;
-    left:170px;
+    left:130px;
     height:100%;
     background-color:transparent;
     background:url(../images/pat-white.png) 0 0 repeat-x;
@@ -578,6 +578,10 @@ section.book img{
 .bar-code-form label{
     color:#535453;
     text-align:center;
+}
+.bar-code-form label.error{
+    color:red;    
+    line-height:40px;
 }
 .bar-code-form input[type=text]{
     width:100%;

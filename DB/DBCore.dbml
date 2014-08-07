@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Fractal" Class="DBCoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=srv63bits\MSSQL2012,49231;Initial Catalog=Fractal;Persist Security Info=True;User ID=sa" SettingsObjectName="DB.Properties.Settings" SettingsPropertyName="FractalConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="dbo.GetCourseDuration" Method="GetCourseDuration" IsComposable="true">
     <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
@@ -136,10 +136,6 @@
     <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
     <Parameter Name="x" Type="System.Xml.Linq.XElement" DbType="Xml" />
     <Parameter Name="out" Type="System.Xml.Linq.XElement" DbType="Xml" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.DeleteCourse" Method="DeleteCourse">
-    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.tx_Subscriptions" Method="tx_Subscriptions">
@@ -447,5 +443,21 @@
   <Function Name="dbo.GetCourseCreatorUserID" Method="GetCourseCreatorUserID" IsComposable="true">
     <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
     <Return Type="System.Int64" />
+  </Function>
+  <Function Name="dbo.DeleteCourse" Method="DeleteCourse">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.List_CourseQuizzesWithUserResults" Method="List_CourseQuizzesWithUserResults" IsComposable="true">
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="List_CourseQuizzesWithUserResultsResult">
+      <Column Name="RecordID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="QuizID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Caption" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaxScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YourScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CRTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

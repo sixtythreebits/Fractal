@@ -268,6 +268,24 @@ namespace Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ეს გასაღები უკვე გამოყენებულია.
+        /// </summary>
+        public static string InformationUsedCourseKey {
+            get {
+                return ResourceManager.GetString("InformationUsedCourseKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to გასაღები ვერ მოიძებნა სისტემაში.
+        /// </summary>
+        public static string InvalidCourseKey {
+            get {
+                return ResourceManager.GetString("InvalidCourseKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ელ-ფოსტის ფორმატი არასწორია..
         /// </summary>
         public static string InvalidEmailFormat {
