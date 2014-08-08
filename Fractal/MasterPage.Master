@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fractal</title>    
+    <link type="image/png" rel="icon" href="/images/favicon.ico" />
     <link href="/css/fonts.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />        
     <link href="/css/utils.css" rel="stylesheet" />
