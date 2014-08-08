@@ -256,4 +256,88 @@ namespace Core
         #endregion Constructors
     }
 
+    public class WebsiteMasterBase : System.Web.UI.MasterPage
+    {
+        #region Properties
+
+        #region General Properties
+        public User UserObject { set; get; }
+        public StringBuilder HeaderInclude { set; get; }
+        #endregion General Properties
+
+        #region Plugins
+        bool _FancyBoxEnabled;
+        public bool FancyBoxEnabled
+        {
+            set
+            {
+                _FancyBoxEnabled = value;
+                if (_FancyBoxEnabled)
+                {
+                    HeaderInclude.Append(Plugins.GetFancyBoxV2());
+                }
+            }
+            get { return _FancyBoxEnabled; }
+        }
+
+        bool _GMLoaderEnabled;
+        public bool GMLoaderEnabled
+        {
+            set
+            {
+                _GMLoaderEnabled = true;
+                if (_GMLoaderEnabled)
+                {
+                    HeaderInclude.Append(Plugins.GetGMLoader());
+                }
+            }
+            get
+            {
+                return _GMLoaderEnabled;
+            }
+        }
+
+        bool _QuizzesEnabled;
+        public bool QuizzesEnabled
+        {
+            set
+            {
+                _QuizzesEnabled = value;
+                if (_QuizzesEnabled)
+                {
+                    HeaderInclude.Append(Plugins.GetQuizzes());
+                }
+            }
+            get { return _QuizzesEnabled; }
+        }
+
+        bool _JQueryUIEnabled;
+        public bool JQueryUIEnabled
+        {
+            set
+            {
+                _JQueryUIEnabled = value;
+                if (_JQueryUIEnabled)
+                {
+                    HeaderInclude.Append(Plugins.GetJQueryUI());
+                }
+            }
+            get { return _JQueryUIEnabled; }
+        }
+        #endregion Plugins
+
+        #endregion Properties
+
+        #region Constructors
+
+        public WebsiteMasterBase()
+        {
+            UserObject = new User();
+            UserObject.GetAuthorizedCredentials();
+
+            HeaderInclude = new StringBuilder();
+        }
+        #endregion Constructors
+    }
+
 }

@@ -14,6 +14,7 @@
 
     <link type="text/css" rel="stylesheet" href="/plugins/gm-loader/gm-loader.css" />
     <script type="text/javascript" src="/plugins/gm-loader/gm-loader.js"></script>
+    <asp:Literal ID="HeadLiteral" runat="server" EnableViewState="false"></asp:Literal>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>    
 </head>
@@ -25,8 +26,6 @@
             <nav>
                 <ul>
                     <li class="active"><a href="/">მთავარი</a></li>
-                    <li><a>წიგნები</a></li>
-                    <li><a href="#">გამოცდები</a></li>
                     <li><a href="#">ჩვენს შესახებ</a></li>
                     <li><a href="#">კონტაქტი</a></li>                    
                     <li class="sign in">
@@ -64,6 +63,11 @@
             </div>
         </footer>
     </div>
+    <asp:PlaceHolder ID="DialogPlaceHolder" runat="server" Visible="false" EnableViewState="false">
+        <div id="dialog">
+	        <p><asp:Literal ID="DialogTextLiteral" runat="server" EnableViewState="false"></asp:Literal></p>
+        </div>
+    </asp:PlaceHolder>
     </form>
     <asp:ContentPlaceHolder ID="ScriptsPlaceHolder" runat="server">        
     </asp:ContentPlaceHolder>

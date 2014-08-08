@@ -6,7 +6,7 @@ using Lib;
 using Core;
 using Core.Properties;
 
-public partial class administration_scripts_CM_courses : System.Web.UI.Page
+public partial class administration_CM_courses : System.Web.UI.Page
 {
     List<Course> CourseList;
 

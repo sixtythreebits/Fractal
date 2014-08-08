@@ -9,7 +9,7 @@
 
 
 
-public partial class administration_scripts_CM_courses {
+public partial class administration_CM_courses {
     
     /// <summary>
     /// LettersRepeater control.

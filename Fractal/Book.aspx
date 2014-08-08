@@ -60,7 +60,7 @@
                         <li>
                             <span class="name">
                                 <span>
-                                    <a href="/quiz/<%#Eval("ID") %>"><%#Eval("Caption") %></a>
+                                    <a href="/book/<%#C.Slug %>/quiz/<%#Eval("ID") %>/"><%#Eval("Caption") %></a>
                                 </span>
                             </span>
                             <span><%#Eval("MaxScore") %></span>

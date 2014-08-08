@@ -182,12 +182,6 @@ namespace DB
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_UserSubscribedCourses", IsComposable=true)]
-		public IQueryable<List_UserSubscribedCoursesResult> List_UserSubscribedCourses([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ActiveOnly", DbType="Bit")] System.Nullable<bool> activeOnly)
-		{
-			return this.CreateMethodCallQuery<List_UserSubscribedCoursesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, activeOnly);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tx_CourseKeys")]
 		public int tx_CourseKeys([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Xml")] System.Xml.Linq.XElement x)
 		{
@@ -372,6 +366,37 @@ namespace DB
 		public IQueryable<List_CourseQuizzesWithUserResultsResult> List_CourseQuizzesWithUserResults([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
 		{
 			return this.CreateMethodCallQuery<List_CourseQuizzesWithUserResultsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courseID, userID);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_UserSubscribedCourses", IsComposable=true)]
+		public IQueryable<List_UserSubscribedCoursesResult> List_UserSubscribedCourses([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ActiveOnly", DbType="Bit")] System.Nullable<bool> activeOnly)
+		{
+			return this.CreateMethodCallQuery<List_UserSubscribedCoursesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, activeOnly);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_QuizzesAllowedForUser", IsComposable=true)]
+		public IQueryable<List_QuizzesAllowedForUserResult> List_QuizzesAllowedForUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
+		{
+			return this.CreateMethodCallQuery<List_QuizzesAllowedForUserResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_UserCourseSubscriptionHistory", IsComposable=true)]
+		public IQueryable<List_UserCourseSubscriptionHistoryResult> List_UserCourseSubscriptionHistory([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID)
+		{
+			return this.CreateMethodCallQuery<List_UserCourseSubscriptionHistoryResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, courseID);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_UserCourseRecentSubscriptions", IsComposable=true)]
+		public IQueryable<List_UserCourseRecentSubscriptionsResult> List_UserCourseRecentSubscriptions()
+		{
+			return this.CreateMethodCallQuery<List_UserCourseRecentSubscriptionsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_Subscriptions")]
+		public int tsp_Subscriptions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SubscriptionID", DbType="BigInt")] System.Nullable<long> subscriptionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TypeCode", DbType="NVarChar(200)")] string typeCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="Int")] System.Nullable<int> type, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TariffID", DbType="BigInt")] System.Nullable<long> tariffID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ExpDate", DbType="DateTime")] System.Nullable<System.DateTime> expDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Note", DbType="NVarChar(400)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, subscriptionID, userID, courseID, typeCode, type, tariffID, expDate, note);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -1652,266 +1677,6 @@ namespace DB
 				if ((this._MaxScore != value))
 				{
 					this._MaxScore = value;
-				}
-			}
-		}
-	}
-	
-	public partial class List_UserSubscribedCoursesResult
-	{
-		
-		private long _SubscriptionID;
-		
-		private long _CourseID;
-		
-		private string _SubscriptionTypeCode;
-		
-		private System.Nullable<bool> _IsExpired;
-		
-		private string _Slug;
-		
-		private string _Description;
-		
-		private string _Icon;
-		
-		private string _Caption;
-		
-		private string _Author;
-		
-		private short _Year;
-		
-		private string _Semester;
-		
-		private System.DateTime _CRTime;
-		
-		private System.Xml.Linq.XElement _teachers;
-		
-		private System.Nullable<int> _Duration;
-		
-		public List_UserSubscribedCoursesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubscriptionID", DbType="BigInt NOT NULL")]
-		public long SubscriptionID
-		{
-			get
-			{
-				return this._SubscriptionID;
-			}
-			set
-			{
-				if ((this._SubscriptionID != value))
-				{
-					this._SubscriptionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseID", DbType="BigInt NOT NULL")]
-		public long CourseID
-		{
-			get
-			{
-				return this._CourseID;
-			}
-			set
-			{
-				if ((this._CourseID != value))
-				{
-					this._CourseID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubscriptionTypeCode", DbType="NVarChar(200)")]
-		public string SubscriptionTypeCode
-		{
-			get
-			{
-				return this._SubscriptionTypeCode;
-			}
-			set
-			{
-				if ((this._SubscriptionTypeCode != value))
-				{
-					this._SubscriptionTypeCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsExpired", DbType="Bit")]
-		public System.Nullable<bool> IsExpired
-		{
-			get
-			{
-				return this._IsExpired;
-			}
-			set
-			{
-				if ((this._IsExpired != value))
-				{
-					this._IsExpired = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Slug", DbType="VarChar(100)")]
-		public string Slug
-		{
-			get
-			{
-				return this._Slug;
-			}
-			set
-			{
-				if ((this._Slug != value))
-				{
-					this._Slug = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this._Description = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Icon", DbType="NVarChar(500)")]
-		public string Icon
-		{
-			get
-			{
-				return this._Icon;
-			}
-			set
-			{
-				if ((this._Icon != value))
-				{
-					this._Icon = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Caption
-		{
-			get
-			{
-				return this._Caption;
-			}
-			set
-			{
-				if ((this._Caption != value))
-				{
-					this._Caption = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="NVarChar(100)")]
-		public string Author
-		{
-			get
-			{
-				return this._Author;
-			}
-			set
-			{
-				if ((this._Author != value))
-				{
-					this._Author = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="SmallInt NOT NULL")]
-		public short Year
-		{
-			get
-			{
-				return this._Year;
-			}
-			set
-			{
-				if ((this._Year != value))
-				{
-					this._Year = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Semester", DbType="NVarChar(200)")]
-		public string Semester
-		{
-			get
-			{
-				return this._Semester;
-			}
-			set
-			{
-				if ((this._Semester != value))
-				{
-					this._Semester = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
-		public System.DateTime CRTime
-		{
-			get
-			{
-				return this._CRTime;
-			}
-			set
-			{
-				if ((this._CRTime != value))
-				{
-					this._CRTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_teachers", DbType="Xml", UpdateCheck=UpdateCheck.Never)]
-		public System.Xml.Linq.XElement teachers
-		{
-			get
-			{
-				return this._teachers;
-			}
-			set
-			{
-				if ((this._teachers != value))
-				{
-					this._teachers = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duration", DbType="Int")]
-		public System.Nullable<int> Duration
-		{
-			get
-			{
-				return this._Duration;
-			}
-			set
-			{
-				if ((this._Duration != value))
-				{
-					this._Duration = value;
 				}
 			}
 		}
@@ -3718,6 +3483,704 @@ namespace DB
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime")]
 		public System.Nullable<System.DateTime> CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_UserSubscribedCoursesResult
+	{
+		
+		private long _SubscriptionID;
+		
+		private long _CourseID;
+		
+		private System.Nullable<bool> _IsExpired;
+		
+		private string _Slug;
+		
+		private string _Icon;
+		
+		private string _Caption;
+		
+		private System.Nullable<System.DateTime> _ExpDate;
+		
+		public List_UserSubscribedCoursesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubscriptionID", DbType="BigInt NOT NULL")]
+		public long SubscriptionID
+		{
+			get
+			{
+				return this._SubscriptionID;
+			}
+			set
+			{
+				if ((this._SubscriptionID != value))
+				{
+					this._SubscriptionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseID", DbType="BigInt NOT NULL")]
+		public long CourseID
+		{
+			get
+			{
+				return this._CourseID;
+			}
+			set
+			{
+				if ((this._CourseID != value))
+				{
+					this._CourseID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsExpired", DbType="Bit")]
+		public System.Nullable<bool> IsExpired
+		{
+			get
+			{
+				return this._IsExpired;
+			}
+			set
+			{
+				if ((this._IsExpired != value))
+				{
+					this._IsExpired = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Slug", DbType="VarChar(100)")]
+		public string Slug
+		{
+			get
+			{
+				return this._Slug;
+			}
+			set
+			{
+				if ((this._Slug != value))
+				{
+					this._Slug = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Icon", DbType="NVarChar(500)")]
+		public string Icon
+		{
+			get
+			{
+				return this._Icon;
+			}
+			set
+			{
+				if ((this._Icon != value))
+				{
+					this._Icon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Caption
+		{
+			get
+			{
+				return this._Caption;
+			}
+			set
+			{
+				if ((this._Caption != value))
+				{
+					this._Caption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpDate
+		{
+			get
+			{
+				return this._ExpDate;
+			}
+			set
+			{
+				if ((this._ExpDate != value))
+				{
+					this._ExpDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_QuizzesAllowedForUserResult
+	{
+		
+		private long _QuizID;
+		
+		private string _Caption;
+		
+		private long _CourseID;
+		
+		private string _Slug;
+		
+		private string _CourseCaption;
+		
+		private System.Nullable<int> _MaxScore;
+		
+		private System.Nullable<int> _YourScore;
+		
+		private System.Nullable<System.DateTime> _PassDate;
+		
+		private System.Nullable<System.DateTime> _ExpDate;
+		
+		public List_QuizzesAllowedForUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt NOT NULL")]
+		public long QuizID
+		{
+			get
+			{
+				return this._QuizID;
+			}
+			set
+			{
+				if ((this._QuizID != value))
+				{
+					this._QuizID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
+		public string Caption
+		{
+			get
+			{
+				return this._Caption;
+			}
+			set
+			{
+				if ((this._Caption != value))
+				{
+					this._Caption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseID", DbType="BigInt NOT NULL")]
+		public long CourseID
+		{
+			get
+			{
+				return this._CourseID;
+			}
+			set
+			{
+				if ((this._CourseID != value))
+				{
+					this._CourseID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Slug", DbType="VarChar(100)")]
+		public string Slug
+		{
+			get
+			{
+				return this._Slug;
+			}
+			set
+			{
+				if ((this._Slug != value))
+				{
+					this._Slug = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseCaption", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string CourseCaption
+		{
+			get
+			{
+				return this._CourseCaption;
+			}
+			set
+			{
+				if ((this._CourseCaption != value))
+				{
+					this._CourseCaption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxScore", DbType="Int")]
+		public System.Nullable<int> MaxScore
+		{
+			get
+			{
+				return this._MaxScore;
+			}
+			set
+			{
+				if ((this._MaxScore != value))
+				{
+					this._MaxScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YourScore", DbType="Int")]
+		public System.Nullable<int> YourScore
+		{
+			get
+			{
+				return this._YourScore;
+			}
+			set
+			{
+				if ((this._YourScore != value))
+				{
+					this._YourScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PassDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PassDate
+		{
+			get
+			{
+				return this._PassDate;
+			}
+			set
+			{
+				if ((this._PassDate != value))
+				{
+					this._PassDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpDate
+		{
+			get
+			{
+				return this._ExpDate;
+			}
+			set
+			{
+				if ((this._ExpDate != value))
+				{
+					this._ExpDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_UserCourseSubscriptionHistoryResult
+	{
+		
+		private long _SubscriptionID;
+		
+		private long _UserID;
+		
+		private string _FullName;
+		
+		private long _CourseID;
+		
+		private string _Course;
+		
+		private System.Nullable<int> _Type;
+		
+		private System.Nullable<System.DateTime> _ExpDate;
+		
+		private System.DateTime _CRTime;
+		
+		public List_UserCourseSubscriptionHistoryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubscriptionID", DbType="BigInt NOT NULL")]
+		public long SubscriptionID
+		{
+			get
+			{
+				return this._SubscriptionID;
+			}
+			set
+			{
+				if ((this._SubscriptionID != value))
+				{
+					this._SubscriptionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="BigInt NOT NULL")]
+		public long UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullName", DbType="NVarChar(401)")]
+		public string FullName
+		{
+			get
+			{
+				return this._FullName;
+			}
+			set
+			{
+				if ((this._FullName != value))
+				{
+					this._FullName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseID", DbType="BigInt NOT NULL")]
+		public long CourseID
+		{
+			get
+			{
+				return this._CourseID;
+			}
+			set
+			{
+				if ((this._CourseID != value))
+				{
+					this._CourseID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Course", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Course
+		{
+			get
+			{
+				return this._Course;
+			}
+			set
+			{
+				if ((this._Course != value))
+				{
+					this._Course = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int")]
+		public System.Nullable<int> Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpDate
+		{
+			get
+			{
+				return this._ExpDate;
+			}
+			set
+			{
+				if ((this._ExpDate != value))
+				{
+					this._ExpDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
+		public System.DateTime CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_UserCourseRecentSubscriptionsResult
+	{
+		
+		private long _RecordID;
+		
+		private long _SubscriptionID;
+		
+		private long _UserID;
+		
+		private string _Username;
+		
+		private string _Fname;
+		
+		private string _Lname;
+		
+		private string _Email;
+		
+		private long _CourseID;
+		
+		private string _Course;
+		
+		private System.Nullable<int> _Type;
+		
+		private string _TypeCode;
+		
+		private System.Nullable<System.DateTime> _ExpDate;
+		
+		private System.DateTime _CRTime;
+		
+		public List_UserCourseRecentSubscriptionsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordID", DbType="BigInt NOT NULL")]
+		public long RecordID
+		{
+			get
+			{
+				return this._RecordID;
+			}
+			set
+			{
+				if ((this._RecordID != value))
+				{
+					this._RecordID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubscriptionID", DbType="BigInt NOT NULL")]
+		public long SubscriptionID
+		{
+			get
+			{
+				return this._SubscriptionID;
+			}
+			set
+			{
+				if ((this._SubscriptionID != value))
+				{
+					this._SubscriptionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="BigInt NOT NULL")]
+		public long UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fname", DbType="NVarChar(200)")]
+		public string Fname
+		{
+			get
+			{
+				return this._Fname;
+			}
+			set
+			{
+				if ((this._Fname != value))
+				{
+					this._Fname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lname", DbType="NVarChar(200)")]
+		public string Lname
+		{
+			get
+			{
+				return this._Lname;
+			}
+			set
+			{
+				if ((this._Lname != value))
+				{
+					this._Lname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseID", DbType="BigInt NOT NULL")]
+		public long CourseID
+		{
+			get
+			{
+				return this._CourseID;
+			}
+			set
+			{
+				if ((this._CourseID != value))
+				{
+					this._CourseID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Course", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Course
+		{
+			get
+			{
+				return this._Course;
+			}
+			set
+			{
+				if ((this._Course != value))
+				{
+					this._Course = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int")]
+		public System.Nullable<int> Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeCode", DbType="NVarChar(200)")]
+		public string TypeCode
+		{
+			get
+			{
+				return this._TypeCode;
+			}
+			set
+			{
+				if ((this._TypeCode != value))
+				{
+					this._TypeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpDate
+		{
+			get
+			{
+				return this._ExpDate;
+			}
+			set
+			{
+				if ((this._ExpDate != value))
+				{
+					this._ExpDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
+		public System.DateTime CRTime
 		{
 			get
 			{

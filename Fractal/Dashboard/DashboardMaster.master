@@ -18,7 +18,7 @@
                     <a href="/dashboard/password/">პაროლის შეცვლა</a>
                 </li>
                 <li>
-                    <a href="/dashboard/quizzes/">ჩაბარებული ტესტები</a>
+                    <a href="/dashboard/quiz-results/">ჩაბარებული ტესტები</a>
                 </li>
             </ul>
         </nav>

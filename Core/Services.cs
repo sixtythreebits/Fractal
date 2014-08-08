@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 using Core.Utilities;
 using Core.Properties;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Linq;
 
 namespace Core.Services
 {
@@ -39,6 +41,10 @@ namespace Core.Services
                 case "1":
                     {
                         return ResetPasswordRequest();
+                    }
+                case "9":
+                    {
+                        return SubmitQuizSolution();
                     }
                 default:
                     {
@@ -98,6 +104,47 @@ namespace Core.Services
             }
 
             return JsonConvert.SerializeObject(Result, Formatting.None);
+        }
+
+        /// <summary>
+        /// Submits solution from the user to quiz. 
+        /// Needs request parameters: quizid, courseid, data
+        /// </summary>
+        /// <returns>Response from the server</returns>
+        private string SubmitQuizSolution()
+        {
+            User U = new User();
+            string result = string.Format("<data><result>error</result><message>{0}</message></data>", Resources.Abort);
+
+            var param = XElement.Parse(context.Request.Form["params"].DecryptWeb());
+            var QuizID = long.Parse(param.Element("quiz_id").Value);
+            var CourseID = param.Element("course_id") == null ? null : (long?)long.Parse(param.Element("course_id").Value);
+            var SectionID = param.Element("section_id") == null ? null : (long?)long.Parse(param.Element("section_id").Value);
+            var AssetID = param.Element("asset_id") == null ? null : (long?)long.Parse(param.Element("asset_id").Value);
+
+            if (QuizID > 0 && U.GetAuthorizedCredentials())
+            {
+                var Q = new Quiz();
+
+                var el = XElement.Parse(context.Request.Form["data"]);
+                el = new XElement("data", param.Elements(),
+                                  el.Descendants("answer")
+                                    .Select(A =>
+                                            new XElement("answers",
+                                                         new XElement("question_id",
+                                                                      A.Attribute("question_id").Value.DecryptWeb()),
+                                                         new XElement("answer_id", A.Attribute("answer_id").Value.DecryptWeb()))));
+
+                //System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "file.xml", el.ToString());            
+                Q.TX_Quizes(4, el.ToString());
+
+                if (!Q.IsError)
+                {
+                    result = string.Format("<data><result>success</result><message>{0}</message></data>", Resources.InformationQuizSubmitSuccess);
+                }
+            }
+
+            return result;
         }
         #endregion Methods
     }

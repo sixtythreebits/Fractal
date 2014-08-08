@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('#DescriptionTextBox').tinymce({
         width: "100%",
-        height: 2100,
+        height: 210,
         theme: "advanced",
         theme_advanced_buttons1: "bold,italic,underline,forecolor",
         theme_advanced_buttons2: "",

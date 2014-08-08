@@ -730,6 +730,15 @@ section.book img{
 }
 /* ---------- /grid ---------- */
 
+
+/* ---------- Quiz ---------- */
+.content
+{
+    width:1000px;
+    margin:0 auto;    
+}
+
+
 /* ---------- dashboard ---------- */
 
 .dashboard > nav{

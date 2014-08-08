@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="administration_scripts_CM_courses" Codebehind="courses.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="../MasterPage.master" AutoEventWireup="true" Inherits="administration_CM_courses" Codebehind="courses.aspx.cs" %>
 
 <%@ MasterType TypeName="administration_MasterPage" %>
 

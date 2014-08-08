@@ -53,7 +53,9 @@
     <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -120,6 +122,7 @@
     <Content Include="Administration\css\style.css" />
     <Content Include="Administration\css\tab-bar.css" />
     <Content Include="Administration\Default.aspx" />
+    <Content Include="Administration\General\subscriptions.aspx" />
     <Content Include="Administration\img\asset-list\asset-filter-menu.png" />
     <Content Include="Administration\img\asset-list\asset-list-bg.png" />
     <Content Include="Administration\img\asset-list\asset-list-datepicker.png" />
@@ -329,6 +332,7 @@
     <Content Include="Administration\PopupPages\CM\course\QuizToCourse.aspx" />
     <Content Include="Administration\PopupPages\CreateNewCourseKeys.aspx" />
     <Content Include="Administration\PopupPages\QuizPreview.aspx" />
+    <Content Include="Administration\PopupPages\subscriptions.aspx" />
     <Content Include="Administration\scripts\CM\courses.aspx.js" />
     <Content Include="Administration\scripts\CM\course\general.aspx.js" />
     <Content Include="Administration\scripts\CM\course\quizes.aspx.js" />
@@ -562,6 +566,7 @@
     <Content Include="handlers\download.ashx" />
     <Content Include="handlers\preview.ashx" />
     <Content Include="MasterPage.Master" />
+    <Content Include="Quiz.aspx" />
     <Content Include="scripts\jquery-2.1.0.min.map" />
     <Content Include="fonts\BPG_DejaVuSans.eot" />
     <Content Include="fonts\BPG_DejaVuSans.ttf" />
@@ -1297,6 +1302,13 @@
     <Compile Include="Administration\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\General\subscriptions.aspx.cs">
+      <DependentUpon>subscriptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\General\subscriptions.aspx.designer.cs">
+      <DependentUpon>subscriptions.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administration\MasterPage.master.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1331,6 +1343,13 @@
     </Compile>
     <Compile Include="Administration\PopupPages\QuizPreview.aspx.designer.cs">
       <DependentUpon>QuizPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\PopupPages\subscriptions.aspx.cs">
+      <DependentUpon>subscriptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\PopupPages\subscriptions.aspx.designer.cs">
+      <DependentUpon>subscriptions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\UM\ChangeUser.aspx.cs">
       <DependentUpon>ChangeUser.aspx</DependentUpon>
@@ -1486,6 +1505,13 @@
     </Compile>
     <Compile Include="forms.aspx.designer.cs">
       <DependentUpon>forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quiz.aspx.cs">
+      <DependentUpon>Quiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quiz.aspx.designer.cs">
+      <DependentUpon>Quiz.aspx</DependentUpon>
     </Compile>
     <Compile Include="signup.aspx.cs">
       <DependentUpon>signup.aspx</DependentUpon>

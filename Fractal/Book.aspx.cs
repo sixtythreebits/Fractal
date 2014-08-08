@@ -32,7 +32,6 @@ namespace Fractal
                 SubscribePlaceHolder.Visible = false;
                 QuizzesPlaceHolder.Visible = true;
                 SectionLiteral.Text = "გამოცდები";                
-                
 
                 var Q = new Quiz();
                 QuizzesRepeater.DataSource = Q.ListCourseQuizzesWithUserResults(C.ID, Master.UserObject.ID).Select(c => new

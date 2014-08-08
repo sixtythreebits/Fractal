@@ -507,6 +507,28 @@ namespace Core
             });
         }
 
+        public List<CourseQuizFront> ListCourseQuizzesAllowedForUser(long? UserID)
+        {
+            return TryToGetList<CourseQuizFront>(string.Format("Core.Quiz.ListCourseQuizzesAllowedForUser(UserID = {0})", UserID), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    return db.List_QuizzesAllowedForUser(UserID).Select(q => new CourseQuizFront
+                    {
+                        ID = q.QuizID,                        
+                        Caption = q.Caption,
+                        MaxScore = q.MaxScore,
+                        StudentScore = q.YourScore,
+                        CRTime = q.PassDate,
+                        ExpDate = q.ExpDate,
+                        CourseID = q.CourseID,
+                        CourseSlug = q.Slug,
+                        CourseCaption = q.CourseCaption
+                    }).ToList();
+                }
+            });
+        }
+
         /// <summary>
         /// Gets List of Quizes
         /// </summary>
