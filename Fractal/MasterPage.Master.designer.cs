@@ -13,15 +13,6 @@ namespace Fractal {
     public partial class MasterPage {
         
         /// <summary>
-        /// HeadLiteral control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal HeadLiteral;
-        
-        /// <summary>
         /// head control.
         /// </summary>
         /// <remarks>
@@ -47,24 +38,6 @@ namespace Fractal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-        
-        /// <summary>
-        /// DialogPlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder DialogPlaceHolder;
-        
-        /// <summary>
-        /// DialogTextLiteral control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal DialogTextLiteral;
         
         /// <summary>
         /// ScriptsPlaceHolder control.
