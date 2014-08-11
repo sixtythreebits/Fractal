@@ -459,6 +459,7 @@
     <Content Include="App_Themes\DevEx\Web\ucProgressBack.png" />
     <Content Include="App_Themes\DevEx\Web\ucProgressIndicatorBack.png" />
     <Content Include="Book.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="css\fonts.css" />
     <Content Include="css\style.css" />
     <Content Include="css\utils.css" />
@@ -1205,6 +1206,7 @@
     <Content Include="forms.aspx" />
     <Content Include="scripts\validation-2.0.js" />
     <Content Include="signup.aspx" />
+    <Content Include="StaticPage.aspx" />
     <Content Include="TPL\EmailTemplate.htm" />
     <Content Include="TPL\EmailTemplateWithButton.htm" />
     <Content Include="UserControls\ExporterControl.ascx" />
@@ -1408,6 +1410,13 @@
     <Compile Include="Book.aspx.designer.cs">
       <DependentUpon>Book.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1520,6 +1529,13 @@
     </Compile>
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaticPage.aspx.cs">
+      <DependentUpon>StaticPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaticPage.aspx.designer.cs">
+      <DependentUpon>StaticPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ExporterControl.ascx.cs">
       <DependentUpon>ExporterControl.ascx</DependentUpon>
