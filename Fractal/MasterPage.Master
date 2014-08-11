@@ -49,6 +49,11 @@
                     <li class="sign">
                         <a href="/signup/" class="btn">რეგისტრაცია</a>
                     </li>
+                    <li class="profile hidden">
+                        <a href="#" class="profile"></a>
+                        <a href="#" class="logout"></a>
+                        <span class="profile"><a href="#">ალექსანრე სუკიასოვი</a></span>
+                    </li>
                 </ul>
             </nav>
         </header>

@@ -258,6 +258,46 @@ li.sign div a{
 li.sign input.btn{
     line-height:31px;
 }
+
+
+header li.profile{
+    position:relative;
+    margin-top:28px;
+}
+header li a.profile,
+header li a.logout{
+    float:left;
+    display:block;
+    background-position:bottom;
+    background-repeat:no-repeat;
+}
+header li a:hover {
+    background-position:top;
+}
+header li a.profile{
+    width:24px;
+    height:24px;
+    background-image:url(../images/icons/header/user.png);
+}
+header li a.logout{
+    width:22px;
+    height:23px;
+    background-image:url(../images/icons/header/logout.png);
+    margin:1px 0 0 14px;
+}
+header li span.profile{
+    position:absolute;
+    right:0;
+    bottom:-24px;
+    width:200px;
+
+    text-align:right;
+}
+header li span.profile a{
+    color:#009344;
+    font-size:11px;
+    font-family: 'BPG DejaVu Sans';
+}
 /* ---------- /header ---------- */
 
 
