@@ -162,7 +162,7 @@ course.archiveCourse = function (_this) {
                 $.ajax({
                     url: document.URL,
                     type: "POST",
-                    data: { action: "archive", id: id },
+                    data: { action: "delete", id: id },
                     dataType: "text",
                     beforeSend: function () {
                         GMLoader.open();

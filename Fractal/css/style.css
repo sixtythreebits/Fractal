@@ -382,7 +382,7 @@ section.gray h2 span{
 .home-top h2.title span {
     position:absolute;
     right:0;
-    left:170px;
+    left:130px;
     height:100%;
     background-color:transparent;
     background:url(../images/pat-white.png) 0 0 repeat-x;
@@ -619,6 +619,10 @@ section.book img{
     color:#535453;
     text-align:center;
 }
+.bar-code-form label.error{
+    color:red;    
+    line-height:40px;
+}
 .bar-code-form input[type=text]{
     width:100%;
     height:47px;
@@ -765,6 +769,15 @@ section.book img{
     width:470px;
 }
 /* ---------- /grid ---------- */
+
+
+/* ---------- Quiz ---------- */
+.content
+{
+    width:1000px;
+    margin:0 auto;    
+}
+
 
 /* ---------- dashboard ---------- */
 

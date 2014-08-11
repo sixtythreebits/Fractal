@@ -124,6 +124,24 @@ namespace Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ნამდვილად გნებავთ ჩანაწერის წაშლა?.
+        /// </summary>
+        public static string ConfirmDeleteSubscriptionRecord {
+            get {
+                return ResourceManager.GetString("ConfirmDeleteSubscriptionRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ნამდვილად გნებავთ წაუშალოთ მომხმარებელს წიგნის აქტივაციის ჩანაწერი?.
+        /// </summary>
+        public static string ConfirmDeleteUserCourseSubscription {
+            get {
+                return ResourceManager.GetString("ConfirmDeleteUserCourseSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ნამდვილად გსურთ  გასაღების განახლება?.
         /// </summary>
         public static string ConfirmResetCourseKey {
@@ -138,6 +156,15 @@ namespace Core.Properties {
         public static string ConfirmResetCourseKeyGroup {
             get {
                 return ResourceManager.GetString("ConfirmResetCourseKeyGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ნამდვილად დავასრულოთ გამოცდა? გაითვალისწინეთ რომ დასრულების შემდეგ თქვენ აღარ გექნებათ შესაძლებლობა ხელახლა ჩააბაროთ ეს ტესტი..
+        /// </summary>
+        public static string ConfirmSubmitQuiz {
+            get {
+                return ResourceManager.GetString("ConfirmSubmitQuiz", resourceCulture);
             }
         }
         
@@ -187,7 +214,7 @@ namespace Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MMM dd, yyyy hh:mm tt.
+        ///   Looks up a localized string similar to MMM dd, yyyy HH:mm.
         /// </summary>
         public static string FormatDateTime {
             get {
@@ -259,11 +286,38 @@ namespace Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to თქვენი პასუხები წარმატებით შეინახა..
+        /// </summary>
+        public static string InformationQuizSubmitSuccess {
+            get {
+                return ResourceManager.GetString("InformationQuizSubmitSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა პროფილის აქტივაციისათვის..
         /// </summary>
         public static string InformationRegistrationSuccess {
             get {
                 return ResourceManager.GetString("InformationRegistrationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ეს გასაღები უკვე გამოყენებულია.
+        /// </summary>
+        public static string InformationUsedCourseKey {
+            get {
+                return ResourceManager.GetString("InformationUsedCourseKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to გასაღები ვერ მოიძებნა სისტემაში.
+        /// </summary>
+        public static string InvalidCourseKey {
+            get {
+                return ResourceManager.GetString("InvalidCourseKey", resourceCulture);
             }
         }
         
@@ -318,6 +372,15 @@ namespace Core.Properties {
         public static string RequiredCourseCaption {
             get {
                 return ResourceManager.GetString("RequiredCourseCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to აუცილებელია წიგნის არჩევა..
+        /// </summary>
+        public static string RequiredCourseSelection {
+            get {
+                return ResourceManager.GetString("RequiredCourseSelection", resourceCulture);
             }
         }
         
@@ -399,6 +462,24 @@ namespace Core.Properties {
         public static string RequiredStartDate {
             get {
                 return ResourceManager.GetString("RequiredStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to აირჩიეთ მომხმარებელი და წიგნი..
+        /// </summary>
+        public static string RequiredUsersAndCoursesSelection {
+            get {
+                return ResourceManager.GetString("RequiredUsersAndCoursesSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to აუცილებელია მომხმარებლის არჩევა..
+        /// </summary>
+        public static string RequredUsersSelection {
+            get {
+                return ResourceManager.GetString("RequredUsersSelection", resourceCulture);
             }
         }
         

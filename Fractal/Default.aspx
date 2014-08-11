@@ -6,17 +6,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="home-top">
         <h2 class="title">
-            გამოცდები
+            წიგნები
             <span></span>
         </h2>
         <ul>
             <li>
                 <img src="images/0/book-home.png" alt="" />
-                <a href="#">ალგებრა</a>
+                <a href="/book/algebra/">ალგებრა</a>
             </li>
             <li>
                 <img src="images/0/book-home.png" alt="" />
-                <a href="#">გეომეტრია</a>
+                <a href="/book/geometry/">გეომეტრია</a>
             </li>
         </ul>
     </div>

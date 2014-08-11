@@ -227,19 +227,14 @@ namespace Core
             {
                 using (var db = ConnectionFactory.GetDBCoreDataContext())
                 {
-                    return db.List_UserSubscribedCourses(UserID, ActiveOnly).OrderByDescending(C => C.CRTime).Select(C => new Course
+                    return db.List_UserSubscribedCourses(UserID, ActiveOnly).Select(C => new Course
                     {
                         ID = C.CourseID,
                         Caption = C.Caption,
-                        Description = C.Description,
                         Icon = C.Icon,
-                        Year = C.Year,
-                        Semester = C.Semester,
-                        unid = C.SubscriptionTypeCode,
-                        CRTime = C.CRTime,
+                        CRTime = C.ExpDate,
                         IsExpired = C.IsExpired.Value,
-                        Slug = C.Slug,
-                        Properties = C.teachers
+                        Slug = C.Slug
                     }).ToList();
                 }
             });
@@ -478,6 +473,192 @@ namespace Core
                     db.tx_CourseKeys(iud, XElement.Parse(xml));
                 }
             });
+        }
+        #endregion Methods
+    }
+
+    public class Subscription : ObjectBase
+    {
+        #region Properties
+        public long ID { set; get; }
+        public int TypeID { set; get; }
+        public string TypeCode { set; get; }
+        public string Type { set; get; }
+        public long? TariffID { set; get; }
+        public decimal? Price { set; get; }
+        public DateTime? ExpDate { set; get; }
+        public long CourseID { set; get; }
+        public string Course { set; get; }
+        public long UserID { set; get; }
+        public string UserFullName { set; get; }
+        public string Fname { set; get; }
+        public string Lname { set; get; }
+        public string Email { set; get; }
+        public string Note { set; get; }
+        public XElement Properties { set; get; }
+        #endregion Properties
+
+        #region Methods
+        /// <summary>
+        /// Gets List of only user most recent subscriptions
+        /// </summary>
+        /// <returns></returns>
+        public List<Subscription> ListRecentSubscriptions(byte? iud = null, object filter = null)
+        {
+            return TryToGetList<Subscription>("Subscription.ListRecentSubscriptions() - ", () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    var query = db.List_UserCourseRecentSubscriptions();
+
+                    switch (iud)
+                    {
+                        case 0:
+                            {
+                                var x = XElement.Parse(filter.ToString());
+                                long CourseID = long.Parse(x.Element("course_id").Value);
+                                query = query.Where(S => S.CourseID == CourseID);
+
+                                if (x.Element("d1") != null)
+                                {
+                                    var d1 = DateTime.Parse(x.Element("d1").Value);
+                                    query = query.Where(S => S.ExpDate >= d1);
+                                }
+
+                                if (x.Element("d2") != null)
+                                {
+                                    var d2 = DateTime.Parse(x.Element("d2").Value);
+                                    query = query.Where(S => S.ExpDate <= d2);
+                                }
+
+                                if (x.Element("crtime_d1") != null)
+                                {
+                                    var d1 = DateTime.Parse(x.Element("crtime_d1").Value);
+                                    query = query.Where(S => S.CRTime >= d1);
+                                }
+
+                                if (x.Element("crtime_d2") != null)
+                                {
+                                    var d2 = DateTime.Parse(x.Element("crtime_d2").Value);
+                                    query = query.Where(S => S.CRTime <= d2);
+                                }
+
+                                if (x.Element("user") != null)
+                                {
+                                    var user = x.Element("user").Value;
+                                    query = query.Where(S => S.Fname.Contains(user) || S.Lname.Contains(user));
+                                }
+
+                                if (x.Element("type_id") != null)
+                                {
+                                    var TypeID = int.Parse(x.Element("type_id").Value);
+                                    query = query.Where(S => S.Type == TypeID);
+                                }
+
+
+                                return query.OrderByDescending(S => S.CRTime).Select(S => new Subscription
+                                {
+                                    ID = S.SubscriptionID,
+                                    UserID = S.UserID,
+                                    Fname = S.Fname,
+                                    Lname = S.Lname,
+                                    UserFullName = S.Fname + " " + S.Lname,
+                                    Email = S.Email,
+                                    CourseID = S.CourseID,
+                                    Course = S.Course,
+                                    TypeCode = S.TypeCode,
+                                    ExpDate = S.ExpDate,
+                                    CRTime = S.CRTime
+                                }).ToList();
+                            }
+                        default:
+                            {
+                                return query.OrderByDescending(S => S.CRTime).Select(S => new Subscription
+                                {
+                                    ID = S.SubscriptionID,
+                                    UserID = S.UserID,
+                                    Fname = S.Fname,
+                                    Lname = S.Lname,
+                                    UserFullName = S.Username + " - " + S.Fname + " " + S.Lname,
+                                    Email = S.Email,
+                                    CourseID = S.CourseID,
+                                    Course = S.Course,
+                                    ExpDate = S.ExpDate,
+                                    CRTime = S.CRTime
+                                }).ToList();
+                            }
+                    }
+                }
+            });
+        }
+
+        /// <summary>
+        /// Gets list of subscription history on particular user - course combination
+        /// </summary>
+        /// <param name="UserID">User ID</param>
+        /// <param name="CourseID">Course ID</param>
+        /// <returns>List of subscription history</returns>
+        public List<Subscription> ListUserCourseSubscriptionHistory(long? UserID, long? CourseID)
+        {
+            return TryToGetList<Subscription>(string.Format("Core.Subscription.ListUserCourseSubscriptionHistory(UserID = {0}, CourseID = {1})", UserID, CourseID), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    return db.List_UserCourseSubscriptionHistory(UserID, CourseID)
+                             .OrderByDescending(S => S.CRTime)
+                             .Select(S => new Subscription
+                             {
+                                 ID = S.SubscriptionID,
+                                 UserID = S.UserID,
+                                 UserFullName = S.FullName,
+                                 CourseID = S.CourseID,
+                                 Course = S.Course,
+                                 ExpDate = S.ExpDate,
+                                 CRTime = S.CRTime
+                             }).ToList();
+                }
+            });
+        }
+
+        /// <summary>
+        /// Performs action based on iud parameter with database Subscriptions Object
+        /// </summary>
+        /// <param name="iud">Action ID</param>
+        /// <param name="ID">Database uniq ID</param>
+        /// <param name="UserID">User ID</param>
+        /// <param name="CourseID">Course ID</param>
+        /// <param name="TypeCode">Type Code</param>
+        /// <param name="Type">Type ID</param>
+        /// <param name="TariffID">Tariff ID</param>
+        /// <param name="ExpDate">Expiration Date</param>
+        /// <param name="Note">Note</param>
+        public void TSP_Subscription(byte? iud = null, long? ID = null, long? UserID = null, long? CourseID = null, string TypeCode = null, int? Type = null, long? TariffID = null, DateTime? ExpDate = null, string Note = null)
+        {
+            TryExecute(string.Format("Core.Subscription.TSP_Subscription(iud = {0}, ID = {1}, UserID = {2}, CourseID = {3}, TypeCode = {4}, Type = {5}, TariffID = {6}, ExpDate = {7}, Note = {8})", iud, ID, UserID, CourseID, TypeCode, Type, TariffID, ExpDate, Note), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    db.tsp_Subscriptions(iud, ID, UserID, CourseID, TypeCode, Type, TariffID, ExpDate, Note);
+                }
+            });
+        }
+
+        /// <summary>
+        /// Performs action with user-course subscriptions based on iud parameter and xml values
+        /// </summary>
+        /// <param name="iud">Action ID</param>
+        /// <param name="xml">Input parameters given as xml</param>
+        public void TX_Subscriptions(byte iud, string xml)
+        {
+            XElement RetVal = null;
+            TryExecute(string.Format("Core.Subscription.TX_Subscriptions(iud = {0}, xml = {1})", iud, xml), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    db.tx_Subscriptions(iud, XElement.Parse(xml), ref RetVal);
+                }
+            });
+            Properties = RetVal;
         }
         #endregion Methods
     }

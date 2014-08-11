@@ -3,9 +3,21 @@ using Core;
 
 namespace Fractal
 {
-    public partial class MasterPage : System.Web.UI.MasterPage
+    public partial class MasterPage : WebsiteMasterBase
     {
-        public User UserObject { set; get; }
+        public string DialogText
+        {
+            set
+            {
+                DialogPlaceHolder.Visible = true;
+                DialogTextLiteral.Text = value;
+                JQueryUIEnabled = true;
+                HeaderInclude.AppendFormat("<script type='text/javascript' src='/plugins/jquery-ui/js/dialog.js'></script>{0}", Environment.NewLine);
+
+            }
+            get { return DialogTextLiteral.Text; }
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             UserObject = new User();
@@ -16,7 +28,7 @@ namespace Fractal
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HeadLiteral.Text += HeaderInclude.ToString();
         }
     }
 }

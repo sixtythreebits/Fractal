@@ -130,14 +130,6 @@ public partial class UserControls_QuizUserControl : System.Web.UI.UserControl
         ShowHintPlaceHolder.Visible =
         HintPlaceHolder.Visible = !string.IsNullOrEmpty(CurrentQuestion.Hint) && QuizObject.ShowHints;
 
-        //ShowAnalysisPlaceHolder.Visible =
-        //AnalysisPlaceHolder.Visible = !string.IsNullOrEmpty(CurrentQuestion.Analysis) && (QuizObject.ShowAnalysis || ViewMode == QuizViewMode.Preview || ViewMode == QuizViewMode.Study);
-
-        //ShowCorrectAnswerPlaceHolder.Visible = (ViewMode == QuizViewMode.Study || ViewMode == QuizViewMode.Preview) && CurrentQuestion.Answers.Count > 0;
-
-        //ShowVideoExplanationPlaceHolder.Visible =
-        //VideoExplanationPlaceHolder.Visible = (ViewMode == QuizViewMode.Study || QuizObject.IsTaken || ViewMode == QuizViewMode.Preview) && CurrentQuestion.VideoAnswerID.HasValue;
-
         PointsPlaceHolder.Visible = ViewMode != QuizViewMode.Study;
                                 
         AnswerAdditionalClass = string.Empty;
@@ -161,36 +153,13 @@ public partial class UserControls_QuizUserControl : System.Web.UI.UserControl
 
         var AnswersRepeater = (Repeater)e.Item.FindControl("AnswersRepeater");
         AnswersRepeater.DataSource = CurrentQuestion.Answers;
-        AnswersRepeater.DataBind();
-
-        //Show statistics of how other students gave their answer to the question
-        if (QuizObject.ShowOtherStudentAnswers && QuizObject.IsTaken)
-        {
-            var StatsPlaceHolder = (PlaceHolder)e.Item.FindControl("StatsPlaceHolder");
-            var StatsRepeater = (Repeater)e.Item.FindControl("StatsRepeater");
-
-            StatsPlaceHolder.Visible = true;
-            decimal TotalAnsweredCount = CurrentQuestion.Answers.Sum(a => a.AnsweredCount);
-
-            StatsRepeater.DataSource = CurrentQuestion.Answers.Select((a, index) => new
-            {
-                Index = (char)(index + 65),
-                Percent = string.Format("{0}%", Math.Round(Convert.ToDecimal(100 * a.AnsweredCount) / TotalAnsweredCount))
-            }).ToList();
-            StatsRepeater.DataBind();
-        }        
+        AnswersRepeater.DataBind();       
     }
 
     protected void AnswersRepeater_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
     {
         var CheckBoxLiteral = (Literal)e.Item.FindControl("CheckBoxLiteral");
         var a = (Answer)e.Item.DataItem;
-        //REMOVE THIS COMMENTED BLOCK IF ANSWER REALLY CANT CONTAIN FILES
-        //if (a.FileID.HasValue && a.FileID.Value > 0)
-        //{
-        //    ((PlaceHolder)e.Item.FindControl("fileAnswer")).Visible = true;
-        //}
-        // In sections we dont need any user selected data
         if (ViewMode != QuizViewMode.Study)
         {
             CheckBoxLiteral.Text = string.Format("<input type='{0}' name='answ_{1}' {2} {3} />",

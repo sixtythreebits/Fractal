@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using Core;
+using Core.Properties;
+using System.Globalization;
 
 namespace Fractal.Dashboard
 {
@@ -11,7 +10,23 @@ namespace Fractal.Dashboard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            InitStartUp();
+        }
 
+        void InitStartUp()
+        {
+            var Q = new Quiz();
+            QuizzesRepeater.DataSource = Q.ListCourseQuizzesAllowedForUser(Master.Master.UserObject.ID)
+            .Where(q => q.CRTime.HasValue)
+            .Select(q => new
+            {
+                ID = q.ID,
+                Caption = q.Caption,
+                MaxScore = q.MaxScore,
+                StudentScore = q.StudentScore,
+                CRTime = q.CRTime.Value.ToString(Resources.FormatDate, new CultureInfo("ka-ge"))
+            });
+            QuizzesRepeater.DataBind();
         }
     }
 }

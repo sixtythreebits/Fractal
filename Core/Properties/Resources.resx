@@ -138,11 +138,20 @@
   <data name="ConfirmDeleteQuiz" xml:space="preserve">
     <value>ნამდვილად წავშალო ტესტი? ტესტი წაშლა გამოიწვევს ყველა მასზე დაბმული შეკითხვისა და პასუხის წაშლას.</value>
   </data>
+  <data name="ConfirmDeleteSubscriptionRecord" xml:space="preserve">
+    <value>ნამდვილად გნებავთ ჩანაწერის წაშლა?</value>
+  </data>
+  <data name="ConfirmDeleteUserCourseSubscription" xml:space="preserve">
+    <value>ნამდვილად გნებავთ წაუშალოთ მომხმარებელს წიგნის აქტივაციის ჩანაწერი?</value>
+  </data>
   <data name="ConfirmResetCourseKey" xml:space="preserve">
     <value>ნამდვილად გსურთ  გასაღების განახლება?</value>
   </data>
   <data name="ConfirmResetCourseKeyGroup" xml:space="preserve">
     <value>ნამდვილად გნებავთ ჯგუფში ყველა გასაღების განახლება?</value>
+  </data>
+  <data name="ConfirmSubmitQuiz" xml:space="preserve">
+    <value>ნამდვილად დავასრულოთ გამოცდა? გაითვალისწინეთ რომ დასრულების შემდეგ თქვენ აღარ გექნებათ შესაძლებლობა ხელახლა ჩააბაროთ ეს ტესტი.</value>
   </data>
   <data name="DontTouchMe" xml:space="preserve">
     <value>Admin cant be touched.</value>
@@ -160,7 +169,7 @@
     <value>MMM dd, yy</value>
   </data>
   <data name="FormatDateTime" xml:space="preserve">
-    <value>MMM dd, yyyy hh:mm tt</value>
+    <value>MMM dd, yyyy HH:mm</value>
   </data>
   <data name="FormatPageTitle" xml:space="preserve">
     <value>Fractal {0}</value>
@@ -183,8 +192,17 @@
   <data name="InformationProfileActivationSuccess" xml:space="preserve">
     <value>თქვენი პროფილი წარმატებით გააქტიურდა.</value>
   </data>
+  <data name="InformationQuizSubmitSuccess" xml:space="preserve">
+    <value>თქვენი პასუხები წარმატებით შეინახა.</value>
+  </data>
   <data name="InformationRegistrationSuccess" xml:space="preserve">
     <value>თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა პროფილის აქტივაციისათვის.</value>
+  </data>
+  <data name="InformationUsedCourseKey" xml:space="preserve">
+    <value>ეს გასაღები უკვე გამოყენებულია</value>
+  </data>
+  <data name="InvalidCourseKey" xml:space="preserve">
+    <value>გასაღები ვერ მოიძებნა სისტემაში</value>
   </data>
   <data name="InvalidEmailFormat" xml:space="preserve">
     <value>ელ-ფოსტის ფორმატი არასწორია.</value>
@@ -203,6 +221,9 @@
   </data>
   <data name="RequiredCourseCaption" xml:space="preserve">
     <value>აუცილებელია წიგნის დასახელების შეყვანა</value>
+  </data>
+  <data name="RequiredCourseSelection" xml:space="preserve">
+    <value>აუცილებელია წიგნის არჩევა.</value>
   </data>
   <data name="RequiredEmail" xml:space="preserve">
     <value>აუცილებელია ელ - ფოსტის შეყვანა.</value>
@@ -230,6 +251,12 @@
   </data>
   <data name="RequiredStartDate" xml:space="preserve">
     <value>აუცილებელია დასრულების თარიღის შეყვანა.</value>
+  </data>
+  <data name="RequiredUsersAndCoursesSelection" xml:space="preserve">
+    <value>აირჩიეთ მომხმარებელი და წიგნი.</value>
+  </data>
+  <data name="RequredUsersSelection" xml:space="preserve">
+    <value>აუცილებელია მომხმარებლის არჩევა.</value>
   </data>
   <data name="StartGreaterThanEnd" xml:space="preserve">
     <value>საწყისი თარიღი არ უნდა აღემატებოდეს დასასრულის თარიღს.</value>

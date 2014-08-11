@@ -128,6 +128,22 @@ namespace Core
         #endregion Properties
     }
 
+    public struct CourseQuizFront
+    {
+        #region Properties
+        public long RecordID { get; set; }
+        public long ID { get; set; }
+        public string Caption { get; set; }
+        public int? MaxScore { set; get; }
+        public int? StudentScore { set; get; }
+        public long? CourseID { set; get; }
+        public string CourseSlug { set; get; }
+        public string CourseCaption { set; get; }
+        public DateTime? ExpDate { set; get; }
+        public DateTime? CRTime { set; get; }
+        #endregion Properties
+    }
+
     public struct TeacherQuiz
     {
         public long? ID { set;get; }

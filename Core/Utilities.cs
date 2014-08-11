@@ -273,7 +273,7 @@ namespace Core.Utilities
 
         public static string NoCourseIconHttpPath
         {
-            get { return ImageFolderHttpPath + "no-course-cirlce.png"; }
+            get { return "/images/0/book.png"; }
         }
 
         public static string PluginIconImagesFolderHttpPath

@@ -7,28 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fractal.Dashboard {
+namespace Fractal {
     
     
-    public partial class Default {
+    public partial class QuizPage {
         
         /// <summary>
-        /// CoursesRepeater control.
+        /// QuizCaptionLiteral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater CoursesRepeater;
+        protected global::System.Web.UI.WebControls.Literal QuizCaptionLiteral;
         
         /// <summary>
-        /// QuizzesRepeater control.
+        /// QuizUserControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater QuizzesRepeater;
+        protected global::UserControls_QuizUserControl QuizUserControl1;
         
         /// <summary>
         /// Master property.
@@ -36,9 +36,9 @@ namespace Fractal.Dashboard {
         /// <remarks>
         /// Auto-generated property.
         /// </remarks>
-        public new Fractal.Dashboard.DashboardMaster Master {
+        public new Fractal.MasterPage Master {
             get {
-                return ((Fractal.Dashboard.DashboardMaster)(base.Master));
+                return ((Fractal.MasterPage)(base.Master));
             }
         }
     }
