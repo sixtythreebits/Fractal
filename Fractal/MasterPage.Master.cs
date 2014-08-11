@@ -29,6 +29,13 @@ namespace Fractal
         protected void Page_Load(object sender, EventArgs e)
         {
             HeadLiteral.Text += HeaderInclude.ToString();
+            InitAccountHeader();
+        }
+
+        void InitAccountHeader()
+        {
+            AccountPlaceHolder.Visible = UserObject.IsAuthorized;
+            SignInPlaceHolder.Visible = !AccountPlaceHolder.Visible;
         }
     }
 }

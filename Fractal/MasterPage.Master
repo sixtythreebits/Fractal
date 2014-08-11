@@ -30,6 +30,7 @@
                     <li><a href="#">გამოცდები</a></li>
                     <li><a href="#">ჩვენს შესახებ</a></li>
                     <li><a href="#">კონტაქტი</a></li>                    
+                    <asp:PlaceHolder ID="SignInPlaceHolder" runat="server" ViewStateMode="Disabled">
                     <li class="sign in">
                         <a href="#" class="btn">შესვლა</a>
                         <div class="hide">
@@ -50,11 +51,14 @@
                     <li class="sign">
                         <a href="/signup/" class="btn">რეგისტრაცია</a>
                     </li>
-                    <li class="profile hidden">
-                        <a href="#" class="profile"></a>
-                        <a href="#" class="logout"></a>
-                        <span class="profile"><a href="#">ალექსანრე სუკიასოვი</a></span>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder ID="AccountPlaceHolder" runat="server" ViewStateMode="Disabled">
+                    <li class="profile">
+                        <a href="/dashboard/" class="profile" title="ჩემი პანელი"></a>
+                        <a href="/logout/" class="logout" title="გასვლა"></a>
+                        <span class="profile"><a href="/dashboard/"  title="ჩემი პანელი"><%=UserObject.FullName %></a></span>
                     </li>
+                    </asp:PlaceHolder>
                 </ul>
             </nav>
         </header>
