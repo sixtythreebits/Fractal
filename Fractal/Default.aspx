@@ -163,3 +163,8 @@
         </div>
     </section>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">
+<script>
+    $("header nav li").eq(0).addClass("active");
+</script>
+</asp:Content>

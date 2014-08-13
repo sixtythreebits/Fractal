@@ -5,10 +5,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<h2 class="title">
-    <span><asp:Literal ID="QuizCaptionLiteral" runat="server"></asp:Literal></span>
-</h2>
-<section class="content">
+<section class="cnt">
+<article>            
+    <h1><asp:Literal ID="QuizCaptionLiteral" runat="server"></asp:Literal></h1>
+</article>
 <uc1:QuizUserControl ID="QuizUserControl1" runat="server" />
 </section>
 </asp:Content>

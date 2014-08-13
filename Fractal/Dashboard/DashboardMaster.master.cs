@@ -15,7 +15,7 @@ namespace Fractal.Dashboard
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AdminPlaceHolder.Visible = Master.UserObject.IsAdmin;
         }
     }
 }

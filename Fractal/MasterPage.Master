@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fractal</title>    
+    <link type="image/png" rel="icon" href="/images/favicon.ico" />
     <link href="/css/fonts.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />        
     <link href="/css/utils.css" rel="stylesheet" />
@@ -25,11 +26,9 @@
             <a href="/" class="logo">Fractal</a>
             <nav>
                 <ul>
-                    <li class="active"><a href="/">მთავარი</a></li>
-                    <li><a>წიგნები</a></li>
-                    <li><a href="#">გამოცდები</a></li>
-                    <li><a href="#">ჩვენს შესახებ</a></li>
-                    <li><a href="#">კონტაქტი</a></li>                    
+                    <li><a href="/">მთავარი</a></li>
+                    <li><a href="/about/">ჩვენს შესახებ</a></li>
+                    <li><a href="/contact/">კონტაქტი</a></li>                    
                     <asp:PlaceHolder ID="SignInPlaceHolder" runat="server" ViewStateMode="Disabled">
                     <li class="sign in">
                         <a href="#" class="btn">შესვლა</a>

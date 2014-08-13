@@ -66,6 +66,7 @@
     line-height:20px;
     margin-top: -10px;
     margin-left: 60px;
+    font-size:16px;
 }
 
 .quiz-container > .questions > li > p .image-tip {
@@ -119,6 +120,7 @@
 .quiz-container > .questions > li > ul > li > input {
     position: absolute;
     left: 10px;
+    top:7px;
 }
 
 .quiz-container > .questions > li > ul > li > h4 {
@@ -163,6 +165,7 @@
 
 .quiz-container .analysis p, .quiz-container .hint p {
     margin-left: 60px;
+    font-size:16px;
 }
 
 .quiz-container .controll-panel ul {
@@ -209,6 +212,9 @@
     margin-right: 30px;
 }
 
+.quiz-container > .questions > li > ul > li p {
+    font-size:16px;
+}
 
 .quiz-container > .questions > li > ul > li.medium {
 	float: left;
