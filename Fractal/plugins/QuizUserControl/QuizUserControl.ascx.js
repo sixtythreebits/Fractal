@@ -44,7 +44,7 @@
 
                                 $(DialogDivID).dialog("option",
                                 {
-                                    title: "Result",
+                                    title: "შედეგი",
                                     width: 280,
                                     buttons:
                                     {

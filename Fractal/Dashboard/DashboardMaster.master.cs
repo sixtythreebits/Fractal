@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Core;
 
 
 namespace Fractal.Dashboard
@@ -11,11 +13,24 @@ namespace Fractal.Dashboard
             {
                 Response.Redirect("~/");
             }
+            else
+            {
+                InitStartUp();
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        void InitStartUp()
+        {
             AdminPlaceHolder.Visible = Master.UserObject.IsAdmin;
+
+            var C = new Course();
+            var list = C.ListUserSubscribedCourses(Master.UserObject.ID, true);
+            BonusQuizzesPlaceHolder.Visible = list.Where(c => c.Slug == "algebra" || c.Slug == "geometry").Count() > 1;
         }
     }
 }

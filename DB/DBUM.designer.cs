@@ -101,12 +101,6 @@ namespace DB
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UM_List_Users", IsComposable=true)]
-		public IQueryable<UM_List_UsersResult> UM_List_Users()
-		{
-			return this.CreateMethodCallQuery<UM_List_UsersResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UM_List_UserRoles", IsComposable=true)]
 		public IQueryable<UM_List_UserRolesResult> UM_List_UserRoles([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
 		{
@@ -196,301 +190,11 @@ namespace DB
 			userID = ((System.Nullable<long>)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-	public partial class UM_List_UsersResult
-	{
 		
-		private long _usersid;
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _Fname;
-		
-		private string _Lname;
-		
-		private System.Nullable<System.DateTime> _BirthDate;
-		
-		private string _Mobile;
-		
-		private string _Email;
-		
-		private string _Address1;
-		
-		private string _Address2;
-		
-		private string _Avatar;
-		
-		private System.Nullable<System.DateTime> _LastVisitDate;
-		
-		private long _VisitCount;
-		
-		private bool _IsActive;
-		
-		private System.Guid _unid;
-		
-		private System.DateTime _CRTime;
-		
-		public UM_List_UsersResult()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UM_List_Users", IsComposable=true)]
+		public IQueryable<UM_List_UsersResult> UM_List_Users()
 		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usersid", DbType="BigInt NOT NULL")]
-		public long usersid
-		{
-			get
-			{
-				return this._usersid;
-			}
-			set
-			{
-				if ((this._usersid != value))
-				{
-					this._usersid = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(200)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fname", DbType="NVarChar(200)")]
-		public string Fname
-		{
-			get
-			{
-				return this._Fname;
-			}
-			set
-			{
-				if ((this._Fname != value))
-				{
-					this._Fname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lname", DbType="NVarChar(200)")]
-		public string Lname
-		{
-			get
-			{
-				return this._Lname;
-			}
-			set
-			{
-				if ((this._Lname != value))
-				{
-					this._Lname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BirthDate", DbType="Date")]
-		public System.Nullable<System.DateTime> BirthDate
-		{
-			get
-			{
-				return this._BirthDate;
-			}
-			set
-			{
-				if ((this._BirthDate != value))
-				{
-					this._BirthDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(100)")]
-		public string Mobile
-		{
-			get
-			{
-				return this._Mobile;
-			}
-			set
-			{
-				if ((this._Mobile != value))
-				{
-					this._Mobile = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this._Email = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(200)")]
-		public string Address1
-		{
-			get
-			{
-				return this._Address1;
-			}
-			set
-			{
-				if ((this._Address1 != value))
-				{
-					this._Address1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(200)")]
-		public string Address2
-		{
-			get
-			{
-				return this._Address2;
-			}
-			set
-			{
-				if ((this._Address2 != value))
-				{
-					this._Address2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="NVarChar(200)")]
-		public string Avatar
-		{
-			get
-			{
-				return this._Avatar;
-			}
-			set
-			{
-				if ((this._Avatar != value))
-				{
-					this._Avatar = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> LastVisitDate
-		{
-			get
-			{
-				return this._LastVisitDate;
-			}
-			set
-			{
-				if ((this._LastVisitDate != value))
-				{
-					this._LastVisitDate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitCount", DbType="BigInt NOT NULL")]
-		public long VisitCount
-		{
-			get
-			{
-				return this._VisitCount;
-			}
-			set
-			{
-				if ((this._VisitCount != value))
-				{
-					this._VisitCount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit NOT NULL")]
-		public bool IsActive
-		{
-			get
-			{
-				return this._IsActive;
-			}
-			set
-			{
-				if ((this._IsActive != value))
-				{
-					this._IsActive = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unid", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid unid
-		{
-			get
-			{
-				return this._unid;
-			}
-			set
-			{
-				if ((this._unid != value))
-				{
-					this._unid = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
-		public System.DateTime CRTime
-		{
-			get
-			{
-				return this._CRTime;
-			}
-			set
-			{
-				if ((this._CRTime != value))
-				{
-					this._CRTime = value;
-				}
-			}
+			return this.CreateMethodCallQuery<UM_List_UsersResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 	}
 	
@@ -1525,6 +1229,320 @@ namespace DB
 				if ((this._Code != value))
 				{
 					this._Code = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UM_List_UsersResult
+	{
+		
+		private long _usersid;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Fname;
+		
+		private string _Lname;
+		
+		private System.Nullable<System.DateTime> _BirthDate;
+		
+		private string _Mobile;
+		
+		private string _Email;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _Avatar;
+		
+		private System.Nullable<System.DateTime> _LastVisitDate;
+		
+		private System.Nullable<int> _CityID;
+		
+		private long _VisitCount;
+		
+		private bool _IsActive;
+		
+		private System.Guid _unid;
+		
+		private System.DateTime _CRTime;
+		
+		public UM_List_UsersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usersid", DbType="BigInt NOT NULL")]
+		public long usersid
+		{
+			get
+			{
+				return this._usersid;
+			}
+			set
+			{
+				if ((this._usersid != value))
+				{
+					this._usersid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(200)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fname", DbType="NVarChar(200)")]
+		public string Fname
+		{
+			get
+			{
+				return this._Fname;
+			}
+			set
+			{
+				if ((this._Fname != value))
+				{
+					this._Fname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lname", DbType="NVarChar(200)")]
+		public string Lname
+		{
+			get
+			{
+				return this._Lname;
+			}
+			set
+			{
+				if ((this._Lname != value))
+				{
+					this._Lname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BirthDate", DbType="Date")]
+		public System.Nullable<System.DateTime> BirthDate
+		{
+			get
+			{
+				return this._BirthDate;
+			}
+			set
+			{
+				if ((this._BirthDate != value))
+				{
+					this._BirthDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(100)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this._Mobile = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address1", DbType="NVarChar(200)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address2", DbType="NVarChar(200)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="NVarChar(200)")]
+		public string Avatar
+		{
+			get
+			{
+				return this._Avatar;
+			}
+			set
+			{
+				if ((this._Avatar != value))
+				{
+					this._Avatar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastVisitDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastVisitDate
+		{
+			get
+			{
+				return this._LastVisitDate;
+			}
+			set
+			{
+				if ((this._LastVisitDate != value))
+				{
+					this._LastVisitDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CityID", DbType="Int")]
+		public System.Nullable<int> CityID
+		{
+			get
+			{
+				return this._CityID;
+			}
+			set
+			{
+				if ((this._CityID != value))
+				{
+					this._CityID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitCount", DbType="BigInt NOT NULL")]
+		public long VisitCount
+		{
+			get
+			{
+				return this._VisitCount;
+			}
+			set
+			{
+				if ((this._VisitCount != value))
+				{
+					this._VisitCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Bit NOT NULL")]
+		public bool IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this._IsActive = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unid", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid unid
+		{
+			get
+			{
+				return this._unid;
+			}
+			set
+			{
+				if ((this._unid != value))
+				{
+					this._unid = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
+		public System.DateTime CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
 				}
 			}
 		}

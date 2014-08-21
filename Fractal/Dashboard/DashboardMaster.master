@@ -20,6 +20,11 @@
                 <li>
                     <a href="/dashboard/quiz-results/">ჩაბარებული ტესტები</a>
                 </li>
+                <asp:PlaceHolder ID="BonusQuizzesPlaceHolder" runat="server" ViewStateMode="Disabled">                
+                <li>
+                    <a href="/dashboard/bonus-quizzes/">ბონუს ტესტები</a>
+                </li>
+                </asp:PlaceHolder>
                 <asp:PlaceHolder ID="AdminPlaceHolder" runat="server" ViewStateMode="Disabled">
                 <li>
                     <a href="/administration/">ადმინისტრირება</a>

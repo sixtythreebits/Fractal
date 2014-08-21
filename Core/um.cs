@@ -28,7 +28,6 @@ namespace Core
         public string Address1 { set; get; }
         public string Address2 { set; get; }
         public string Zip { set; get; }
-        public string CityID { set; get; }
         public string Avatar { set; get; }
         public string About { set; get; }
         public bool IsAuthorized { set; get; }
@@ -36,7 +35,8 @@ namespace Core
         public bool IsGrant { set; get; }
         public bool IsActive { set; get; }
         public DateTime? LastVisitDate { set; get; }
-        public long? VisitCount { set; get; }
+        public int? CityID { set; get; }
+
         public List<Role> Roles { set; get; }
         public List<Permission> Permissions { set; get; }
         public XElement Properties { set; get; }
@@ -263,10 +263,9 @@ namespace Core
                         this.Address1 = x.ValueOf("Address1");
                         this.Address2 = x.ValueOf("address2");
                         this.Zip = x.ValueOf("zip");
-                        this.CityID = x.ValueOf("city_id");
+                        this.CityID = x.IntValueOf("city_id");
                         this.Avatar = x.ValueOf("avatar");
-                        this.LastVisitDate = x.DateTimeValueOf("last_visit_date");
-                        this.VisitCount = x.LongValueOf("visit_count");
+                        this.LastVisitDate = x.DateTimeValueOf("last_visit_date");                        
                         this.About = x.ValueOf("about");
                         this.IsActive = x.BooleanValueOf("is_active") == true;
 
@@ -377,7 +376,7 @@ namespace Core
                                 Avatar = U.Avatar,
                                 IsActive = U.IsActive,
                                 LastVisitDate = U.LastVisitDate,
-                                VisitCount = U.VisitCount,
+                                CityID = U.CityID,
                                 CRTime = U.CRTime
                             });
             });
@@ -448,7 +447,7 @@ namespace Core
                         Avatar = U.Avatar,
                         IsActive = U.IsActive,
                         LastVisitDate = U.LastVisitDate,
-                        VisitCount = U.VisitCount,
+                        CityID = U.CityID,
                         CRTime = U.CRTime
                     }).ToList();
                 }

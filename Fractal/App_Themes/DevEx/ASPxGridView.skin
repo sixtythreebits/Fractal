@@ -1,4 +1,4 @@
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+﻿<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 <%@ Register TagPrefix="dxwgv" Namespace="DevExpress.Web.ASPxGridView" Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 
 <dxwgv:ASPxGridView runat="server" CssFilePath="~/App_Themes/DevEx/{0}/styles.css" CssPostfix="DevEx">
@@ -14,7 +14,7 @@
     <SettingsPager PageSize="30">
         <PageSizeItemSettings Visible="true" Items="10, 20, 30, 50, 100" />
     </SettingsPager>
-    <SettingsText ConfirmDelete="Do you really want to delete this row?" />
+    <SettingsText ConfirmDelete="ნამდვილად წავშალო ჩანაწერი?" />
     <SettingsCommandButton>
         <NewButton>
             <Image Url="~/plugins/icons/img/add.png"></Image>

@@ -63,13 +63,14 @@ public partial class management_UM_users : System.Web.UI.Page
          "<username>" + e.NewValues["Username"] + "</username>" +
          (e.NewValues["Password"] == null ? string.Empty : ("<password>" + e.NewValues["Password"].ToString().MD5() + "</password>")) +
          "<fname>" + e.NewValues["Fname"] + "</fname>" +
-         "<lname>" + e.NewValues["Lname"] + "</lname>" +         
+         "<lname>" + e.NewValues["Lname"] + "</lname>" +
          "<email>" + e.NewValues["Email"] + "</email>" +
-         "<is_teacher>" + e.NewValues["IsTeacher"] + "</is_teacher>" +
-         "<is_ta>" + e.NewValues["IsTA"] + "</is_ta>" +
-         "<is_admin>" + e.NewValues["IsAdmin"] + "</is_admin>" +
+            //"<is_teacher>" + e.NewValues["IsTeacher"] + "</is_teacher>" +
+            //"<is_ta>" + e.NewValues["IsTA"] + "</is_ta>" +
+            //"<is_admin>" + e.NewValues["IsAdmin"] + "</is_admin>" +
          "<is_active>" + e.NewValues["IsActive"] + "</is_active>" +
-        "</data>";        
+         "<city_id>" + e.NewValues["CityID"] + "</city_id>" +
+        "</data>";
     }
 
     protected void UsersGrid_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
@@ -84,10 +85,11 @@ public partial class management_UM_users : System.Web.UI.Page
         "<fname>" + e.NewValues["Fname"] + "</fname>" +
         "<lname>" + e.NewValues["Lname"] + "</lname>" +        
         "<email>" + e.NewValues["Email"] + "</email>" +
-        "<is_teacher>" + e.NewValues["IsTeacher"] + "</is_teacher>" +
-        "<is_ta>" + e.NewValues["IsTA"] + "</is_ta>" +
-        "<is_admin>" + e.NewValues["IsAdmin"] + "</is_admin>" +
+        //"<is_teacher>" + e.NewValues["IsTeacher"] + "</is_teacher>" +
+        //"<is_ta>" + e.NewValues["IsTA"] + "</is_ta>" +
+        //"<is_admin>" + e.NewValues["IsAdmin"] + "</is_admin>" +
         "<is_active>" + e.NewValues["IsActive"] + "</is_active>" +
+        "<city_id>" + e.NewValues["CityID"] + "</city_id>" +
        "</data>";
     }
 

@@ -1,4 +1,8 @@
+﻿var Abort;
+
 $(function () {
+    Abort = $("#HFAbort").val();
+
     $('.sign.in > a').click(function () {
         $('.sign.in > div').removeClass('hide');
         $(document).click(function (e) {

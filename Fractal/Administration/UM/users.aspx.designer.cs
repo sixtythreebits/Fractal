@@ -12,6 +12,15 @@
 public partial class management_UM_users {
     
     /// <summary>
+    /// ExporterControl control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::UserControls_ExporterControl ExporterControl;
+    
+    /// <summary>
     /// UsersGrid control.
     /// </summary>
     /// <remarks>
@@ -28,6 +37,15 @@ public partial class management_UM_users {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.ObjectDataSource UsersDataSource;
+    
+    /// <summary>
+    /// CitiesDataSource control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ObjectDataSource CitiesDataSource;
     
     /// <summary>
     /// Master property.

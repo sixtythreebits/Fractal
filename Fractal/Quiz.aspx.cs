@@ -27,10 +27,18 @@ namespace Fractal
             QuizUserControl1.ShowQuizCaption = false;
             QuizUserControl1.QuizID = QuizID;
             QuizUserControl1.ViewMode = QuizViewMode.Pass;
-            QuizUserControl1.QuizDataBound += delegate(object sender, EventArgs e)
+            QuizUserControl1.QuizDataBound += (object sender, EventArgs e) =>
             {
                 var uc = (UserControls_QuizUserControl)sender;
-                QuizCaptionLiteral.Text = uc.QuizObject.Caption;                
+                var Q = uc.QuizObject;
+                if (Q.IsTaken)
+                {
+                    Response.Redirect(Q.IsBonus ? "~/dashboard/bonus-quizzes/" : "~/dashboard/quiz-results/");
+                }
+                else
+                {
+                    QuizCaptionLiteral.Text = uc.QuizObject.Caption;
+                }
             };
         }
     }

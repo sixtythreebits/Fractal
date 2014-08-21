@@ -2,13 +2,16 @@
 <%@ MasterType TypeName="administration_MasterPage" %>
 <%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
 <%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register Src="~/UserControls/ExporterControl.ascx" TagPrefix="uc1" TagName="ExporterControl" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">    
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">    
 <div class="main-title">
 	<span class="left"></span>
 	<a href="#" class="icon text add">დამატება</a>    
+    <uc1:ExporterControl runat="server" ID="ExporterControl" GridID="UsersGrid" FileName="users" />
 	<span class="right"></span>
 </div>    
 <div class="container">
@@ -47,9 +50,10 @@
                         <RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
                     </ValidationSettings>
                 </PropertiesTextEdit>
-            </dx:GridViewDataTextColumn>                                                                          
-            <dx:GridViewDataCheckColumn FieldName="IsAdmin" Caption="ადმინი" Width="60px">                
-            </dx:GridViewDataCheckColumn>
+            </dx:GridViewDataTextColumn>                                                                                      
+            <dx:GridViewDataComboBoxColumn FieldName="CityID" Caption="ქალაქი" Width="150px">
+                <PropertiesComboBox DataSourceID="CitiesDataSource" TextField="Name" ValueField="ID"></PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataCheckColumn FieldName="IsActive" Caption="აქტიური" Width="70px">
                 <PropertiesCheckEdit DisplayTextChecked="Active" DisplayTextUnchecked="Not Active"></PropertiesCheckEdit> 
             </dx:GridViewDataCheckColumn>
@@ -102,6 +106,13 @@
             <asp:Parameter Name="iud" Type="Byte" DefaultValue="1" />
             <asp:Parameter Name="xml" Type="String" />
         </UpdateParameters>
+    </asp:ObjectDataSource>
+
+    <asp:ObjectDataSource ID="CitiesDataSource" runat="server" SelectMethod="ListAny" CacheDuration="7200" TypeName="Core.Utilities.Any">
+        <SelectParameters>
+            <asp:Parameter Name="level" Type="Int32"  DefaultValue="1" />
+            <asp:Parameter Name="dcode" Type="Int32"  DefaultValue="5" />
+        </SelectParameters>
     </asp:ObjectDataSource>
 </div>
 </asp:Content>

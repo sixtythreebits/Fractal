@@ -148,6 +148,7 @@ namespace Core
     {
         public long? ID { set;get; }
         public string Caption { set; get; }
+        public bool IsBonus { set; get; }
         public int? QuestionsCount { set; get; }
         public DateTime CRTime  { set; get; }
     }

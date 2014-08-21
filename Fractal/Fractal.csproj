@@ -115,7 +115,7 @@
     <Content Include="Administration\CM\course\QuizResults.aspx" />
     <Content Include="Administration\CM\course\quiz\quiz.aspx" />
     <Content Include="Administration\CM\course\quiz\quizes.aspx" />
-    <Content Include="Administration\CM\course\subscriptions.aspx" />
+    <Content Include="Administration\CM\quiz\BonusQuizzes.aspx" />
     <Content Include="Administration\CM\quiz\quiz.aspx" />
     <Content Include="Administration\CM\quiz\quizes.aspx" />
     <Content Include="Administration\css\box-bar.css" />
@@ -464,6 +464,7 @@
     <Content Include="css\fonts.css" />
     <Content Include="css\style.css" />
     <Content Include="css\utils.css" />
+    <Content Include="Dashboard\BonusQuizzes.aspx" />
     <Content Include="Dashboard\ChangePassword.aspx" />
     <Content Include="Dashboard\Default.aspx" />
     <Content Include="Dashboard\Profile.aspx" />
@@ -518,6 +519,22 @@
     <Content Include="plugins\form\form.css" />
     <Content Include="plugins\form\form.js" />
     <Content Include="plugins\form\img\select.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_808080_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_847e71_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_8DC262_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="plugins\jquery-ui\css\jquery-ui.min.css" />
+    <Content Include="plugins\jquery-ui\js\jquery-ui.min.js" />
     <Content Include="plugins\jquery.bxslider\images\bx_loader.gif" />
     <Content Include="plugins\jquery.bxslider\images\controls.png" />
     <Content Include="plugins\jquery.bxslider\jquery.bxslider.css" />
@@ -574,6 +591,7 @@
     <Content Include="handlers\download.ashx" />
     <Content Include="handlers\preview.ashx" />
     <Content Include="MasterPage.Master" />
+    <Content Include="poligon.aspx" />
     <Content Include="Quiz.aspx" />
     <Content Include="scripts\jquery-2.1.0.min.map" />
     <Content Include="fonts\BPG_DejaVuSans.eot" />
@@ -878,23 +896,9 @@
     <Content Include="plugins\icons\img\xls.png" />
     <Content Include="plugins\jquery-ui-timepicker\jquery-ui-timepicker-addon.css" />
     <Content Include="plugins\jquery-ui-timepicker\jquery-ui-timepicker-addon.js" />
-    <Content Include="plugins\jquery-ui\css\images\animated-overlay.gif" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_flat_0_333333_40x100.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_flat_65_ffffff_40x100.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_glass_55_fbf8ee_1x400.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-icons_004276_256x240.png" />
-    <Content Include="plugins\jquery-ui\css\images\ui-icons_cc0000_256x240.png" />
     <Content Include="plugins\jquery-ui\css\images\ui-icons_ffffff_256x240.png" />
-    <Content Include="plugins\jquery-ui\css\jquery-ui-1.10.3.custom.min.css" />
     <Content Include="plugins\jquery-ui\css\jquery-ui-system.css" />
     <Content Include="plugins\jquery-ui\js\dialog.js" />
-    <Content Include="plugins\jquery-ui\js\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="plugins\jquery.flipster\arrows.png" />
     <Content Include="plugins\jquery.flipster\jquery.flipster.css" />
     <Content Include="plugins\jquery.flipster\jquery.flipster.min.js" />
@@ -1290,12 +1294,12 @@
     <Compile Include="Administration\CM\course\quiz\quizes.aspx.designer.cs">
       <DependentUpon>quizes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administration\CM\course\subscriptions.aspx.cs">
-      <DependentUpon>subscriptions.aspx</DependentUpon>
+    <Compile Include="Administration\CM\quiz\BonusQuizzes.aspx.cs">
+      <DependentUpon>BonusQuizzes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administration\CM\course\subscriptions.aspx.designer.cs">
-      <DependentUpon>subscriptions.aspx</DependentUpon>
+    <Compile Include="Administration\CM\quiz\BonusQuizzes.aspx.designer.cs">
+      <DependentUpon>BonusQuizzes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\CM\quiz\quiz.aspx.cs">
       <DependentUpon>quiz.aspx</DependentUpon>
@@ -1430,6 +1434,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\BonusQuizzes.aspx.cs">
+      <DependentUpon>BonusQuizzes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\BonusQuizzes.aspx.designer.cs">
+      <DependentUpon>BonusQuizzes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1521,6 +1532,13 @@
     <Compile Include="plugins\SuccessErrorMessageAdmin\SuccessErrorControl.ascx.designer.cs">
       <DependentUpon>SuccessErrorControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="poligon.aspx.cs">
+      <DependentUpon>poligon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poligon.aspx.designer.cs">
+      <DependentUpon>poligon.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="forms.aspx.cs">
       <DependentUpon>forms.aspx</DependentUpon>
@@ -1574,6 +1592,9 @@
       <Project>{02e1f55a-5880-4ad1-bab8-c0377a3496d3}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

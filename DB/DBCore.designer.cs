@@ -195,12 +195,6 @@ namespace DB
 			return this.CreateMethodCallQuery<List_QuizAttemptsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_Quizes", IsComposable=true)]
-		public IQueryable<List_QuizesResult> List_Quizes()
-		{
-			return this.CreateMethodCallQuery<List_QuizesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_Answers")]
 		public int tsp_Answers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AnswerID", DbType="BigInt")] ref System.Nullable<long> answerID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QuestionID", DbType="BigInt")] System.Nullable<long> questionID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Answer", DbType="NVarChar(MAX)")] string answer, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Explanation", DbType="NVarChar(MAX)")] string explanation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsCorrect", DbType="Bit")] System.Nullable<bool> isCorrect, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AssetID", DbType="BigInt")] System.Nullable<long> assetID)
 		{
@@ -239,14 +233,6 @@ namespace DB
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_Quizes")]
-		public int tsp_Quizes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QuizID", DbType="BigInt")] ref System.Nullable<long> quizID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Caption", DbType="NVarChar(200)")] string caption)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, quizID, caption);
-			quizID = ((System.Nullable<long>)(result.GetParameterValue(1)));
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_CourseQuizes")]
 		public int tsp_CourseQuizes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RecordID", DbType="BigInt")] System.Nullable<long> recordID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QuizID", DbType="BigInt")] System.Nullable<long> quizID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EndDate", DbType="DateTime")] System.Nullable<System.DateTime> endDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GradeReleaseDate", DbType="DateTime")] System.Nullable<System.DateTime> gradeReleaseDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsPublished", DbType="Bit")] System.Nullable<bool> isPublished, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsPractice", DbType="Bit")] System.Nullable<bool> isPractice, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SectionID", DbType="BigInt")] System.Nullable<long> sectionID)
 		{
@@ -270,12 +256,6 @@ namespace DB
 		public IQueryable<List_TeacherQuizesNotInCourseResult> List_TeacherQuizesNotInCourse([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID)
 		{
 			return this.CreateMethodCallQuery<List_TeacherQuizesNotInCourseResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, courseID);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_TeacherQuizes", IsComposable=true)]
-		public IQueryable<List_TeacherQuizesResult> List_TeacherQuizes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
-		{
-			return this.CreateMethodCallQuery<List_TeacherQuizesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_dtAny", IsComposable=true)]
@@ -397,6 +377,32 @@ namespace DB
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, subscriptionID, userID, courseID, typeCode, type, tariffID, expDate, note);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_Quizes")]
+		public int tsp_Quizes([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QuizID", DbType="BigInt")] ref System.Nullable<long> quizID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Caption", DbType="NVarChar(200)")] string caption, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsBonusQuiz", DbType="Bit")] System.Nullable<bool> isBonusQuiz)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, quizID, caption, isBonusQuiz);
+			quizID = ((System.Nullable<long>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_Quizes", IsComposable=true)]
+		public IQueryable<List_QuizesResult> List_Quizes()
+		{
+			return this.CreateMethodCallQuery<List_QuizesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_TeacherQuizes", IsComposable=true)]
+		public IQueryable<List_TeacherQuizesResult> List_TeacherQuizes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
+		{
+			return this.CreateMethodCallQuery<List_TeacherQuizesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.List_BonusQuizzesWithUserResults", IsComposable=true)]
+		public IQueryable<List_BonusQuizzesWithUserResultsResult> List_BonusQuizzesWithUserResults([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID)
+		{
+			return this.CreateMethodCallQuery<List_BonusQuizzesWithUserResultsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
 		}
 	}
 	
@@ -2050,158 +2056,6 @@ namespace DB
 		}
 	}
 	
-	public partial class List_QuizesResult
-	{
-		
-		private long _QuizID;
-		
-		private string _Caption;
-		
-		private System.DateTime _CRTime;
-		
-		private System.Nullable<long> _UserID;
-		
-		private System.Nullable<bool> _IsCreator;
-		
-		private string _Username;
-		
-		private string _Fname;
-		
-		private string _Lname;
-		
-		public List_QuizesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt NOT NULL")]
-		public long QuizID
-		{
-			get
-			{
-				return this._QuizID;
-			}
-			set
-			{
-				if ((this._QuizID != value))
-				{
-					this._QuizID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
-		public string Caption
-		{
-			get
-			{
-				return this._Caption;
-			}
-			set
-			{
-				if ((this._Caption != value))
-				{
-					this._Caption = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
-		public System.DateTime CRTime
-		{
-			get
-			{
-				return this._CRTime;
-			}
-			set
-			{
-				if ((this._CRTime != value))
-				{
-					this._CRTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="BigInt")]
-		public System.Nullable<long> UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCreator", DbType="Bit")]
-		public System.Nullable<bool> IsCreator
-		{
-			get
-			{
-				return this._IsCreator;
-			}
-			set
-			{
-				if ((this._IsCreator != value))
-				{
-					this._IsCreator = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(100)")]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fname", DbType="NVarChar(200)")]
-		public string Fname
-		{
-			get
-			{
-				return this._Fname;
-			}
-			set
-			{
-				if ((this._Fname != value))
-				{
-					this._Fname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lname", DbType="NVarChar(200)")]
-		public string Lname
-		{
-			get
-			{
-				return this._Lname;
-			}
-			set
-			{
-				if ((this._Lname != value))
-				{
-					this._Lname = value;
-				}
-			}
-		}
-	}
-	
 	public partial class List_AnswersResult
 	{
 		
@@ -2617,86 +2471,6 @@ namespace DB
 				if ((this._CRTime != value))
 				{
 					this._CRTime = value;
-				}
-			}
-		}
-	}
-	
-	public partial class List_TeacherQuizesResult
-	{
-		
-		private System.Nullable<long> _QuizID;
-		
-		private string _Caption;
-		
-		private System.DateTime _CRTime;
-		
-		private System.Nullable<int> _QuestionCount;
-		
-		public List_TeacherQuizesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt")]
-		public System.Nullable<long> QuizID
-		{
-			get
-			{
-				return this._QuizID;
-			}
-			set
-			{
-				if ((this._QuizID != value))
-				{
-					this._QuizID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
-		public string Caption
-		{
-			get
-			{
-				return this._Caption;
-			}
-			set
-			{
-				if ((this._Caption != value))
-				{
-					this._Caption = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
-		public System.DateTime CRTime
-		{
-			get
-			{
-				return this._CRTime;
-			}
-			set
-			{
-				if ((this._CRTime != value))
-				{
-					this._CRTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionCount", DbType="Int")]
-		public System.Nullable<int> QuestionCount
-		{
-			get
-			{
-				return this._QuestionCount;
-			}
-			set
-			{
-				if ((this._QuestionCount != value))
-				{
-					this._QuestionCount = value;
 				}
 			}
 		}
@@ -4181,6 +3955,372 @@ namespace DB
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
 		public System.DateTime CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_QuizesResult
+	{
+		
+		private long _QuizID;
+		
+		private string _Caption;
+		
+		private bool _IsBonusQuiz;
+		
+		private System.DateTime _CRTime;
+		
+		private System.Nullable<long> _UserID;
+		
+		private System.Nullable<bool> _IsCreator;
+		
+		private string _Username;
+		
+		private string _Fname;
+		
+		private string _Lname;
+		
+		public List_QuizesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt NOT NULL")]
+		public long QuizID
+		{
+			get
+			{
+				return this._QuizID;
+			}
+			set
+			{
+				if ((this._QuizID != value))
+				{
+					this._QuizID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
+		public string Caption
+		{
+			get
+			{
+				return this._Caption;
+			}
+			set
+			{
+				if ((this._Caption != value))
+				{
+					this._Caption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsBonusQuiz", DbType="Bit NOT NULL")]
+		public bool IsBonusQuiz
+		{
+			get
+			{
+				return this._IsBonusQuiz;
+			}
+			set
+			{
+				if ((this._IsBonusQuiz != value))
+				{
+					this._IsBonusQuiz = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
+		public System.DateTime CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="BigInt")]
+		public System.Nullable<long> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsCreator", DbType="Bit")]
+		public System.Nullable<bool> IsCreator
+		{
+			get
+			{
+				return this._IsCreator;
+			}
+			set
+			{
+				if ((this._IsCreator != value))
+				{
+					this._IsCreator = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(100)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fname", DbType="NVarChar(200)")]
+		public string Fname
+		{
+			get
+			{
+				return this._Fname;
+			}
+			set
+			{
+				if ((this._Fname != value))
+				{
+					this._Fname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lname", DbType="NVarChar(200)")]
+		public string Lname
+		{
+			get
+			{
+				return this._Lname;
+			}
+			set
+			{
+				if ((this._Lname != value))
+				{
+					this._Lname = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_TeacherQuizesResult
+	{
+		
+		private System.Nullable<long> _QuizID;
+		
+		private string _Caption;
+		
+		private bool _IsBonusQuiz;
+		
+		private System.DateTime _CRTime;
+		
+		private System.Nullable<int> _QuestionCount;
+		
+		public List_TeacherQuizesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt")]
+		public System.Nullable<long> QuizID
+		{
+			get
+			{
+				return this._QuizID;
+			}
+			set
+			{
+				if ((this._QuizID != value))
+				{
+					this._QuizID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
+		public string Caption
+		{
+			get
+			{
+				return this._Caption;
+			}
+			set
+			{
+				if ((this._Caption != value))
+				{
+					this._Caption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsBonusQuiz", DbType="Bit NOT NULL")]
+		public bool IsBonusQuiz
+		{
+			get
+			{
+				return this._IsBonusQuiz;
+			}
+			set
+			{
+				if ((this._IsBonusQuiz != value))
+				{
+					this._IsBonusQuiz = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime NOT NULL")]
+		public System.DateTime CRTime
+		{
+			get
+			{
+				return this._CRTime;
+			}
+			set
+			{
+				if ((this._CRTime != value))
+				{
+					this._CRTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuestionCount", DbType="Int")]
+		public System.Nullable<int> QuestionCount
+		{
+			get
+			{
+				return this._QuestionCount;
+			}
+			set
+			{
+				if ((this._QuestionCount != value))
+				{
+					this._QuestionCount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class List_BonusQuizzesWithUserResultsResult
+	{
+		
+		private long _QuizID;
+		
+		private string _Caption;
+		
+		private System.Nullable<int> _MaxScore;
+		
+		private System.Nullable<int> _YourScore;
+		
+		private System.Nullable<System.DateTime> _CRTime;
+		
+		public List_BonusQuizzesWithUserResultsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuizID", DbType="BigInt NOT NULL")]
+		public long QuizID
+		{
+			get
+			{
+				return this._QuizID;
+			}
+			set
+			{
+				if ((this._QuizID != value))
+				{
+					this._QuizID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caption", DbType="NVarChar(100)")]
+		public string Caption
+		{
+			get
+			{
+				return this._Caption;
+			}
+			set
+			{
+				if ((this._Caption != value))
+				{
+					this._Caption = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaxScore", DbType="Int")]
+		public System.Nullable<int> MaxScore
+		{
+			get
+			{
+				return this._MaxScore;
+			}
+			set
+			{
+				if ((this._MaxScore != value))
+				{
+					this._MaxScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YourScore", DbType="Int")]
+		public System.Nullable<int> YourScore
+		{
+			get
+			{
+				return this._YourScore;
+			}
+			set
+			{
+				if ((this._YourScore != value))
+				{
+					this._YourScore = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRTime", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CRTime
 		{
 			get
 			{

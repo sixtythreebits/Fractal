@@ -89,8 +89,11 @@ namespace Core
         public static string GetJQueryUI()
         {
             return ConfigurationManager.AppSettings["CDNJQueryUI"] == "true" ?
-                   string.Format("<link type='text/css' href='//code.jquery.com/ui/1.10.3/themes/blitzer/jquery-ui.min.css' rel='stylesheet' />{0}<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-system.css' rel='stylesheet' />{0}<script type='text/javascript' src='//code.jquery.com/ui/1.10.3/jquery-ui.min.js'></script>{0}", Environment.NewLine) :
-                   string.Format("<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-1.10.3.custom.min.css' rel='stylesheet' />{0}<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-system.css' rel='stylesheet' />{0}<script type='text/javascript' src='/plugins/jquery-ui/js/jquery-ui-1.10.3.custom.min.js'></script>{0}", Environment.NewLine);
+                   //string.Format("<link type='text/css' href='//code.jquery.com/ui/1.10.3/themes/blitzer/jquery-ui.min.css' rel='stylesheet' />{0}<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-system.css' rel='stylesheet' />{0}<script type='text/javascript' src='//code.jquery.com/ui/1.10.3/jquery-ui.min.js'></script>{0}", Environment.NewLine) :
+                   //string.Format("<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-1.10.3.custom.min.css' rel='stylesheet' />{0}<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-system.css' rel='stylesheet' />{0}<script type='text/javascript' src='/plugins/jquery-ui/js/jquery-ui-1.10.3.custom.min.js'></script>{0}", Environment.NewLine);
+                   string.Format("<link type='text/css' href='//code.jquery.com/ui/1.11.1/themes/south-street/jquery-ui.min.css' rel='stylesheet' />{0}<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-system.css' rel='stylesheet' />{0}<script type='text/javascript' src='//code.jquery.com/ui/1.11.1/jquery-ui.min.js'></script>{0}", Environment.NewLine) :
+                   string.Format("<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui.min.css' rel='stylesheet' />{0}<link type='text/css' href='/plugins/jquery-ui/css/jquery-ui-system.css' rel='stylesheet' />{0}<script type='text/javascript' src='/plugins/jquery-ui/js/jquery-ui.min.js'></script>{0}", Environment.NewLine);
+                   
         }
 
         public static string GetJQueryUITimePicker()

@@ -77,7 +77,8 @@
         <div id="dialog">
 	        <p><asp:Literal ID="DialogTextLiteral" runat="server" EnableViewState="false"></asp:Literal></p>
         </div>
-    </asp:PlaceHolder>
+    </asp:PlaceHolder>     
+        <input type="hidden" id="HFAbort" value="<%=Core.Properties.Resources.Abort %>" />
     </form>
     <asp:ContentPlaceHolder ID="ScriptsPlaceHolder" runat="server">        
     </asp:ContentPlaceHolder>

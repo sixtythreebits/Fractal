@@ -281,6 +281,8 @@ namespace Core
         public decimal? MaxScore { set; get; }
         public List<Question> Questions { set; get; }
         public string unid { set; get; }
+
+        public bool IsBonus { set; get; }
         public XElement Properties { set; get; }
         #endregion Properties
 
@@ -348,6 +350,7 @@ namespace Core
                         ID = el.LongValueOf("id");
                         Caption = el.ValueOf("caption");
                         IsTaken = el.BooleanValueOf("is_passed") == true;
+                        IsBonus = el.BooleanValueOf("is_bonus") == true;
                         StartDate = el.DateTimeValueOf("start_date");
                         EndDate = el.DateTimeValueOf("end_date");
                         GradeReleaseDate = el.DateTimeValueOf("grade_date");
@@ -441,6 +444,26 @@ namespace Core
                 using (var db = ConnectionFactory.GetDBCoreDataContext())
                 {
                     return db.IsUserAlreadyPassedQuiz(UserID, QuizID).Value;
+                }
+            });
+        }
+
+        public List<CourseQuizFront> ListBonusQuizzesWithUserResults(long? UserID)
+        {
+            return TryToGetList<CourseQuizFront>(string.Format("Core.Quiz.ListBonusQuizzesWithUserResults(UserID = {0})", UserID), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    return db.List_BonusQuizzesWithUserResults(UserID)
+                    .OrderByDescending(q => q.CRTime)
+                    .Select(q => new CourseQuizFront
+                    {
+                        ID = q.QuizID,
+                        Caption = q.Caption,
+                        MaxScore = q.MaxScore,
+                        StudentScore = q.YourScore,
+                        CRTime = q.CRTime
+                    }).ToList();
                 }
             });
         }
@@ -542,7 +565,7 @@ namespace Core
                     return db.List_Quizes().OrderByDescending(Q => Q.CRTime).Select(Q => new UserQuiz
                     {
                         ID = Q.QuizID,
-                        Caption = Q.Caption,
+                        Caption = Q.Caption,                        
                         CRTime = Q.CRTime,
                         UserID = Q.UserID,
                         UserFullName = Q.Fname + " " + Q.Lname,
@@ -650,7 +673,28 @@ namespace Core
                     .Select(Q => new TeacherQuiz
                     {
                         ID = Q.QuizID,
-                        Caption = Q.Caption,
+                        Caption = Q.Caption,                  
+                        IsBonus = Q.IsBonusQuiz,
+                        CRTime = Q.CRTime,
+                        QuestionsCount = Q.QuestionCount
+                    }).ToList();
+                }
+            });
+        }
+
+        public List<TeacherQuiz> ListTeacherBonusQuizes(long? UserID)
+        {
+            return TryToGetList<TeacherQuiz>(string.Format("Core.Quiz.ListTeacherBonusQuizes(UserID = {0})", UserID), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    return db.List_TeacherQuizes(UserID)
+                    .Where(q => q.IsBonusQuiz)
+                    .OrderBy(Q => Q.Caption)
+                    .Select(Q => new TeacherQuiz
+                    {
+                        ID = Q.QuizID,
+                        Caption = Q.Caption,                        
                         CRTime = Q.CRTime,
                         QuestionsCount = Q.QuestionCount
                     }).ToList();
@@ -681,47 +725,20 @@ namespace Core
         }
 
         /// <summary>
-        /// Gets List of user - quiz connections
-        /// </summary>
-        /// <returns>List of quizes</returns>
-        public List<UserQuiz> ListUserQuizes()
-        {
-            return TryToGetList<UserQuiz>("Core.Quiz.ListQuizes() - ", () =>
-            {
-                using (var db = ConnectionFactory.GetDBCoreDataContext())
-                {
-                    return db.List_UserQuizes().OrderBy(Q => Q.Caption)
-                    .Select(Q => new UserQuiz
-                    {
-                        RecordID = Q.RecordID,
-                        ID = Q.QuizID,
-                        Caption = Q.Caption,
-                        UserID = Q.UserID,
-                        Username = Q.Username,
-                        UserFullName = Q.Fname + " " + Q.Lname,
-                        View = Q.View,
-                        Edit = Q.Edit,
-                        Delete = Q.Delete,
-                        CRTime = Q.CRTime
-                    }).ToList();
-                }
-            });
-        }
-
-        /// <summary>
         /// Performs CRUD action on Quiz table in database
         /// </summary>
         /// <param name="iud">Action ID</param>
         /// <param name="ID">Database uniq ID</param>             
-        /// <param name="Caption">Caption</param>        
-        public void TSP_Quiz(byte? iud = null, long? ID = null, string Caption = null)
+        /// <param name="Caption">Caption</param>
+        /// <param name="IsBonus">IsBonus</param>
+        public void TSP_Quiz(byte? iud = null, long? ID = null, string Caption = null,bool? IsBonus = null)
         {
-            TryExecute(string.Format("Core.Quiz.TSP_Quiz(iud = {0}, ID = {1}, Caption = {2})", iud, ID, Caption), delegate()
+            TryExecute(string.Format("Core.Quiz.TSP_Quiz(iud = {0}, ID = {1}, Caption = {2}, IsBonus = {3})", iud, ID, Caption, IsBonus), delegate()
             {
                 using (var db = ConnectionFactory.GetDBCoreDataContext())
                 {
                     long? NewID = ID;
-                    db.tsp_Quizes(iud, ref NewID, Caption);
+                    db.tsp_Quizes(iud, ref NewID, Caption, IsBonus);
                     this.ID = NewID;
                 }
             });

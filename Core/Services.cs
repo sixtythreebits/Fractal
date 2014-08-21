@@ -117,10 +117,10 @@ namespace Core.Services
             string result = string.Format("<data><result>error</result><message>{0}</message></data>", Resources.Abort);
 
             var param = XElement.Parse(context.Request.Form["params"].DecryptWeb());
-            var QuizID = long.Parse(param.Element("quiz_id").Value);
-            var CourseID = param.Element("course_id") == null ? null : (long?)long.Parse(param.Element("course_id").Value);
-            var SectionID = param.Element("section_id") == null ? null : (long?)long.Parse(param.Element("section_id").Value);
-            var AssetID = param.Element("asset_id") == null ? null : (long?)long.Parse(param.Element("asset_id").Value);
+            var QuizID = param.LongValueOf("quiz_id");
+            var CourseID = param.LongValueOf("course_id");
+            var SectionID = param.LongValueOf("section_id");
+            var AssetID = param.LongValueOf("asset_id");
 
             if (QuizID > 0 && U.GetAuthorizedCredentials())
             {
@@ -153,8 +153,9 @@ namespace Core.Services
     {
         #region Properties
         string _SMTP = "smtp.gmail.com";
-        string _Username = "emma@63bits.com";
-        string _Password = "1qaz!QAZ";
+        string _Username = "fractal.co@gmail.com";
+        string _Password = "912C934B647E";
+        //string _Password = "adsadsads"; old pass
         int _Port = 587;
         string _From;
         bool _EnableSSL = true;
@@ -169,7 +170,7 @@ namespace Core.Services
         #region Constructors
         public Mail()
         {
-            
+            From = _Username;
         }
 
         public Mail(string Username, string Password)
@@ -195,7 +196,7 @@ namespace Core.Services
             TryExecute(string.Format("Core.Services.Mail.Send(To = {0}, Subject = {1}, Body = {2})", To, Subject, Body), () =>
             {
                 MailMessage message = new MailMessage();
-                message.From = new MailAddress(_Username);
+                message.From = new MailAddress(From);
                 message.To.Add(To);
                 message.Subject = Subject;
                 message.Body = Body;

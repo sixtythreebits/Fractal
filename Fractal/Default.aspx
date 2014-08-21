@@ -128,7 +128,7 @@
 
     </section>
 
-    <section class="home gray">
+    <section class="home gray hidden">
         <h2 class="title">
             <span>ჩვენი გუნდი</span>
         </h2>
