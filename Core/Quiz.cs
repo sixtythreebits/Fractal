@@ -260,6 +260,7 @@ namespace Core
         public long? RecordID { set; get; }
         public string Caption { set; get; }
         public long? CourseID { set; get; }
+        public long? AttemptID { set; get; }
         public string CourseCaption { set; get; }
         public string CourseNavigationSlug { set; get; }
         public long? UserID { set; get; }
@@ -283,6 +284,7 @@ namespace Core
         public string unid { set; get; }
 
         public bool IsBonus { set; get; }
+        public bool ResultSeen { set; get; }
         public XElement Properties { set; get; }
         #endregion Properties
 
@@ -350,19 +352,21 @@ namespace Core
                         ID = el.LongValueOf("id");
                         Caption = el.ValueOf("caption");
                         IsTaken = el.BooleanValueOf("is_passed") == true;
+                        AttemptID = el.LongValueOf("attempt_id");
                         IsBonus = el.BooleanValueOf("is_bonus") == true;
                         StartDate = el.DateTimeValueOf("start_date");
                         EndDate = el.DateTimeValueOf("end_date");
                         GradeReleaseDate = el.DateTimeValueOf("grade_date");
                         ShowHints = el.BooleanValueOf("show_hints") == true;
                         ShowAnalysis = el.BooleanValueOf("show_analysis") == true;
-                        ShowAnswers = IsTaken && (GradeReleaseDate.HasValue && GradeReleaseDate.Value < DateTime.Now) || (el.BooleanValueOf("show_answers") == true);
+                        ShowAnswers = IsTaken; //&& (GradeReleaseDate.HasValue && GradeReleaseDate.Value < DateTime.Now) || (el.BooleanValueOf("show_answers") == true);
                         ShowAnalysis = ShowAnalysis == false ? IsTaken && ShowAnswers : ShowAnalysis;
                         IsPublished = el.BooleanValueOf("is_published") == true;
                         IsExpired = EndDate.HasValue && EndDate < DateTime.Now;
                         IsPractice = el.BooleanValueOf("is_practice") == true;
                         AllowSkip = el.BooleanValueOf("allow_skip") == true;
                         ShowOtherStudentAnswers = el.BooleanValueOf("show_other_answers") == true;
+                        ResultSeen = el.BooleanValueOf("result_seen") == true;
                         unid = el.ValueOf("unid");
 
                         Questions = el.Element("questions") == null ? new List<Question>() :
@@ -720,6 +724,29 @@ namespace Core
                         ID = Q.QuizID,
                         Caption = Q.Caption
                     }).ToList();
+                }
+            });
+        }
+
+        /// <summary>
+        /// Performs CRUD action on Attempts table in database
+        /// </summary>
+        /// <param name="iud">Action ID</param>
+        /// <param name="ID">Database uniq ID</param>             
+        /// <param name="Num">Attempt number</param>
+        /// <param name="UserID">User ID</param>
+        /// <param name="QuizID">Quiz ID</param>
+        /// <param name="CourseID">Course ID</param>
+        /// <param name="Score">Score</param>
+        /// <param name="Status">Status</param>
+        /// <param name="ResultSeen">Whether results is seen by user or not</param>
+        public void TSP_Attempt(byte? iud = null, long? ID = null, byte? Num = null, long? UserID = null, long? QuizID = null, long? CourseID = null, decimal? Score = null, int? Status = null, bool? ResultSeen = null)
+        {
+            TryExecute(string.Format("Core.Quiz.TSP_Attempt(iud = {0}, ID = {1}, Num = {2}, UserID = {3}, QuizID = {4}, CourseID = {5}, Score = {6}, Status = {7}, ResultSeen = {8})", iud, ID, Num, UserID, QuizID, CourseID, Score, Status, ResultSeen), () =>
+            {
+                using (var db = ConnectionFactory.GetDBCoreDataContext())
+                {
+                    db.tsp_Attempts(iud, ref ID, Num, UserID, QuizID, CourseID, Score, Status, ResultSeen);
                 }
             });
         }

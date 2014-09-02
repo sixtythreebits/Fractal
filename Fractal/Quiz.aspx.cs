@@ -31,13 +31,17 @@ namespace Fractal
             {
                 var uc = (UserControls_QuizUserControl)sender;
                 var Q = uc.QuizObject;
-                if (Q.IsTaken)
+                if (Q.ResultSeen)
                 {
                     Response.Redirect(Q.IsBonus ? "~/dashboard/bonus-quizzes/" : "~/dashboard/quiz-results/");
                 }
                 else
                 {
                     QuizCaptionLiteral.Text = uc.QuizObject.Caption;
+                    if (Q.IsTaken)
+                    {
+                        Q.TSP_Attempt(iud: 1, ID: Q.AttemptID, ResultSeen: true);
+                    }
                 }
             };
         }

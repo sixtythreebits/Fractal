@@ -404,6 +404,14 @@ namespace DB
 		{
 			return this.CreateMethodCallQuery<List_BonusQuizzesWithUserResultsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tsp_Attempts")]
+		public int tsp_Attempts([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="TinyInt")] System.Nullable<byte> iud, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="AttemptID", DbType="BigInt")] ref System.Nullable<long> attemptID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Num", DbType="TinyInt")] System.Nullable<byte> num, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="BigInt")] System.Nullable<long> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="QuizID", DbType="BigInt")] System.Nullable<long> quizID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CourseID", DbType="BigInt")] System.Nullable<long> courseID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Score", DbType="Money")] System.Nullable<decimal> score, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ResultSeen", DbType="Bit")] System.Nullable<bool> resultSeen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iud, attemptID, num, userID, quizID, courseID, score, status, resultSeen);
+			attemptID = ((System.Nullable<long>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class List_dtAnyResult

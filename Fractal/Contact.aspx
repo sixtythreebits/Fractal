@@ -5,20 +5,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="cnt contact">
         <h1>კონტაქტი</h1>
-
-        <p>
-            მსხდარ გადავასხი უკუგდება დარბაზია წაეტანა უჯიშო შვილო დაიწრიტება, გერ იგონებდა, ეცნო გავცეცხლდი დამწუხრებული. შესწვდებოდა იალტა ვგავდი ნაპრალიდან, ხიდ, საქნელია, ავაწყვე ტოვებდა მოიხვია. უკუგდება ყოველწლიურად გაბევრდება დამღუპველი დაიწრიტება კრივის გძელაძიანთ ღილი წამოისხამდა.
-        </p>
+        <p>თბილისი, ფალიაშვილის 44</p>
 
         <ul>
             <li class="tel">
-                032 250 55 55
+                579 - 13 - 45 - 60
             </li>
             <li class="mail">
-                <a href="mailto: contact@fractal.ge">contact@fractal.ge</a>
+                <a href="mailto:fractal.co@gmail.com">fractal.co@gmail.com</a>
             </li>
             <li class="address">
-                Javjavadze 48
+                ფალიაშვილის 44
             </li>
         </ul>
 
@@ -36,18 +33,18 @@
 
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
-
+    
     function init() {
         var mapOptions = {
             zoom: 15,
-            center: new google.maps.LatLng(41.728566, 44.775789),
+            center: new google.maps.LatLng(41.708569, 44.766933),
             styles: [{ featureType: 'water', elementType: 'geometry', stylers: [{ hue: '#71ABC3' }, { saturation: -10 }, { lightness: -21 }, { visibility: 'simplified' }] }, { featureType: 'landscape.natural', elementType: 'geometry', stylers: [{ hue: '#7DC45C' }, { saturation: 37 }, { lightness: -41 }, { visibility: 'simplified' }] }, { featureType: 'landscape.man_made', elementType: 'geometry', stylers: [{ hue: '#C3E0B0' }, { saturation: 23 }, { lightness: -12 }, { visibility: 'simplified' }] }, { featureType: 'poi', elementType: 'all', stylers: [{ hue: '#A19FA0' }, { saturation: -98 }, { lightness: -20 }, { visibility: 'off' }] }, { featureType: 'road', elementType: 'geometry', stylers: [{ hue: '#FFFFFF' }, { saturation: -100 }, { lightness: 100 }, { visibility: 'simplified' }] }]
         };
         var mapElement = document.getElementById('map');
         var map = new google.maps.Map(mapElement, mapOptions);
 
         var FlagMarker = new google.maps.Marker({
-            position: new google.maps.LatLng(41.728566, 44.775789),
+            position: new google.maps.LatLng(41.708569, 44.766933),
             map: map
         });
     }

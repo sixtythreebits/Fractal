@@ -523,4 +523,16 @@
       <Column Name="CRTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.tsp_Attempts" Method="tsp_Attempts">
+    <Parameter Name="iud" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="AttemptID" Parameter="attemptID" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Parameter Name="Num" Parameter="num" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="QuizID" Parameter="quizID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="CourseID" Parameter="courseID" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Score" Parameter="score" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ResultSeen" Parameter="resultSeen" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

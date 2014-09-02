@@ -20,9 +20,20 @@ namespace Fractal
         void InitStartUp()
         {
             C = new Course(Request.QueryString["id"]);
-            CourseCaptionLiteral.Text = C.Caption;
-            DescriptionLiteral.Text = C.Description;
-            BookImage.ImageUrl = string.IsNullOrWhiteSpace(C.Icon) ? AppSettings.NoCourseIconHttpPath : AppSettings.UploadFolderHttpPath + C.Icon;
+            if (C.ID > 0)
+            {
+                CourseCaptionLiteral.Text = C.Caption;
+                DescriptionLiteral.Text = C.Description;
+                BookImage.ImageUrl = string.IsNullOrWhiteSpace(C.Icon) ? AppSettings.NoCourseIconHttpPath : AppSettings.UploadFolderHttpPath + C.Icon;
+
+                TextBoxPlaceHolder.Visible = Master.UserObject.IsAuthorized;
+
+                KeyTextBoxLiteral.Text = Master.UserObject.IsAuthorized ? "შეიყვანეთ კოდი იმისთვის, რომ მიიღოთ წვდომა გამოცდებთან" : "გაიარეთ ავტორიზაცია ან დარეგისტრირდით, იმისათვის რომ შეიყვანოთ კოდი";
+            }
+            else
+            {
+                Response.Redirect("~/");
+            }
         }
 
         void InitSubscriptions()

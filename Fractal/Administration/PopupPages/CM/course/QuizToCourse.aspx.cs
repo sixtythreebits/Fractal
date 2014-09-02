@@ -81,7 +81,7 @@ public partial class administration_PopupPages_CM_course_QuizToCourse : System.W
             }
             else
             {
-                var URL = NewQuizRadioButton.Checked ? string.Format("\"/CM/course/quiz/quiz.aspx?id={0}&qid={1}\"", CourseID, Q.Properties.Value) : "window.parent.document.URL";
+                var URL = NewQuizRadioButton.Checked ? string.Format("\"/administration/CM/quiz/quiz.aspx?id={0}&qid={1}\"", CourseID, Q.Properties.Value) : "window.parent.document.URL";
                 HeadLiteral.Text = string.Format("<script> ClosePopup(); window.parent.location = {0}; </script>", URL);
             }
         }

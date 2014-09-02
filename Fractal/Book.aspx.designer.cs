@@ -58,6 +58,24 @@ namespace Fractal {
         protected global::System.Web.UI.WebControls.PlaceHolder SubscribePlaceHolder;
         
         /// <summary>
+        /// KeyTextBoxLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal KeyTextBoxLiteral;
+        
+        /// <summary>
+        /// TextBoxPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder TextBoxPlaceHolder;
+        
+        /// <summary>
         /// KeyTextBox control.
         /// </summary>
         /// <remarks>

@@ -930,6 +930,8 @@ section.contact li.tel{
     line-height:41px;
     letter-spacing:-4px;
     margin-bottom:25px;
+    font-family: helvetica, arial;
+    font-weight: bold;
 }
 section.contact li.mail{
     background:url(../images/icons/mail.png) 1px no-repeat;

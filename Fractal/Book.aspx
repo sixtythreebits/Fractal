@@ -20,11 +20,13 @@
         <asp:PlaceHolder ID="SubscribePlaceHolder" runat="server" ViewStateMode="Disabled">
         <div class="bar-code">
             <div class="bar-code-form">
-                <label>შეიყვანეთ კოდი იმისთვის, რომ მიიღოთ წვდომა გამოცდებთან</label>
-                <asp:TextBox ID="KeyTextBox" runat="server"></asp:TextBox>                
-                <asp:Button ID="ActivateButton" runat="server" CssClass="btn big" Text="გაგზავნა" OnClick="ActivateButton_Click" />                
-                <asp:PlaceHolder ID="ErrorPlaceHolder" runat="server" Visible="false">
-                <label class="error"><asp:Literal ID="ErrorMessageLiteral" runat="server"></asp:Literal></label>
+                <label><asp:Literal ID="KeyTextBoxLiteral" runat="server" ViewStateMode="Disabled"></asp:Literal></label>
+                <asp:PlaceHolder ID="TextBoxPlaceHolder" runat="server" Visible="false">
+                    <asp:TextBox ID="KeyTextBox" runat="server"></asp:TextBox>                
+                    <asp:Button ID="ActivateButton" runat="server" CssClass="btn big" Text="გაგზავნა" OnClick="ActivateButton_Click" />                
+                    <asp:PlaceHolder ID="ErrorPlaceHolder" runat="server" Visible="false">
+                    <label class="error"><asp:Literal ID="ErrorMessageLiteral" runat="server"></asp:Literal></label>
+                    </asp:PlaceHolder>
                 </asp:PlaceHolder>
             </div>
 
@@ -59,9 +61,16 @@
                     <ItemTemplate>
                         <li>
                             <span class="name">
+                                <asp:PlaceHolder ID="LinkPlaceHolder" runat="server" ViewStateMode="Disabled" Visible='<%#Eval("StudentScore")==null %>'>
                                 <span>
                                     <a href="/book/<%#C.Slug %>/quiz/<%#Eval("ID") %>/"><%#Eval("Caption") %></a>
                                 </span>
+                                </asp:PlaceHolder>
+                                <asp:PlaceHolder ID="TextPlaceHolder" runat="server" ViewStateMode="Disabled" Visible='<%#Eval("StudentScore")!=null %>'>
+                                    <span>
+                                        <%#Eval("Caption") %>
+                                    </span>
+                                </asp:PlaceHolder>
                             </span>
                             <span><%#Eval("MaxScore") %></span>
                             <span><%#Eval("StudentScore") %></span>
