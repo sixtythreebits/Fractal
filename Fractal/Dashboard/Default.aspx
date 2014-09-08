@@ -43,7 +43,7 @@
                                 <a href="/book/<%#Eval("Slug") %>/quiz/<%#Eval("ID") %>/"><%#Eval("Caption")%></a>
                             </span>
                         </span>
-                        <span>13</span>
+                        <span><%#Eval("MaxScore") %></span>
                         <span><a href="/book/<%#Eval("Slug") %>/"><%#Eval("CourseCaption")%></a></span>
                         <span><%#Eval("ExpDate") %></span>
                     </li>

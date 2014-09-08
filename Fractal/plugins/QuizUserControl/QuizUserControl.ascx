@@ -29,7 +29,7 @@
                             <ItemTemplate>
                                 <li id='li_<%# Eval("ID").ToString().EncryptWeb() %>' class="<%# GetAnswerClass((bool)Eval("IsCorrect"), (bool)Eval("IsUserAnswer")) %>">                                    
                                     <asp:Literal ID="CheckBoxLiteral" runat="server" EnableViewState="false"></asp:Literal>
-                                    <h4><%# Utility.IndexToChar(Container.ItemIndex + 1) %></h4>
+                                    <h4>&nbsp; <%--<%# Utility.IndexToChar(Container.ItemIndex + 1) %>--%></h4>
                                     <p><%#Eval("answer")%></p>
                                 </li>
                             </ItemTemplate>
