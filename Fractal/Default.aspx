@@ -23,10 +23,10 @@
 
     <ul class="banners cl">
         <li>
-            <a href="#"><img src="images/0/banner.jpg" alt="" /></a>
+            <a href="http://zoommer.ge" target="_blank"><img src="/images/banners/01.png" alt="" /></a>
         </li>
         <li>
-            <a href="#"><img src="images/0/banner.jpg" alt="" /></a>
+            <a href="http://zoommer.ge" target="_blank"><img src="/images/banners/02.png" alt="" /></a>
         </li>
     </ul>
 
