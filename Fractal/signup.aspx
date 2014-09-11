@@ -41,8 +41,7 @@
                             </SelectParameters>
                         </asp:ObjectDataSource>
                     </div>
-                </div>                            
-
+                </div>                                            
                 <asp:Button ID="FinishRegistrationButton" runat="server" ClientIDMode="Static" CssClass="btn big" Text="რეგისტრაცია" OnClick="FinishRegistrationButton_Click" />
             </div>
             <div class="right">
@@ -59,6 +58,7 @@
                 </p>                            
             </div>            
         </div>
+        <asp:Label ID="MessageLable" runat="server" CssClass="message green"></asp:Label>        
     </section>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">

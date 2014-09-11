@@ -26,8 +26,11 @@ namespace Fractal
             {
                 Session.Remove("signup_success");
                 SuccessErrorControl1.ShowSuccess = true;
+                MessageLable.Text =
                 SuccessErrorControl1.Message = Resources.InformationRegistrationSuccess;
                 FinishRegistrationButton.Visible = false;
+                MessageLable.Visible = true;
+
             }
         }
 
