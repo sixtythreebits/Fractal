@@ -295,7 +295,7 @@ namespace Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა პროფილის აქტივაციისათვის..
+        ///   Looks up a localized string similar to თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა\n{0}\nპროფილის აქტივაციისათვის..
         /// </summary>
         public static string InformationRegistrationSuccess {
             get {

@@ -13,6 +13,15 @@ namespace Fractal {
     public partial class signup {
         
         /// <summary>
+        /// FormPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder FormPlaceHolder;
+        
+        /// <summary>
         /// EmailTextBox control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,22 @@ namespace Fractal {
         protected global::System.Web.UI.WebControls.Button FinishRegistrationButton;
         
         /// <summary>
-        /// MessageLable control.
+        /// SuccessPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MessageLable;
+        protected global::System.Web.UI.WebControls.PlaceHolder SuccessPlaceHolder;
+        
+        /// <summary>
+        /// MessageLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal MessageLiteral;
         
         /// <summary>
         /// SuccessErrorControl1 control.

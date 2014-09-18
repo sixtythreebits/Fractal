@@ -196,7 +196,7 @@
     <value>თქვენი პასუხები წარმატებით შეინახა.</value>
   </data>
   <data name="InformationRegistrationSuccess" xml:space="preserve">
-    <value>თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა პროფილის აქტივაციისათვის.</value>
+    <value>თქვენ წარმატებით დარეგისტრირდით. გთოვთ შეამოწმოთ თქვენი ელ-ფოსტა\n{0}\nპროფილის აქტივაციისათვის.</value>
   </data>
   <data name="InformationUsedCourseKey" xml:space="preserve">
     <value>ეს გასაღები უკვე გამოყენებულია</value>

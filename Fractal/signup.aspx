@@ -9,6 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="cnt cl">
         <h2 class="form">რეგისტრაცია</h2>
+        <asp:PlaceHolder ID="FormPlaceHolder" runat="server">
         <div class="form cl">
             <div class="left">
                 <h4>პერსონალური ინფორმაცია</h4>                
@@ -58,7 +59,10 @@
                 </p>                            
             </div>            
         </div>
-        <asp:Label ID="MessageLable" runat="server" CssClass="message green"></asp:Label>        
+        </asp:PlaceHolder>  
+        <asp:PlaceHolder ID="SuccessPlaceHolder" runat="server" ViewStateMode="Disabled" Visible="false">
+            <p class="message green"><asp:Literal ID="MessageLiteral" runat="server"></asp:Literal></p>        
+        </asp:PlaceHolder>
     </section>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">

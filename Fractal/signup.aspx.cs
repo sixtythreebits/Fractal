@@ -23,14 +23,17 @@ namespace Fractal
         void CheckSession()
         {
             if (Session["signup_success"] != null)
-            {
-                Session.Remove("signup_success");
+            {                
                 SuccessErrorControl1.ShowSuccess = true;
-                MessageLable.Text =
-                SuccessErrorControl1.Message = Resources.InformationRegistrationSuccess;
-                FinishRegistrationButton.Visible = false;
-                MessageLable.Visible = true;
+                MessageLiteral.Text = string.Format(Resources.InformationRegistrationSuccess.Replace("\\n", "<br /><br />"), Session["signup_email"]);
+                SuccessPlaceHolder.Visible = true;
 
+                SuccessErrorControl1.Message = Resources.SuccessInformationSave;
+                FinishRegistrationButton.Visible = false;
+                
+                FormPlaceHolder.Visible = false;
+                Session.Remove("signup_success");
+                Session.Remove("signup_email");
             }
         }
 
@@ -75,6 +78,7 @@ namespace Fractal
                     M.Send(Master.UserObject.Email, Subject, Body);
 
                     Session["signup_success"] = true;
+                    Session["signup_email"] = Master.UserObject.Email;
                     Response.Redirect("/signup");                    
                 }
             }

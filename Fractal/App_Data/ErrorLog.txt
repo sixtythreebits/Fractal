@@ -5,3 +5,313 @@ http://localhost:5568/Administration/PopupPages/CM/course/QuizToCourse.aspx - 30
 Core.Course.GetCourseCreatorUser(CourseID = ) --- Nullable object must have a value.
 ------------------------------------
 
+
+
+------------------------------------
+http://localhost:5568/signup.aspx - 18-Sep-14 12:15:11
+Core.Services.Mail.Send(To = hgfdsdfasdf@sadf.fdsa, Subject = პროფილის აქტივაცია, Body = <!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+</head>
+
+<body>
+    <table cellpadding='0' cellspacing='0' border='0' style="width:620px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px;">
+        <tr>
+            <td style='width:620px; text-align:center; height:154px;'>                
+                <img alt="Fractal Logo" src="cid:logo" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style='padding:0 29px;'>
+                    <h1 style='font-size:24px; font-weight:200; text-align:center; padding:25px 0 30px; margin:0'>პროფილის აქტივაცია</h1>
+                    <p>
+                       გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს.
+                    </p>
+                    <br /><br />
+
+                    <div style='text-align:center'>
+                        <a href='http://localhost:5568/activation/a3nal4x65u4bfo5co7lg35rkllve3mjkhescqfups4xt46amricnvfizinptwn7wxcwxlt2qxbwgw000/' style="
+                    padding:6px 40px;
+
+                    font-family:'Lucida Grande', Verdana;
+                    color:#333;
+                    text-decoration:none;
+                    text-align:center;
+                    line-height:30px;
+
+                    background-color:#fff;
+					background: -webkit-linear-gradient(top, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+                    border:1px solid #999;
+                    border-radius:4px;
+                    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+                    ">პროფილის აქტივაცია</a>
+                    </div>
+                    <br /><br /><br /><br />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style='text-align:center; line-height:20px'>
+                <p style='color:#808080; margin:0'>
+                    <strong>© 2014 FRACTAL.GE. ALL RIGHTS RESERVED</strong>
+                </p>                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>) --- The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+------------------------------------
+
+
+
+------------------------------------
+http://localhost:5568/signup.aspx - 18-Sep-14 12:17:37
+Core.Services.Mail.Send(To = gfdsgsef@fdsfg.gfds, Subject = პროფილის აქტივაცია, Body = <!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+</head>
+
+<body>
+    <table cellpadding='0' cellspacing='0' border='0' style="width:620px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px;">
+        <tr>
+            <td style='width:620px; text-align:center; height:154px;'>                
+                <img alt="Fractal Logo" src="cid:logo" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style='padding:0 29px;'>
+                    <h1 style='font-size:24px; font-weight:200; text-align:center; padding:25px 0 30px; margin:0'>პროფილის აქტივაცია</h1>
+                    <p>
+                       გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს.
+                    </p>
+                    <br /><br />
+
+                    <div style='text-align:center'>
+                        <a href='http://localhost:5568/activation/gttltzljconkahhhchexikpzj5snasxzq7jkzl76bhxomg6v33fqbfnpcjggrlc3zr7jmz6mor2yc000/' style="
+                    padding:6px 40px;
+
+                    font-family:'Lucida Grande', Verdana;
+                    color:#333;
+                    text-decoration:none;
+                    text-align:center;
+                    line-height:30px;
+
+                    background-color:#fff;
+					background: -webkit-linear-gradient(top, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+                    border:1px solid #999;
+                    border-radius:4px;
+                    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+                    ">პროფილის აქტივაცია</a>
+                    </div>
+                    <br /><br /><br /><br />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style='text-align:center; line-height:20px'>
+                <p style='color:#808080; margin:0'>
+                    <strong>© 2014 FRACTAL.GE. ALL RIGHTS RESERVED</strong>
+                </p>                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>) --- The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+------------------------------------
+
+
+
+------------------------------------
+http://localhost:5568/signup.aspx - 18-Sep-14 12:18:18
+Core.Services.Mail.Send(To = xvcbxcvb@bcddf.fda, Subject = პროფილის აქტივაცია, Body = <!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+</head>
+
+<body>
+    <table cellpadding='0' cellspacing='0' border='0' style="width:620px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px;">
+        <tr>
+            <td style='width:620px; text-align:center; height:154px;'>                
+                <img alt="Fractal Logo" src="cid:logo" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style='padding:0 29px;'>
+                    <h1 style='font-size:24px; font-weight:200; text-align:center; padding:25px 0 30px; margin:0'>პროფილის აქტივაცია</h1>
+                    <p>
+                       გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს.
+                    </p>
+                    <br /><br />
+
+                    <div style='text-align:center'>
+                        <a href='http://localhost:5568/activation/mdzq5gaflzxsvldlpb75x2fsz7arpbizu5dogy4a5giy4uetkgfuyb6xelpu7moe6aacszgzljw6m000/' style="
+                    padding:6px 40px;
+
+                    font-family:'Lucida Grande', Verdana;
+                    color:#333;
+                    text-decoration:none;
+                    text-align:center;
+                    line-height:30px;
+
+                    background-color:#fff;
+					background: -webkit-linear-gradient(top, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+                    border:1px solid #999;
+                    border-radius:4px;
+                    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+                    ">პროფილის აქტივაცია</a>
+                    </div>
+                    <br /><br /><br /><br />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style='text-align:center; line-height:20px'>
+                <p style='color:#808080; margin:0'>
+                    <strong>© 2014 FRACTAL.GE. ALL RIGHTS RESERVED</strong>
+                </p>                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>) --- The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+------------------------------------
+
+
+
+------------------------------------
+http://localhost:5568/signup.aspx - 18-Sep-14 12:21:21
+Core.Services.Mail.Send(To = gfdfg@gdsf.gfds, Subject = პროფილის აქტივაცია, Body = <!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+</head>
+
+<body>
+    <table cellpadding='0' cellspacing='0' border='0' style="width:620px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px;">
+        <tr>
+            <td style='width:620px; text-align:center; height:154px;'>                
+                <img alt="Fractal Logo" src="cid:logo" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style='padding:0 29px;'>
+                    <h1 style='font-size:24px; font-weight:200; text-align:center; padding:25px 0 30px; margin:0'>პროფილის აქტივაცია</h1>
+                    <p>
+                       გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს.
+                    </p>
+                    <br /><br />
+
+                    <div style='text-align:center'>
+                        <a href='http://localhost:5568/activation/z7mim2b4j3imam4rtbqx5l5rucoa7qnv4p2i4mlk7l4xnsnucqerwonret36edgubqszvimewzhri000/' style="
+                    padding:6px 40px;
+
+                    font-family:'Lucida Grande', Verdana;
+                    color:#333;
+                    text-decoration:none;
+                    text-align:center;
+                    line-height:30px;
+
+                    background-color:#fff;
+					background: -webkit-linear-gradient(top, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+                    border:1px solid #999;
+                    border-radius:4px;
+                    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+                    ">პროფილის აქტივაცია</a>
+                    </div>
+                    <br /><br /><br /><br />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style='text-align:center; line-height:20px'>
+                <p style='color:#808080; margin:0'>
+                    <strong>© 2014 FRACTAL.GE. ALL RIGHTS RESERVED</strong>
+                </p>                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>) --- The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+------------------------------------
+
+
+
+------------------------------------
+http://localhost:5568/signup.aspx - 18-Sep-14 12:22:04
+Core.Services.Mail.Send(To = fsafasd@gfdsfg.gfd, Subject = პროფილის აქტივაცია, Body = <!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+</head>
+
+<body>
+    <table cellpadding='0' cellspacing='0' border='0' style="width:620px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px;">
+        <tr>
+            <td style='width:620px; text-align:center; height:154px;'>                
+                <img alt="Fractal Logo" src="cid:logo" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style='padding:0 29px;'>
+                    <h1 style='font-size:24px; font-weight:200; text-align:center; padding:25px 0 30px; margin:0'>პროფილის აქტივაცია</h1>
+                    <p>
+                       გმადლობთ რეგისტრაციისათვის. თქვენი პროფილი წარმატებით დარეგისტრირდა. მისი გააქტიურებისათვის გთხოვთ მიჰყევით ქვედა ბმულს.
+                    </p>
+                    <br /><br />
+
+                    <div style='text-align:center'>
+                        <a href='http://localhost:5568/activation/iebpqp2cgkfs33cka6axmwyblahfyulibyi33xyzyzdlzv5gcj7kihqlav5vx2vb72xxbmmx53jqm000/' style="
+                    padding:6px 40px;
+
+                    font-family:'Lucida Grande', Verdana;
+                    color:#333;
+                    text-decoration:none;
+                    text-align:center;
+                    line-height:30px;
+
+                    background-color:#fff;
+					background: -webkit-linear-gradient(top, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e7 100%,#2989d8 100%,#e7e7e7 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+                    border:1px solid #999;
+                    border-radius:4px;
+                    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+                    ">პროფილის აქტივაცია</a>
+                    </div>
+                    <br /><br /><br /><br />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style='text-align:center; line-height:20px'>
+                <p style='color:#808080; margin:0'>
+                    <strong>© 2014 FRACTAL.GE. ALL RIGHTS RESERVED</strong>
+                </p>                
+            </td>
+        </tr>
+    </table>
+</body>
+</html>) --- The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+------------------------------------
+
